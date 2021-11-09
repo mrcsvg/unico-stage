@@ -9,7 +9,7 @@ const config = {
   title: 'Unico Check - SDKs',
   tagline: 'Se integre com a único de forma fácil e rápida',
   url: 'https://mrcsvg.github.io',
-  baseUrl: '/',
+  baseUrl: '/unico-sdkbio-docs/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
