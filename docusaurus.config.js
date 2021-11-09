@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Unico Check - SDKs',
   tagline: 'Se integre com a único de forma fácil e rápida',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://mrcsvg.github.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'unico', // Usually your GitHub org/user name.
-  projectName: 'unico-check-sdk-docs', // Usually your repo name.
+  organizationName: 'mrcsvg', // Usually your GitHub org/user name.
+  projectName: 'unico-sdkbio-docs', // Usually your repo name.
 
   presets: [
     [
