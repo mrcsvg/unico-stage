@@ -1,0 +1,95 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #0f9af7;
+  --ifm-color-primary-dark: #088ce4;
+  --ifm-color-primary-darker: #0784d8;
+  --ifm-color-primary-darkest: #066db1;
+  --ifm-color-primary-light: #28a5f8;
+  --ifm-color-primary-lighter: #35aaf8;
+  --ifm-color-primary-lightest: #5bbafa;
+  --ifm-code-font-size: 95%;
+  --ifm-panel-border-color: #606770;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__logo {
+  height: 52px;
+}
+
+/* Body */
+
+/* body {
+  font-family: 'Comfortaa', cursive;
+} */
+
+/* Table configuration */
+
+table {
+  width: 100%;
+  display: table;
+}
+
+
+.compatibility-table table td{
+  text-align: center;
+}
+
+
+/* Lables */
+
+
+td .label.required {
+  border-width: 1px;
+  letter-spacing: .02rem;
+  margin-left: 8px;
+  margin-right: 0;
+  padding: 0 6px;
+}
+
+.label.required {
+  border-color: #fa5035;
+  color: #fa5035;
+  margin-left: 0;
+  margin-right: 16px;
+}
+
+.label.basic {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+td .label {
+  font-size: .7rem;
+  margin-left: 14px;
+  padding: 0 8px 0 10px;
+}
+
+.label {
+  border-radius: 0 2px 2px 0;
+  color: #fff;
+  display: inline-block;
+  font-size: .85rem;
+  font-weight: 500;
+  padding: 2px 12 px;
+  position: relative;
+}
