@@ -42,5 +42,7 @@ Para desativar a captura automática utilize o método disponibilizado para cada
 ## Como remover/desativar SmartFrame?
 Para desativar o SmartFrame utilize o método disponibilizado para cada plataforma, que pode ser encontrado na documentação Android e iOS. Basta clicar na aba da sua plataforma.
 
-## Conflitos entre arquivos AndroidManifest envolvendo o meta-data com.google.mlkit.vision.DEPENDENCIES. O que fazer?
-Em cenários onde ocorrem conflitos entre os arquivos de AndroidManifest envolvendo dependências com.google.mlkit.vision, basta adicionar a tag tools:replace="android:value" dentro do meta-data, ficando dessa forma:
+## Conflitos entre arquivos AndroidManifest envolvendo o meta-data `com.google.mlkit.vision.DEPENDENCIES`. O que fazer?
+Em cenários onde ocorrem conflitos entre os arquivos de AndroidManifest envolvendo dependências `com.google.mlkit.vision`, basta adicionar a tag `tools:replace="android:value"` dentro do meta-data, ficando dessa forma:
+
+![Conflitos entre arquivos AndroidManifest ](/img/faqs/faq-conflited-mlkit.png)

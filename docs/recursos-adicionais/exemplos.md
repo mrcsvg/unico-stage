@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Sobre esta página
 
-Abaixo você encontrará uma coleção de projetos de exemplo para entender melhor o funcionamento de cada um de nossos SDKs
+Abaixo você encontrará uma coleção de projetos de exemplo para entender melhor o funcionamento de cada um de nossos SDKs:
 
 ## Projetos Web
 

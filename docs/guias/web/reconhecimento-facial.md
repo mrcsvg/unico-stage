@@ -31,11 +31,20 @@ Neste tipo de experiência seu usuário é totalmente responsável por posiciona
 
 Neste tipo de captura, nosso SDK não efetua nenhum tipo de validação do que está sendo capturado e isso pode aumentar as chances de problemas ao enviar o `base64` obtido para o motor de biometria.
 
+import imgCapturaManual from '/static/img/guias/img_cameranormal.png';
+
+<img src={imgCapturaManual} alt="Captura Manual" className="imgCenter" />
+
+
 ### Captura Automática
 
 Neste tipo de experiência, identificamos a face do usuário automáticamente através de algorítimos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
 
 Por ajudar o usuário a enquadrar sua face na área de captura, esta opção pode diminuir problemas ao enviar o `base64` às APIs de nosso motor biométrico.
+
+import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
+
+<img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
 
 ## Implementação
 

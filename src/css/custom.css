@@ -18,6 +18,9 @@
   --ifm-color-primary-lightest: #5bbafa;
   --ifm-code-font-size: 95%;
   --ifm-panel-border-color: #606770;
+
+  --aa-search-input-height: 30px;
+  /* --doc-sidebar-width */
 }
 
 .docusaurus-highlight-code-line {
@@ -33,6 +36,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .navbar__logo {
   height: 52px;
+  margin-left: 7px;
 }
 
 /* Body */
@@ -51,6 +55,15 @@ table {
 
 .compatibility-table table td{
   text-align: center;
+}
+
+
+/* Images */
+
+.imgCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -92,4 +105,13 @@ td .label {
   font-weight: 500;
   padding: 2px 12 px;
   position: relative;
+}
+
+
+
+
+/* Table of content constumization */
+
+.table-of-contents__left-border {
+  border-left: 2px solid var(--ifm-toc-border-color);
 }

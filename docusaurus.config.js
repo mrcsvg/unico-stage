@@ -16,6 +16,14 @@ const config = {
   organizationName: 'mrcsvg', // Usually your GitHub org/user name.
   projectName: 'unico-sdkbio-docs', // Usually your repo name.
 
+
+
+  plugins: [
+    [require.resolve('@cmfcmf/docusaurus-search-local'), {
+      // Options here
+      language: "pt",
+    }]
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -46,6 +54,24 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+        switchConfig: {
+          darkIcon: '👻',
+          lightIcon: '☀️',
+          darkIconStyle: {
+            marginLeft: '0px',
+          },
+          lightIconStyle: {
+            marginRight: '3px',
+          },
+        },
+      },
+
+
       navbar: {
         title: '',
         logo: {
@@ -56,16 +82,45 @@ const config = {
           {
             type: 'doc',
             docId: 'intro',
-            position: 'left',
-            label: 'SDKs Unico | Check',
+            position: 'right',
+            label: 'SDKs Docs',
           },
         
+
+
+          {
+            type: 'dropdown',
+            label: 'SDK APIs',
+            position: 'right',
+            items: [
+              {
+                type: 'doc',
+                label: 'Web SDK',
+                docId: 'guias/web/API',
+              },
+              // ... more items
+            ],
+          },
+
+
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://www3.acesso.io/identity/services/v3/docs/',
+            label: 'Rest API Reference',
+            position: 'right',
+          },
+
+          {
+            href: 'https://github.com/acesso-io',
             label: 'GitHub',
             position: 'right',
           },
+
+
+          // {
+          //   type: 'search',
+          //   position: 'right',
+          // },
           // {
           //   type: 'localeDropdown',
           //   position: 'right',
@@ -148,8 +203,10 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} unico. All rights reserved. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
+
+
       },
       i18n: {
         defaultLocale: 'pt-BR',
