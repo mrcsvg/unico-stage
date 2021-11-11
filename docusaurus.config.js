@@ -21,7 +21,8 @@ const config = {
   plugins: [
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // Options here
-      language: "pt",
+      docsRouteBasePath: '/',
+      // language: "pt",
     }]
   ],
   presets: [
