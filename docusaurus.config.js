@@ -86,8 +86,34 @@ const config = {
             position: 'right',
             label: 'SDKs Docs',
           },
-        
 
+          {
+            type: 'doc',
+            docId: 'release-notes/whats-new',
+            position: 'right',
+            label: 'Release Notes',
+          },          
+
+          {
+            type: 'dropdown',
+            label: 'Release Notes',
+            position: 'right',
+            items: [
+              {
+                type: 'doc',
+                label: 'Web SDK',
+                docId: 'guias/web/release-notes',
+              },
+              {
+                type: 'doc',
+                label: 'iOS SDK',
+                docId: 'guias/iOS/release-notes',
+              },
+
+
+              // ... more items
+            ],
+          },
 
           {
             type: 'dropdown',
