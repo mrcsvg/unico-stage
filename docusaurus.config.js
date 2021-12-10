@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const simplePlantUML = require("@akebifiky/remark-simple-plantuml");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -37,7 +38,10 @@ const config = {
           editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
           sidebarCollapsible: true,
           sidebarCollapsed: false,
-          routeBasePath: '/'
+          routeBasePath: '/',
+          remarkPlugins: [
+            [simplePlantUML, {baseUrl: "https://www.plantuml.com/plantuml/svg"}]
+          ]
         },
         blog: {
           showReadingTime: true,
@@ -87,12 +91,13 @@ const config = {
             label: 'SDKs Docs',
           },
 
-          {
-            type: 'doc',
-            docId: 'release-notes/whats-new',
-            position: 'right',
-            label: 'Release Notes',
-          },          
+          // Ocultando o release notes do menu enquanto n temos o conteúdo.
+          // { 
+          //   type: 'doc',
+          //   docId: 'release-notes/whats-new',
+          //   position: 'right',
+          //   label: 'Release Notes',
+          // },      
 
           {
             type: 'dropdown',
