@@ -1,6 +1,10 @@
 ---
 sidebar_label: 'API Reference'
 sidebar_position: 8
+title: Unico Check - Web SDK
+description: API Reference do SDK Web do Único Check
+keywords: 
+  - Web
 ---
 
 # SDK API Reference
@@ -32,13 +36,13 @@ acessoWebFrame.initCamera(configurations, callback, layout);
 
 #### Possíveis retornos
 
-Os retornos deverão ser tratados na função de callback que é passada como parametro para o método `initCamera()`. Os possíveis retornos previstos para este método são:
+Os retornos deverão ser tratados na função de callback que é passada como parâmetro para o método `initCamera()`. Os possíveis retornos previstos para este método são:
 
 - Success;
 - Error;
 - Support
 
-Em caso de sucesso (`sucess`), o método `initCamera()` retornará a imagem capturada em formato *base64*. Este base64 deverá ser enviado para nossas APIs para completar o processo de verificação biométrica.
+Em caso de sucesso (`success`), o método `initCamera()` retornará a imagem capturada em formato *base64*. Este base64 deverá ser enviado para nossas APIs para completar o processo de verificação biométrica.
 
 ```javascript
 {
@@ -72,13 +76,13 @@ acessoWebFrame.initDocument(configurations, callback, layout);
 
 #### Possíveis retornos
 
-Os retornos deverão ser tratados na função de callback que é passada como parametro para o método `initDocument()`. Os possíveis retornos previstos para este método são:
+Os retornos deverão ser tratados na função de callback que é passada como parâmetro para o método `initDocument()`. Os possíveis retornos previstos para este método são:
 
 - Success;
 - Error;
 - Support
 
-Em caso de sucesso (`sucess`), o método `initDocument()` retornará a imagem capturada em formato *base64*. Este base64 deverá ser enviado para nossas APIs para completar o processo de verificação biométrica.
+Em caso de sucesso (`success`), o método `initDocument()` retornará a imagem capturada em formato *base64*. Este base64 deverá ser enviado para nossas APIs para completar o processo de verificação biométrica.
 
 ```javascript
 {
@@ -114,9 +118,9 @@ O objeto `configuration` é obrigatório para os métodos `initCamera()` e `init
 
 #### Objeto `Configuration` para reconhecimento facial:
 
-Parametros do objeto `configuration` para a funcionalidade de reconhecimento facial (utilizado no método `initCamera()`):
+Parâmetros do objeto `configuration` para a funcionalidade de reconhecimento facial (utilizado no método `initCamera()`):
 
-| Parametro	| Descrição |
+| Parâmetro	| Descrição |
 | --------- | ---- |
 | `TYPE` <div class="label basic required">Required</div> |	Esta propriedade é o que irá indicar o tipo de captura (automática ou manual). Confira as possibilidades na tabela abaixo. | 
 | `optional.FACE_MODE` | Esta propriedade irá indicar qual camerá será utilizada (frontal ou traseira). Confira as possibilidade e restrições na tabela abaixo. | 
@@ -141,7 +145,7 @@ Saiba mais sobre as diferenças da **câmera normal** para a **câmera inteligen
 | `2` | Câmera traseira | 
 
 :::caution Nota sobre a câmera traseira
-A câmera traseira só pode ser utilizada em dispositivos móveis e com a camera com captura manual. Não atendendo estes critérios, o parametro será ignorado.
+A câmera traseira só pode ser utilizada em dispositivos móveis e com a camera com captura manual. Não atendendo estes critérios, o parâmetro será ignorado.
 
 Recomendamos a utilização deste parâmetro apenas quando tenha certeza que o dispositivo de utilização será um celular e que a captura será realizada por um terceiro, como um funcionário da empresa em seus clientes, por exemplo.
 
@@ -159,11 +163,11 @@ Recomendamos a utilização deste parâmetro apenas quando tenha certeza que o d
 
 #### Objeto `Configuration` para captura de documentos
 
-Parametros do objeto `configuration` para a funcionalidade de reconhecimento facial (utilizado no método `initDocument()`):
+Parâmetros do objeto `configuration` para a funcionalidade de reconhecimento facial (utilizado no método `initDocument()`):
 
 | Parametro	| Descrição |
 | --------- | ---- |
-| `TYPE` <div class="label basic required">Required</div> |	Esta propriedade é o que irá indicar o tipo de doccumento que está sendo capturado. Confira as possibilidades na tabela abaixo. | 
+| `TYPE` <div class="label basic required">Required</div> |	Esta propriedade é o que irá indicar o tipo de documento que está sendo capturado. Confira as possibilidades na tabela abaixo. | 
 | `optional.LABEL_DOCUMENT_TYPE_OTHERS` | Esta propriedade indica o título do tipo documento que será exibido durante o processo de captura para o usuário. Só é aplicado quando o tipo de documento é igual a "Outros". | 
 
 ##### Valores possíveis para o campo`TYPE`
@@ -200,7 +204,7 @@ O objeto callback deverá possuir funções de callback que serão disparadas em
 
 | Evento	| Descrição|
 | --- | --- |
-| `succes`| Evento disparado em caso de sucesso na captura. Sempre retornará um base64 como resposta que deverá ser enviado a nossas APIs	|   
+| `success`| Evento disparado em caso de sucesso na captura. Sempre retornará um base64 como resposta que deverá ser enviado a nossas APIs	|   
 | `error`| Evento disparado caso ocorra algum erro que não esteja relacionado com problemas de suporte (compatibilidade) quanto ao browser do usuário	|   
 | `support`| Evento disparado caso ocorra algum problema de compatibilidade com o browser do usuário	|   
 
@@ -314,7 +318,7 @@ Retornado caso algum erro ocorra no processo de captura. Os códigos de erro map
     code: number, //código do erro
     message: string, //mensagem de erro
     type: = string, //tipo de erro
-    stack: objeto //opicional (usado para casos que não precisamos retornar mais detalhes sobre erros internos, ideal é que caso exista armazenar e nos relatar se necessário)
+    stack: objeto //opcional (usado para casos que não precisamos retornar mais detalhes sobre erros internos, ideal é que caso exista armazenar e nos relatar se necessário)
 }
 ```
 
@@ -349,7 +353,7 @@ Como exemplo, deixamos um snippet de código sugerindo alguns tratamentos para n
     },
     error: function(error) {
       if(error.code === 100){
-        //Um erro que não prevíamos, neste caso a captura está interompida por mau funcionamento, armazenar e entrar em contato conosco.
+        //Um erro que não prevíamos, neste caso a captura está interrompida por mau funcionamento, armazenar e entrar em contato conosco.
       }
       else
       if(error.code === 101) {
@@ -407,6 +411,6 @@ Como exemplo, deixamos um snippet de código sugerindo alguns tratamentos para n
 
 
 
-## Popups (To be Reviewd)
+## Popups (To be Reviewed)
 ***Carregamento***: Acionado no início do carregamento dos arquivos até que esteja tudo pronto para o usuário realizar a captura ou entre capturas nos casos de captura frente e verso combinada de documentos.
 ***Mensagem de enquadramento***: Label usada para auxiliar o usuário no enquadramento da face no modo CÂMERA INTELIGENTE. Adicionar regras css que afetam a posição do box ou tamanho, deverá causar mau funcionamento, pois a posição do box é calculada automaticamente em tempo real.

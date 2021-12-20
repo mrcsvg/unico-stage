@@ -37,14 +37,14 @@ Os modelos **deverão** estar disponíveis em uma pasta de nome `models` **acess
 
 Após a instalação de nosso SDK, basta importa-lo da maneira correta em seu projeto. 
 
-#### Caso tenha instalado o SDK atrvés de nosso pacote npm
+#### Caso tenha instalado o SDK através de nosso pacote npm
 
 Caso tenha instalado nosso pacote via npm:
 ```javascript
 import * as acessoWebFrame from 'unico-webframe';
 ```
 
-#### Caso tenha instalado o SDK atrvés de nosso cdn
+#### Caso tenha instalado o SDK através de nosso cdn
 
 Caso tenha instalado nosso pacote via cdn:
 ```javascript
@@ -68,10 +68,10 @@ O identificador deste div deverá ser sempre igual a `id='box-camera'`.
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato atrvés de nosso e-mail [uporte.unicocheck@unico.io](mailto:uporte.unicocheck@unico.io);
+- Entre em contato através de nosso e-mail [uporte.unicocheck@unico.io](mailto:uporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
-## Proximos passos
+## Próximos passos
 
 Ótimo! Você chegou até aqui =). A seguir vamos te mostrar como importar nosso SDK em seu projeto e como seguir com a implementação.
 

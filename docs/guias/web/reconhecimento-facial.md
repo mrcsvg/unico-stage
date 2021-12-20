@@ -23,7 +23,7 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 ## Recursos disponíveis
 
-Nosso SDK é responável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporcão da tela do usuário final. A captura da imagem para o reconhecimento facial pode ser feita de duas formas descritas ao longo desse guia. São elas:
+Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. A captura da imagem para o reconhecimento facial pode ser feita de duas formas descritas ao longo desse guia. São elas:
 
 ### Captura Manual
 
@@ -62,7 +62,7 @@ Como primeiro passo, sugerimos que você configure o tamanho de nosso frame dent
 
 :::tip Dica
 
-Muidas vezes o funcionamento de nosso frame pode ser afetado por alguns design-systems que possuam algum tipo de grid-system como, por exemplo, bootstrap ou material-ui. Para minimizar este risco, certifique-se de posicionar nosso frame (`id="box-camera"`) em algum lugar do código que não herde regras indesejadas de css.
+Muitas vezes o funcionamento de nosso frame pode ser afetado por alguns design-systems que possuam algum tipo de grid-system como, por exemplo, bootstrap ou material-ui. Para minimizar este risco, certifique-se de posicionar nosso frame (`id="box-camera"`) em algum lugar do código que não herde regras indesejadas de css.
 
 :::
 
@@ -109,7 +109,7 @@ Sendo assim, recomendamos que na view Web Mobile:
 
 Você pode conferir um exemplo de implementação através de um projeto que deixamos [nesta página](recursos-adicionais/exemplos) (Angular).
 
-:::caution Testes com  simuladr de devices
+:::caution Testes com  simulador de devices
 
 Testes de devices utilizando o modo desenvolvedor de seu browser não irão funcionar, dado que, a camera utilizada pelo seu browser é a mesma de seu desktop, que possui uma resolução totalmente diferente da camera de um dispositivo móvel. Recomendamos que este tipo de teste seja feito diretamente no device.
 :::
@@ -123,7 +123,7 @@ Testes de devices utilizando o modo desenvolvedor de seu browser não irão func
 
 ### Configurar funções de callback
 
-Um dos objetos que devemos passar como parametro ao método responsável por renderizar o frame de captura é o de **callback**. Este objeto deverá conter funções de callback para casos de sucesso e erro, como exemplificados abaixo.
+Um dos objetos que devemos passar como parâmetro ao método responsável por renderizar o frame de captura é o de **callback**. Este objeto deverá conter funções de callback para casos de sucesso e erro, como exemplificados abaixo.
 
 ```javascript
   var callback = {
@@ -159,7 +159,7 @@ Para mais detalhes sobre o objeto de `callback`, consulte nossa a [API Reference
 Este é um passo opcional, porém recomendado. 
 :::
 
-Um dos objetos que podemos passar como parametro ao método responsável por renderizar o frame de captura é o de **layout**. Este objeto deverá conter propriedades para customizar a aparência do componente de captura, como exemplificados abaixo.
+Um dos objetos que podemos passar como parâmetro ao método responsável por renderizar o frame de captura é o de **layout**. Este objeto deverá conter propriedades para customizar a aparência do componente de captura, como exemplificados abaixo.
 
 ```javascript
  var layout = {
@@ -413,12 +413,12 @@ Como mencionado acima, em ambos os casos, caso o evento success seja disparado, 
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato atrvés de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
+- Entre em contato através de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
-## Proximos passos
+## Próximos passos
 
-Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcinalidade de captura de documentos.
+Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcionalidade de captura de documentos.
 
 - [Guia para implantação de captura de documentos](reconhecimento-facial);
 - [API Reference do SDK](API);

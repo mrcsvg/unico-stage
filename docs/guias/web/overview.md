@@ -8,7 +8,7 @@ hide_title: true
 
 ## Sobre este SDK
 
-O SDK Web do **Unico Check** permite a construção, de forma rápida e fácil, de uma grande experiência de reconhecimento facial em seu web-app. Fornecemos um frame para a captura biométrica via JavaScript nativo utilizando algoritimos de abertura de câmera modernos e visão computacional, com o objetivo de auxiliar no enquandramento das imagens as otimizando para aumentar a acurácia na resposta do nosso motor biométrico.
+O SDK Web do **Unico Check** permite a construção, de forma rápida e fácil, de uma grande experiência de reconhecimento facial em seu web-app. Fornecemos um frame para a captura biométrica via JavaScript nativo utilizando algorítimos de abertura de câmera modernos e visão computacional, com o objetivo de auxiliar no enquadramento das imagens as otimizando para aumentar a acurácia na resposta do nosso motor biométrico.
 
 Nosso SDK Web utiliza os recursos nativos do HTML 5, JavaScript e CSS e funciona em todos os browsers modernos.
 
@@ -32,7 +32,7 @@ Nas versões desktop o usuário pode encontrar dificuldades em efetuar as captur
 
 ### Browsers
 
-O frame de captura disponibilizado por meio de nosso SDK, é compativel com as seguintes combinações de browsers e sistemas operacionais:
+O frame de captura disponibilizado por meio de nosso SDK, é compatível com as seguintes combinações de browsers e sistemas operacionais:
 
 <div className="compatibility-table">
 
@@ -45,7 +45,7 @@ O frame de captura disponibilizado por meio de nosso SDK, é compativel com as s
 </div>
 
 
-De forma geral, nosso SDK da suporte a WebRTC e versões mais recentes dos browsers listados acima. Por questões de compatibilidade e segurançca, não garantimos o funcionamento em versões muito antigas destes browsers.
+De forma geral, nosso SDK da suporte a WebRTC e versões mais recentes dos browsers listados acima. Por questões de compatibilidade e segurança, não garantimos o funcionamento em versões muito antigas destes browsers.
 
 :::caution Atenção 
 
@@ -57,7 +57,7 @@ Não damos suporte á WebView ou Browsers de fábrica.
 
 Atualmente, nosso SDK Web possui as seguintes funcionalidades disponíveis:
 
-- Reconhecimento facil;
+- Reconhecimento fácil;
     - Captura com Camêra Manual;
     - Captura com Camêra Inteligênte;
 - Captura de documentos;
@@ -66,7 +66,7 @@ Atualmente, nosso SDK Web possui as seguintes funcionalidades disponíveis:
 
 Alguns celulares antigos, como aparelhos com Android 6 ou iPhone 4, podem não possuir suporte aos recursos necessários para o funcionamento das técnologia de visão computacional, como face-api e tjfs, que são utilizadas em nossa funcionalidade de *Câmera Inteligente*.
 
-Nestes casos, a funcionalidade de *Câmera Normal* irá ser acionanada como fallback, permitindo que o usuário faça a captura manual.
+Nestes casos, a funcionalidade de *Câmera Normal* irá ser acionada como fallback, permitindo que o usuário faça a captura manual.
 
 :::
 
@@ -109,7 +109,7 @@ User <- YourApp : Feedback
 3. Sua aplicação renderiza nosso frame para captura em um placeholder pré estabelecido;
 4. Sua aplicação captura a imagem (de forma automática ou manual), gerando uma imagen no formato `base64`;
 5. Sua repassa o `base64` para seu servidor; 
-6. Seu servidor interaje com as nossas APIs para validar a imagens (A documentação de nossas APIs pode ser encontrada [neste link](https://www3.acesso.io/identity/services/v3/docs/))
+6. Seu servidor interage com as nossas APIs para validar a imagens (A documentação de nossas APIs pode ser encontrada [neste link](https://www3.acesso.io/identity/services/v3/docs/))
 7. Nossos servidores retornam a resposta da validação biométrica, que é repassada para sua aplicação;
 
 
@@ -117,10 +117,10 @@ User <- YourApp : Feedback
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato atrvés de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
+- Entre em contato através de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
-## Proximos passos
+## Próximos passos
 
 Ótimo! Você chegou até aqui =). A seguir vamos te mostrar como importar nosso SDK em seu projeto e como seguir com a implementação.
 

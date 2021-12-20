@@ -32,7 +32,7 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 
 - Maior segurança na SDK.
 
-- Melhoria no objeto de retorno no método `on.success`, adicionando a propriedade `encrypted` que possui um JWT que deve ser enviado em menos de 10 minutos para integração com unico check onboarding.
+- Melhoria no objeto de retorno no método `on.success`, adicionando a propriedade `encrypted` que possui um JWT que deve ser enviado em menos de 10 minutos para integração com Unico check onboarding.
 
     ```javascript
     {

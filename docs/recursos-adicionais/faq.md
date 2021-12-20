@@ -16,10 +16,10 @@ import TOCInline from '@theme/TOCInline';
 
 
 ## Qual é o tamanho da SDK Android?
-O SDK Android unico aumenta o tamanho do seu aplicativo em 3.2 MB.
+O SDK Android da Unico aumenta o tamanho do seu aplicativo em 3.2 MB.
 
 ## Qual é o tamanho da SDK iOS?
-O SDK iOS unico aumenta o tamanho do seu aplicativo em 145 KB.
+O SDK iOS da Unico aumenta o tamanho do seu aplicativo em 145 KB.
 
 ## Qual a importância de implementar a SDK no seu projeto?
 O principal intuito é auxiliar em uma melhor captura de selfie para biometria facial. Maior precisão e segurança. Nossa SDK permite que os desenvolvedores deixem as features de segurança em ótimas mãos. Além disso, assegura a redução da porcentagem de drop das imagens em relação a captura por parte de câmera padrões de cada dispositivo.
@@ -28,7 +28,7 @@ O principal intuito é auxiliar em uma melhor captura de selfie para biometria f
 Nossa SDK possui muitas funcionalidades. Sendo, a Câmera Inteligente que realiza a captura da foto de maneira automática, câmera normal e captura de documentos.
 
 ## Como que eu faço para baixar as novas atualizações da SDK?
-Para baixar as novas atualizações, primeiro confira o descritivo da versão no Release Notes - que se encontra na documentação ao lado da "Implementação" - e posteriormente incremente a tag de implmenentação dentro do seu projeto.
+Para baixar as novas atualizações, primeiro confira o descritivo da versão no Release Notes - que se encontra na documentação ao lado da "Implementação" - e posteriormente incremente a tag de implementação dentro do seu projeto.
 
 ## Quando que eu sei que a SDK possui versões mais atualizadas do que eu estou usando?
 É possível se inscrever, junto ao gerente de contas, em nosso newsletter. Assim sempre receberá as novidades via email. Também, possuímos uma documentação de todas as plataformas, clicando na aba de Release Notes encontram-se as informações sobre as últimas atualizações da SDK.

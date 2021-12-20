@@ -28,7 +28,7 @@ Essa nova versão traz melhorias significativas em relação a versão anterior 
 pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios', :tag => ‘2.0.1’
 ```
 
-- Correção na implementacão das customizacões.
+- Correção na implementação das customizações.
 
 ## Versão `2.0.0`
 
@@ -150,7 +150,7 @@ Entre outras limpezas que sempre estamos realizando ;)
 pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios', :tag => ‘1.2.0’
 ```
 
-- A partir dessa versão (1.2.0), a SDK unico check não possuíra mais intra-dependências dentro do projeto. Tais quais incluíam FirebaseMLVision, AFNetworking, MBProgressHUD entre outras. Nosso time trouxe todas as funcionalidades e vantagens que tais dependências traziam para o iOS core nativo, simplificando e reduzindo em mais de 75% o tamanho de biblioteca em relação a versão anterior.
+- A partir dessa versão (1.2.0), a SDK Unico check não possuíra mais intra-dependências dentro do projeto. Tais quais incluíam FirebaseMLVision, AFNetworking, MBProgressHUD entre outras. Nosso time trouxe todas as funcionalidades e vantagens que tais dependências traziam para o iOS core nativo, simplificando e reduzindo em mais de 75% o tamanho de biblioteca em relação a versão anterior.
 
 ## Versão `1.1.5`
 
