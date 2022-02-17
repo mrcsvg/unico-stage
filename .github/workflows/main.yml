@@ -1,13 +1,6 @@
 name: GitHub Pages
 
-on:
-  push:
-    branches:
-      - master
-    paths:
-      - '.github/workflows/deploy.yml'
-      - 'website/**'
-  pull_request:
+on: workflow_dispatch
 
 jobs:
   deploy:
