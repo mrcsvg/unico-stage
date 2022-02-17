@@ -135,11 +135,10 @@ User <- YourApp : Feedback
 1. O Usuário acessa sua aplicação;
 2. Através de nosso SDK, sua aplicação solicita o frame para captura (conforme configurado em sua aplicação);
 3. Sua aplicação renderiza nosso frame para captura em um placeholder pré estabelecido;
-4. Sua aplicação captura a imagem (de forma automática ou manual), gerando uma imagen no formato `base64`;
-5. Sua repassa o `base64` para seu servidor; 
+4. Sua aplicação captura a imagem (de forma automática, manual ou com o liveness ativo), gerando um token `JWT`;
+5. Sua aplicação repassa o `JWT` para seu servidor; 
 6. Seu servidor interage com as nossas APIs para validar a imagens (A documentação de nossas APIs pode ser encontrada [neste link](https://www3.acesso.io/identity/services/v3/docs/))
 7. Nossos servidores retornam a resposta da validação biométrica, que é repassada para sua aplicação;
-
 
 ## Precisando de ajuda?
 

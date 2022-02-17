@@ -7,19 +7,22 @@ sidebar_position: 4
 
 ## Sobre este guia
 
-Nossos guias foram elaborados para ajudá-lo a se familiarizar com alguns conceitos básicos, oferecendo uma abordagem rápida e simples, para que você possa se integrar sem qualquer fricção ao nosso motor biométrico.
+Este guia foi elaborado para ajudá-lo a integrar nosso SDK Web de forma rápida e fácil. 
+Buscamos trazer conceitos básicos, exemplos de implementação dos SDKs e também de como interagir com as APIs REST de nosso motor biométrico.
 
-Caso esteja buscando formas de personalizar sua integração, sugerimos que visite nossa [API Reference](api) para checar todas nossas possibilidades de customização.
+:::info Vale lembrar
+Vale lembrar que este guia foca no processo de captura de imagens. Caso esteja buscando informações sobre as APIs REST do **Unico Check**, sugerimos que visite nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/), nosso guia de APIs ou nossa página de página [Visão Geral](overview).
+:::
 
-Através deste guia de integração com o SDK Web do **Unico Check**, em poucos minutos você será capaz de:
+Através deste guia, em poucos minutos você será capaz de:
 
-- Implantar a abertura da câmera e captura de imagem;
+- Implementar a abertura da câmera e captura de imagens;
 - Entender como manipular os dados de retorno;
-- Entender como utilizar nossas APIs;
+- Entender como utilizar o retorno de nosso SDK com nossas APIs;
 
 ## Antes de começar
 
-Certifique-se que você seguiu nosso passo-a-passo para instalação e importação de nosso SDK através [deste guia](como-comecar). É importante também ter em conta as funcionalidades disponíveis neste SDK, como explicado na página de [Visão Geral](overview).
+Certifique-se que você seguiu nosso passo-a-passo para instalação e importação de nosso SDK através [deste guia](../como-comecar). É importante também ter em conta as funcionalidades disponíveis neste SDK, como explicado na página de [Visão Geral](../overview).
 
 ## Recursos disponíveis
 
@@ -47,6 +50,27 @@ import Steps from '@site/src/components/Steps';
 
 <Steps headingDepth={3}>
 <ol>
+
+<li>
+
+### Inicializar nosso SDK
+
+Como primeiro passo, você deverá efetuar 3 passos simples em seu projeto: 
+
+Instancie um novo Builder:
+
+```javascript
+let unicoCameraBuilder = new Unico.UnicoCheckBuilder();
+```
+
+Especifique o caminho dos arquivos adicionais (caso adicionados em seu projeto):
+
+```javascript
+unicoCameraBuilder.setResourceDirectory("/resources");
+```
+
+</li>
+
 <li>
 
 ### Configurar o tamanho do frame
@@ -127,19 +151,15 @@ Um dos objetos que devemos passar como parâmetro ao método responsável por re
       error: function(error) {
         console.error(error)
         //confira na aba "Configurações" sobre os tipos de erros
-      },
-      support: function(error) {
-        console.log(error)
-        //confira na aba "Configurações" sobre os tipos de erros
       }
     }
   };
 
 ```
 
-Este objeto é obrigatório e caso não seja corretamente implementado (contemplando todos os eventos de `success`, `error` ou `support`) irá gerar uma exceção, que caso não tratada, será exibida no console do usuário).
+Este objeto é obrigatório e caso não seja corretamente implementado (contemplando todos os eventos de `success` ou `error` irá gerar uma exceção, que caso não tratada, será exibida no console do usuário).
 
-Para mais detalhes sobre o objeto de `callback`, consulte nossa a [API Reference](api/callback) de nosso SDK Web.
+<!-- Para mais detalhes sobre o objeto de `callback`, consulte nossa a [API Reference](api/callback) de nosso SDK Web. -->
 
 
 </li>
@@ -148,37 +168,37 @@ Para mais detalhes sobre o objeto de `callback`, consulte nossa a [API Reference
 
 ### Configurar layout do frame
 
-:::note
+:::note Passo opcional
 Este é um passo opcional, porém recomendado. 
 :::
 
-Um dos objetos que podemos passar como parâmetro ao método responsável por renderizar o frame de captura é o de **layout**. Este objeto deverá conter propriedades para customizar a aparência do componente de captura, como exemplificados abaixo.
+Oferecemos a possibilidade de customização do frame de captura por meio do nosso **Theme Builder**. Para efetuar a customização do frame basta gerar uma instância da classe `UnicoThemeBuilder` e invocar os métodos que customizam cada uma das propriedades do frame de captura, como exemplificados abaixo:
 
 ```javascript
- var layout = {
-    silhouette: {
-      primaryColor: "#0bbd26",
-      secondaryColor: "#bd0b0b",
-      neutralColor: "#fff",
-    },
-    buttonCapture: {
-      backgroundColor: "#2980ff",
-      iconColor: "#fff",
-    },
-    popupLoadingHtml: '<div style="position: absolute; top: 45%; right: 50%; transform: translate(50%, -50%); z-index: 10; text-align: center;">Loading...</div>',
-    boxMessage: {
-      backgroundColor: "#2980ff",
-      fontColor: "#fff"
-    },
-    boxDocument: {
-      backgroundColor: "#2980ff",
-      fontColor: "#fff"    
-    }
-  }
+const unicoTheme = new Unico.UnicoThemeBuilder()
+.setColorSilhouetteSuccess("#0384fc")
+.setColorSilhouetteError("#D50000")
+.setColorSilhouetteNeutral("#fcfcfc")
+.setBackgroundColor("#dff1f5")
+.setColorText("#0384fc")
+.setBackgroundColorComponents("#0384fc")
+.setColorTextComponents("#dff1f5")
+.setBackgroundColorButtons("#0384fc")
+.setColorTextButtons("#dff1f5")
+.setBackgroundColorBoxMessage("#fff")
+.setColorTextBoxMessage("#000")
+.setHtmlPopupLoading(`<div style="position: absolute; top: 45%; right: 50%; transform:
+translate(50%, -50%); z-index: 10; text-align: center;">Carregando...</div>`)
+.build();
 ```
 
-Para mais detalhes sobre o objeto de `layout`, consulte nossa a [API Reference](api/layout) de nosso SDK Web.
+Após a geração do objeto de tema, conforme exemplificado acima, devemos passa-lo como parâmetro para o método `setTheme` do builder `unicoCameraBuilder`
 
+```javascript
+unicoCameraBuilder.setTheme(theme);
+```
+
+<!-- Para mais detalhes sobre o `UnicoThemeBuilder`, consulte nossa a [API Reference](api/UnicoThemeBuilder) de nosso SDK Web. -->
 </li>
 
 
@@ -186,21 +206,37 @@ Para mais detalhes sobre o objeto de `layout`, consulte nossa a [API Reference](
 
 ### Configurar modo de captura e iniciar a camera
 
-O último passo, porém não menos importante (talvez o mais importante!) é configurar o tipo de documento que será capturado.
-
-Como explicamos [acima](verificacao-documentos#recursos-disponíveis) existem diversos tipos de documento que podem ser capturados. Neste passo você irá selecionar qual deles deseja capturar através do objeto `configurations`.
-
-Você pode conferir os tipos de documentos disponíveis no [API Reference](API#objeto-configuration-para-captura-de-documentos) de nosso SDK.
-
-Abaixo um exemplo para capturar uma CNH.
+Finalmente, devemos iniciar a câmera com as configurações feitas até aqui. Para isto, criaremos uma instância de nosso **builder** através do método `build()`.
 
 ```javascript
-  var configurations = {
-    TYPE: 1
-  }
-
-  acessoWebFrame.initDocument(configurations, callback, layout);
+let unicoCamera = Unico.build();
 ```
+
+A preparação da câmera será efetuada a partir do método `prepareSelfieCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
+- O arquivo JSON com suas credenciais (Gerado através deste [guia](como-comecar#embarcando-as-credenciais-em-seu-projeto));
+- Tipo de documento a ser capturado, sendo eles:
+  - `Unico.DocumentCameraTypes.CNH`: Frame para captura de CNH.
+  - `Unico.DocumentCameraTypes.CPF`: Frame para captura CPF.
+  - `Unico.DocumentCameraTypes.OUTROS("descrição")`: Frame somente com o retângulo onde pode ser usado para outros tipos de documentos. Neste tipo, haverá um parâmetro com a descrição do documento. (Ex. contrato)
+  - `Unico.DocumentCameraTypes.RG_FRENTE`: Frame para captura da frente do RG.
+  - `Unico.DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
+  - `Unico.DocumentCameraTypes.RG_FRENTE_NOVO`: Frame para captura da frente do novo RG.
+  - `Unico.DocumentCameraTypes.RG_VERSO_NOVO`: Frame para captura da parte traseira do novo RG.
+
+Este método gera uma *promisse* que ao ser resolvida, devolve um objeto que será utilizado para efetivamente abrir a câmera através do método `open`, que recebe como parâmetro as funções de `callback` configuradas [neste passo](#configurar-funções-de-callback).
+
+<!-- Entender o tipo do objeto do cameraOpener -->
+
+Abaixo um exemplo utilizando a captura de CPF:
+
+```javascript
+let cameraPromised = unicoCamera.prepareDocumentCamera("/services.json",
+DocumentCameraTypes.CNH);
+
+cameraPromised.then(cameraOpener => cameraOpener.open(callback));
+```
+
+
 
 </li>
 
@@ -230,79 +266,10 @@ curl --location --request POST 'https://example.com/services/v3/AcessoService.sv
 
 ```
 
-
 </li>
 
-<li>
-
-### Juntando todas as peças
-
-Se você chegou até aqui, já deve ter tudo configurado e ready-to-go! Porém, não custa nada deixar dois exemplos de ponta-a-ponta.
-
-Abaixo um exemplo para captura de uma CNH.
-
-```javascript
-document.addEventListener("DOMContentLoaded", () => {
-  
-    var callback = {
-      on: {
-        success: function(obj) {
-          console.log(obj.base64);
-        },
-        error: function(error) {
-          console.error(error)
-          //confira na aba "Configurações" sobre os tipos de erros
-        },
-        support: function(error) {
-          console.log(error)
-          //confira na aba "Configurações" sobre os tipos de erros
-        }
-      }
-    };
-
-  var layout = {
-    silhouette: {
-      primaryColor: "#0bbd26",
-      secondaryColor: "#bd0b0b",
-      neutralColor: "#fff",
-    },
-    buttonCapture: {
-      backgroundColor: "#2980ff",
-      iconColor: "#fff",
-    },
-    popupLoadingHtml: '<div style="position: absolute; top: 45%; right: 50%; transform: translate(50%, -50%); z-index: 10; text-align: center;">Loading...</div>',
-    boxMessage: {
-      backgroundColor: "#2980ff",
-      fontColor: "#fff"
-    },
-    boxDocument: {
-      backgroundColor: "#2980ff",
-      fontColor: "#fff"    
-    }
-  }
-
-  var configurations = {
-    TYPE: 1 //Veja em "Configurações" a tabela de tipos de documentos possuímos"
-  }
-
-  acessoWebFrame.initDocument(configurations, callback, layout);
-});
-```
-
-Como mencionado acima, em ambos os casos, caso o evento success seja disparado, iremos retornar um `base64` que deverá ser enviado para nossas APIs do motor biométrico.
-
-```javascript
-{
-    base64: string
-}
-```
-
-</li>
 </ol>
 </Steps>
-
-
-
 
 
 ## Precisando de ajuda?
@@ -316,5 +283,5 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 
 Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcionalidade de captura de documentos.
 
-- [Guia para implantação de reconhecimento facial](/guias/web/reconhecimento-facial);
-- [API Reference do SDK](/guias/web/API);
+- [Guia para implantação de reconhecimento facial](/guias/web/fluxos/reconhecimento-facial);
+<!-- - [API Reference do SDK](/guias/web/API); -->

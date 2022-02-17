@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Reconhecimento facial'
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 # Reconhecimento facial
@@ -38,7 +38,6 @@ import imgCapturaManual from '/static/img/guias/img_cameranormal.png';
 
 <img src={imgCapturaManual} alt="Captura Manual" className="imgCenter" />
 
-
 ### Captura Automática
 
 Neste tipo de experiência, identificamos a face do usuário automáticamente através de algorítimos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
@@ -49,7 +48,16 @@ import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
 
 <img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
 
-<!-- TODO Vale a pena mencionar o Liveness facetech? -->
+
+### Liveness Ativo Facetec
+
+Também conhecido como prova de vida, neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento. 
+
+Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
+
+:::info Ativação do Liveness Ativo Facetec
+Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).
+:::
 
 ## Implementação
 
@@ -67,9 +75,9 @@ Para iniciar, crie uma instância do builder (gerado através da interface [`IAc
 
 A implementação dessa classe é bem simples e pode ser feita com poucas linhas de código. Tudo que precisa fazer é sobrescrever nossos métodos de callback com as lógicas de negócio de sua aplicação.
 
-:::info Documentação Adicional
+<!-- :::info Documentação Adicional
 Você pode encontrar mais detalhes sobre a classe [AcessoBioListener](API#acessobiolistener) e sua implementação em nosso API Reference.
-:::
+::: -->
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -126,7 +134,9 @@ internal class MainActivity : AppCompatActivity() {
 
 Note que, conforme o exemplo anterior, o trabalho de implementação da classe [AcessoBioListener](API#acessobiolistener) é, em grande parte, a configuração dos métodos de callback. Cada método será chamado em uma situação específica de retorno de nosso SDK, como detalhado abaixo. 
 
-Basta sobrescrever os métodos exemplificados no passo anterior com as lógicas de negócio de sua aplicação. Para mais detalhes sobre os `listeners`, consulte nossa a [API Reference](API#acessobiolistener) de nosso SDK Android.
+Basta sobrescrever os métodos exemplificados no passo anterior com as lógicas de negócio de sua aplicação. 
+
+<!-- Para mais detalhes sobre os `listeners`, consulte nossa a [API Reference](API#acessobiolistener) de nosso SDK Android. -->
 
 :::caution Atenção
 
@@ -140,7 +150,15 @@ Todos os métodos acima devem devem ser criados da forma indicada em seu projeto
 
 ### Configurar modo da câmera
 
-Em seguida, deve-se decidir e configurar qual modo de camerâ será utilizado em seu aplicativo. Como explicamos [acima](reconhecimento-facial#recursos-disponíveis) existem dois modos de captura disponíveis.  
+Em seguida, iremos configurar o modo de captura da camera. Como explicamos [acima](reconhecimento-facial#recursos-disponíveis) existem três modos de captura disponíveis. Caso **não** esteja utilizando o modo **Liveness Ativo Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
+
+:::tip Dica
+
+Caso você esteja utilizando o modo **Liveness Ativo Facetec**, a configuração do tipo de câmera passa a ser irrelevante, pois este modo oferece uma experiência pré-definida que não pode ser alterada.
+
+No entanto, sugerimos que você configure um tipo de câmera em seu builder (como descrito neste passo), pois caso você desabilite o modo **Liveness Ativo Facetec** em seu portal do cliente (e gere um novo JSON), você não precisará alterar seu código.
+
+:::
 
 Nosso SDK tem configurado e habilitado por padrão o *enquadramento inteligente* e a *captura automática*. Para utilizar a câmera em modo normal, desabilite ambas funcionalidades através dos métodos `setAutoCapture` e `setSmartFrame`. Os exemplos a seguir demonstram como você pode configurar cada um dos modos de câmera.
 
@@ -238,17 +256,22 @@ Ao efetuar uma captura de imagem com sucesso, este método será invocado e reto
 
 ##### Método `onErrorSelfie`
 
-Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`ErrorBio`](#). Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK.
+Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`ErrorBio`](#). 
+
+<!-- Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK. -->
 
 :::note Implementação dos listeners
-A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe [`iAcessoBioSelfie`](API#iacessobioselfie). Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK.
+A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe [`iAcessoBioSelfie`](API#iacessobioselfie). 
+
+<!-- Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK. -->
 :::
 
-#### Preparar a câmera
-Preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método retornará um objeto do tipo `UnicoCheckCameraOpener.Selfie`, que quando retornado será utilizado para a abertura da câmera;
+---
 
-#### Abrir a câmera
-Abrir a câmera com o objeto do tipo `UnicoCheckCameraOpener.Selfie`, utilizando o método `open` fornecendo os *listeners* como parâmetro.
+#### Preparar e abrir câmera
+Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e o JSON com as credenciais, gerado [nesse passo](#../como-comecar).
+
+Quando estiver tudo certo, dispararemos um evento que deverá ser tratado através do método `onCameraReady`, que recebe como parâmetro um objeto do tipo `UnicoCheckCameraOpener.Selfie`. Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido, através do método `open()`. O método `open()` deverá receber como parâmetro os *listeners* configurados nos passos acima.
 
 --- 
 
@@ -359,7 +382,7 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcionalidade de captura de documentos.
 
 - [Guia para implantação de captura de documentos](reconhecimento-facial);
-- [API Reference do SDK](API);
+<!-- - [API Reference do SDK](API); -->
 
 
 
