@@ -23,7 +23,14 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Crie ou edite uma nova `API Key`;
-4. Marque o campo "Utiliza liveness ativo" como **SIM** caso queira habilitar a câmera interativa;
+4. Caso deseje utilizar o **Liveness ativo** em seu app, verifique se o campo "**Utiliza liveness ativo**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso [suporte](mailto:suporte.unicocheck@unico.io) e solicite a habilitação;
+
+:::info Liveness Ativo
+
+Saiba mais sobre o liveness ativo [neste guia](#)
+
+:::
+
 5. Marque o campo "Utiliza autenticação segura na SDK" como **SIM**;
 6. Expanda a seção SDK Android, adicione o nome de sua aplicação Android e o Bundle ID;
 7. Salve as alterações.
@@ -32,18 +39,18 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
-3. Ao lado da `API Key` desejada, pressione o botão de **Download**;
-4. Selecione a opção **Android**;
+3. Ao lado da *API Key* desejada, pressione o botão de **Download**;
+4. Selecione a opção **JS**;
 5. Clique em "**Gerar**";
-6. Automaticamente, uma nova aba será aberta contendo informações do projeto em formato JSON.
-7. Salve o conteúdo desta nova aba em um novo arquivo JSON;
-8. Adicione o arquivo salvo em seu projeto. (Explicaremos como utilizar o arquivo em nossos guias)
+6. Uma nova aba será aberta em seu navegador contendo informações do projeto em formato JSON.
 
-<!-- TODO Destacar que o arquivo precisa estar em um lugar público -->
-
-:::caution Bloqueador de Pop-ups
-Se nada acontecer, verifique o bloqueador de popups de seu navegador
+:::caution Atenção aos bloqueadores de Pop-up
+Caso a nova aba não abra, por favor, verifique se o seu navegador está bloqueando os popups.
 :::
+
+7. Salve o conteúdo desta nova aba em um novo arquivo **JSON**;
+8. Adicione o arquivo salvo em seu projeto. Explicaremos como e onde utilizar o arquivo ao longo de nossos guias.
+
 
 ## Instalação
 
