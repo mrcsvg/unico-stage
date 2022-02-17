@@ -17,8 +17,6 @@ const config = {
   organizationName: 'unico-mvg', // Usually your GitHub org/user name.
   projectName: 'unico-sdkbio-docs', // Usually your repo name.
 
-
-
   plugins: [
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // Options here
@@ -92,12 +90,12 @@ const config = {
           },
 
           // Ocultando o release notes do menu enquanto n temos o conteúdo.
-          // { 
+          // {
           //   type: 'doc',
           //   docId: 'release-notes/whats-new',
           //   position: 'right',
           //   label: 'Release Notes',
-          // },      
+          // },
 
           {
             type: 'dropdown',
@@ -167,20 +165,20 @@ const config = {
             items: [
               {
                 label: 'Sobre nós',
-                href: 'https://unico.io/quem-somos/',                
+                href: 'https://unico.io/quem-somos/',
               },
               {
                 label: 'Carreiras',
-                href: 'https://carreiras.unico.io/',                
+                href: 'https://carreiras.unico.io/',
               },
               {
                 label: 'Imprensa',
-                href: 'https://unico.io/',                
+                href: 'https://unico.io/',
               },
               {
                 label: 'Política de privacidade e OptOut',
-                href: 'https://unico.io/politica-de-privacidade/',                
-              },              
+                href: 'https://unico.io/politica-de-privacidade/',
+              },
             ],
           },
           {
@@ -207,7 +205,7 @@ const config = {
                 label: 'unico | people',
                 href: 'https://www.unico.io/unicopeople/blog',
               },
-            ],            
+            ],
           },
           {
             title: 'Acompanhe',
@@ -227,8 +225,8 @@ const config = {
               {
                 label: 'Youtube',
                 href: 'https://www.youtube.com/unicoidtech',
-              },                                      
-            ],            
+              },
+            ],
           },
 
         ],
