@@ -11,12 +11,12 @@ Este guia foi elaborado para ajudá-lo a integrar nosso SDK Android de forma rá
 Buscamos trazer conceitos básicos, exemplos de implementação dos SDKs e também de como interagir com as APIs REST de nosso motor biométrico.
 
 :::info Vale lembrar
-Vale lembrar que este guia foca no processo de captura de imagens. Caso esteja buscando informações sobre as APIs REST do **Unico Check**, sugerimos que visite nosso [API Reference](api), nosso guia de APIs ou nossa página de página [Visão Geral](overview).
+Vale lembrar que este guia foca no processo de captura de imagens. Caso esteja buscando informações sobre as APIs REST do **Unico Check**, sugerimos que visite nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/), nosso guia de APIs ou nossa página de página [Visão Geral](overview).
 :::
 
 Através deste guia, em poucos minutos você será capaz de:
 
-- Implementar a abertura da câmera e captura de imagem;
+- Implementar a abertura da câmera e captura de imagens;
 - Entender como manipular os dados de retorno;
 - Entender como utilizar o retorno de nosso SDK com nossas APIs;
 
@@ -49,6 +49,8 @@ import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
 
 <img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
 
+<!-- TODO Vale a pena mencionar o Liveness facetech? -->
+
 ## Implementação
 
 Ao seguir este passo-a-passo, em poucos minutos você terá todo o potencial de nosso SDK embarcado em sua aplicação Android.
@@ -61,12 +63,12 @@ import Steps from '@site/src/components/Steps';
 
 ### Inicializar nosso SDK
 
-Para iniciar, crie uma instância do builder (gerado através da interface `IAcessoBioBuilder`), fornecendo como parâmetro o *contexto* em questão e a implementação da classe [`AcessoBioListener`](#). 
+Para iniciar, crie uma instância do builder (gerado através da interface [`IAcessoBioBuilder`](API#iacessobiobuilder)), fornecendo como parâmetro o *contexto* em questão e a implementação da classe [`AcessoBioListener`](API#acessobiolistener). 
 
 A implementação dessa classe é bem simples e pode ser feita com poucas linhas de código. Tudo que precisa fazer é sobrescrever nossos métodos de callback com as lógicas de negócio de sua aplicação.
 
 :::info Documentação Adicional
-Você pode encontrar mais detalhes sobre a classe [AcessoBioListener](#) e sua implementação em nosso API Reference.
+Você pode encontrar mais detalhes sobre a classe [AcessoBioListener](API#acessobiolistener) e sua implementação em nosso API Reference.
 :::
 
 import Tabs from '@theme/Tabs';
@@ -120,39 +122,11 @@ internal class MainActivity : AppCompatActivity() {
   </TabItem>
 </Tabs>
 
+**Implementação das funções de callback**
 
-</li>
+Note que, conforme o exemplo anterior, o trabalho de implementação da classe [AcessoBioListener](API#acessobiolistener) é, em grande parte, a configuração dos métodos de callback. Cada método será chamado em uma situação específica de retorno de nosso SDK, como detalhado abaixo. 
 
-<li>
-
-### Implementar funções de callback
-
-Como mencionado no passo anterior, o trabalho de implementação da classe [AcessoBioListener](#) é, em grande parte, a configuração dos métodos de callback. Cada método será chamado em uma situação específica de retorno de nosso SDK, como detalhado abaixo. 
-
-Basta sobrescrever os métodos exemplificados no passo anterior com as lógicas de negócio de sua aplicação. Saiba um pouco mais sobre os métodos de retorno:
-
-#### Método `onErrorAcessoBio(ErrorBio errorBio)`
-Este método será invocado sempre quando qualquer erro de implementação ocorrer ao utilizar algum de nossos métodos, como por exemplo, ao informar um tipo de documento incorreto para a funcionalidade de captura de documentos.
-
-Ao ser invocado, o método receberá um parâmetro do tipo `ErrorBio` que contem detalhes do erro. Saiba mais sobre o tipo `ErrorBio` no [API Reference](#) de nosso SDK.
-
-#### Método `onUserClosedCameraManually()`
-Este método será invocado sempre quando o usuário fechar a câmera de forma manual, como por exemplo, ao clicar no botão "Voltar".
-
-#### Método `onSystemClosedCameraTimeoutSession()`
-Este método será invocado assim que o tempo máximo de sessão for atingido (Sem capturar nenhuma imagem).
-
-<!-- TODO Arrumar -->
-
-:::info  Tempo máximo da sessão
-O tempo máximo da sessão pode ser configurado em nosso **builder** através do método `setTimeoutSession`. Saiba mais sobre  método `setTimeoutSession()` no [API Reference](#) de nosso SDK.
-
-:::
-
-#### Método `onSystemChangedTypeCameraTimeoutFaceInference()`
-Este método será invocado assim que o tempo máximo para detecção da face de um usuário for atingido (sem ter nada detectado). Neste caso, o modo de câmera é alterado automaticamente para o modo manual (sem o smart frame).
-
-Para mais detalhes sobre os métodos de `callback`, consulte nossa a [API Reference](api/callback) de nosso SDK Android.
+Basta sobrescrever os métodos exemplificados no passo anterior com as lógicas de negócio de sua aplicação. Para mais detalhes sobre os `listeners`, consulte nossa a [API Reference](API#acessobiolistener) de nosso SDK Android.
 
 :::caution Atenção
 
@@ -160,9 +134,7 @@ Todos os métodos acima devem devem ser criados da forma indicada em seu projeto
 
 :::
 
-
 </li>
-
 
 <li>
 
@@ -207,7 +179,6 @@ val unicoCheckCamera: UnicoCheckCamera = acessoBioBuilder
 
 </TabItem>
 </Tabs>
-
 
 :::caution Atenção
 
@@ -263,14 +234,14 @@ Através da implementação dos *listeners*, você poderá especificar o que aco
 
 ##### Método `onSuccessSelfie`
 
-Ao efetuar uma captura de imagem com sucesso, este método será invocado e retornará um objeto do tipo [`ResultCamera`](#) que será utilizado posteriormente na chamada de nossas APIs REST. Saiba mais sobre o tipo `ResultCamera` no [API Reference](#) de nosso SDK.
+Ao efetuar uma captura de imagem com sucesso, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. Saiba mais sobre o tipo `ResultCamera` no [API Reference](API#resultcamera) de nosso SDK.
 
 ##### Método `onErrorSelfie`
 
-Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`ErrorBio`](#). Saiba mais sobre o tipo `ResultCamera` no [API Reference](#) de nosso SDK.
+Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`ErrorBio`](#). Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK.
 
 :::note Implementação dos listeners
-A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe [`iAcessoBioSelfie`](#). Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](#) de nosso SDK.
+A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe [`iAcessoBioSelfie`](API#iacessobioselfie). Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK.
 :::
 
 #### Preparar a câmera
@@ -282,10 +253,7 @@ Abrir a câmera com o objeto do tipo `UnicoCheckCameraOpener.Selfie`, utilizando
 --- 
 
 #### Juntando todos os passos
-
 Ao juntar todos os passos, a configuração dos listeners e abertura ficará da seguinte forma:
-
-
 
  <Tabs>
   <TabItem value="java" label="Java" default>
@@ -336,13 +304,14 @@ unicoCheckCamera.prepareSelfieCamera(object : SelfieCameraListener {
   </TabItem>
 </Tabs>
 
+Em caso de sucesso, o objeto `ResultCamera` retornará 2 atributos: `base64` e `encrypted`. O
 
-:::note
- O base64 retornado possui dados com informações e que deverão ser passados inteiramente via integração com o **unico check**.
+- O atributo `base64` pode ser utilizado caso você queira exibir um preview da imagem em seu app;
+- O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check**;  
+
+:::caution Conversão do base64 para Bitmap
+Caso queira converter o base64 para bitmap, a maneira padrão não funcionará para o Android. Será  necessário realizar o split a partir da vírgula(`,`) para que funcione. Caso queira saber mais, sugerimos a leitura do seguinte artigo [How to convert a Base64 string into a Bitmap image to show it in a ImageView?](https://stackoverflow.com/questions/4837110/how-to-convert-a-base64-string-into-a-bitmap-image-to-show-it-in-a-imageview)
 :::
-
-
-Caso queira converter o base64 para Bitmap, a maneira padrão não funcionará para o Android, sendo necessário realizar o split a partir da vírgula(,) para funcionamento correto. Caso queira saber mais, sugerimos o seguinte artigo [How to convert a Base64 string into a Bitmap image to show it in a ImageView?](https://stackoverflow.com/questions/4837110/how-to-convert-a-base64-string-into-a-bitmap-image-to-show-it-in-a-imageview)
 
 </li>
 
@@ -350,7 +319,7 @@ Caso queira converter o base64 para Bitmap, a maneira padrão não funcionará p
 
 ### Chamar nossas APIs
 
-A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `base64` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [neste artigo](#)). Exemplo abaixo:
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `encrypted` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [neste artigo](#)). Exemplo abaixo:
 
 ```bash
 curl --location --request POST 'https://example.com/services/v3/AcessoService.svc/processes' \
@@ -375,34 +344,8 @@ curl --location --request POST 'https://example.com/services/v3/AcessoService.sv
 
 </li>
 
-<li>
-
-### Juntando todas as peças
-
-Se você chegou até aqui, já deve ter tudo configurado e ready-to-go! Porém, não custa nada deixar dois exemplos de ponta-a-ponta.
-
-Abaixo dois exemplos completos, com captura manual ou automática.
-
-Como mencionado acima, em ambos os casos, caso o evento success seja disparado, iremos retornar um `base64` que deverá ser enviado para nossas APIs do motor biométrico.
-
-```javascript
-{
-    base64: string
-}
-```
-
-</li>
 </ol>
 </Steps>
-
-<li>
-
-### Configurar layout do frame (Opcional)
-
-</li>
-
-
-
 
 ## Ficou com dúvidas?
 

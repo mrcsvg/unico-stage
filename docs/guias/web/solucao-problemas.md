@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Reconhecimento facial'
-sidebar_position: 4
+sidebar_label: 'Solução de problemas'
+sidebar_position: 6
 ---
 
-# Reconhecimento facial
+# Verificação de documentos
 
 ## Sobre este guia
 
@@ -23,28 +23,21 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 ## Recursos disponíveis
 
-Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. A captura da imagem para o reconhecimento facial pode ser feita de duas formas descritas ao longo desse guia. São elas:
+Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
 
-### Captura Manual
-
-Neste tipo de experiência seu usuário é totalmente responsável por posicionar sua face dentro da área de captura. Após se posicionar corretamente, o usuário deve clicar em um botão para capturar a imagem. 
-
-Neste tipo de captura, nosso SDK não efetua nenhum tipo de validação do que está sendo capturado e isso pode aumentar as chances de problemas ao enviar o `base64` obtido para o motor de biometria.
-
-import imgCapturaManual from '/static/img/guias/img_cameranormal.png';
-
-<img src={imgCapturaManual} alt="Captura Manual" className="imgCenter" />
+- **CNH:** Captura da CNH aberta;
+- **CPF:** Captura do documento de CPF;
+- **RG frente:** Captura da frente do RG;
+- **RG verso:** Captura do verso do RG;
+- **Novo RG frente:** Captura a frente do novo tipo de RG;
+- **Novo RG verso:** Captura o verso do novo tipo de RG;
+- **Outros:** Captura documento genérico. Para este tipo de captura você deve informar o título do documento que será mostrado na captura para o usuário usando a propriedade `optional.LABEL_DOCUMENT_TYPE_OTHERS`.
 
 
-### Captura Automática
+import imgDocumento from '/static/img/guias/img_documentos.png';
 
-Neste tipo de experiência, identificamos a face do usuário automáticamente através de algorítimos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
+<img src={imgDocumento} alt="Captura Manual" className="imgCenter" />
 
-Por ajudar o usuário a enquadrar sua face na área de captura, esta opção pode diminuir problemas ao enviar o `base64` às APIs de nosso motor biométrico.
-
-import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
-
-<img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
 
 ## Implementação
 
@@ -193,14 +186,13 @@ Para mais detalhes sobre o objeto de `layout`, consulte nossa a [API Reference](
 
 ### Configurar modo de captura e iniciar a camera
 
-O último passo, porém não menos importante (talvez o mais importante!) é configurar o modo de captura da camera. Como explicamos [acima](reconhecimento-facial#recursos-disponíveis) existem dois modos de captura disponíveis. Neste passo você irá selecionar qual deseja utilizar através do objeto `configurations`.
+O último passo, porém não menos importante (talvez o mais importante!) é configurar o tipo de documento que será capturado.
 
-<Tabs>
-  <TabItem value="manual" label="Captura Manual" default>
+Como explicamos [acima](verificacao-documentos#recursos-disponíveis) existem diversos tipos de documento que podem ser capturados. Neste passo você irá selecionar qual deles deseja capturar através do objeto `configurations`.
 
-#### Captura manual
+Você pode conferir os tipos de documentos disponíveis no [API Reference](API#objeto-configuration-para-captura-de-documentos) de nosso SDK.
 
-Caso deseje utilizar a captura manual, o objeto configurations deverá conter a propriedade `TYPE` setada em `1`.
+Abaixo um exemplo para capturar uma CNH.
 
 ```javascript
   var configurations = {
@@ -209,34 +201,6 @@ Caso deseje utilizar a captura manual, o objeto configurations deverá conter a 
 
   acessoWebFrame.initDocument(configurations, callback, layout);
 ```
-
-  </TabItem>
-
-  <TabItem value="automatico" label="Captura Automática">
-
-#### Captura inteligente (automática)
-
-Caso deseje utilizar a captura automática, o objeto configurations deverá conter a propriedade `TYPE` setada em `2`.
-
-Para a captura inteligente, os modelos de visão computacional também devem ser carregados através do método `loadModelsCameraInteligence`, conforme exemplificado abaixo.
-
-```javascript
-  var configurations = {
-    TYPE: 2
-  }
-
-  acessoWebFrame.webFrameModel.loadModelsCameraInteligence("https://meuprojeto.com.br/models").then(() => {
-      acessoWebFrame.initCamera(configurations, callback, layout);
-  })
-  .catch((error) => {
-    console.error(error);
-    //Confira em "Configurações" a lista de erros e demais informações
-  });
-```
-
-  </TabItem>
-</Tabs>
-
 
 </li>
 
@@ -275,69 +239,9 @@ curl --location --request POST 'https://example.com/services/v3/AcessoService.sv
 
 Se você chegou até aqui, já deve ter tudo configurado e ready-to-go! Porém, não custa nada deixar dois exemplos de ponta-a-ponta.
 
-Abaixo dois exemplos completos, com captura manual ou automática.
-
-<Tabs>
-  <TabItem value="manual" label="Captura Manual" default>
-
-Exemplo com captura manual:
+Abaixo um exemplo para captura de uma CNH.
 
 ```javascript
-document.addEventListener("DOMContentLoaded", () => {
-  
-  var callback = {
-    on: {
-      success: function(obj) {
-        console.log(obj.base64);
-      },
-      error: function(error) {
-        console.error(error)
-        //confira na aba "Configurações" sobre os tipos de erros
-      },
-      support: function(error) {
-        console.log(error)
-        //confira na aba "Configurações" sobre os tipos de erros
-      }
-    }
-  };
-
-  var layout = {
-    silhouette: {
-      primaryColor: "#0bbd26",
-      secondaryColor: "#bd0b0b",
-      neutralColor: "#fff",
-    },
-    buttonCapture: {
-      backgroundColor: "#2980ff",
-      iconColor: "#fff",
-    },
-    popupLoadingHtml: '<div style="position: absolute; top: 45%; right: 50%; transform: translate(50%, -50%); z-index: 10; text-align: center;">Loading...</div>',
-    boxMessage: {
-      backgroundColor: "#2980ff",
-      fontColor: "#fff"
-    },
-    boxDocument: {
-      backgroundColor: "#2980ff",
-      fontColor: "#fff"    
-    }
-  }
-
-  var configurations = {
-    TYPE: 1
-  }
-
-  acessoWebFrame.initCamera(configurations, callback, layout);
-});
-```
-
-  </TabItem>
-
-  <TabItem value="automatico" label="Captura Automática">
-
-Exemplo com captura automática:
-
-```javascript
-
 document.addEventListener("DOMContentLoaded", () => {
   
     var callback = {
@@ -378,24 +282,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   var configurations = {
-    TYPE: 2
+    TYPE: 1 //Veja em "Configurações" a tabela de tipos de documentos possuímos"
   }
 
-  acessoWebFrame.webFrameModel.loadModelsCameraInteligence("https://meuprojeto.com.br/models").then(() => {
-      acessoWebFrame.initCamera(configurations, callback, layout);
-  })
-  .catch((error) => {
-    console.error(error);
-    //Confira em "Configurações" a lista de erros e demais informações
-  });
-
+  acessoWebFrame.initDocument(configurations, callback, layout);
 });
-
 ```
-
-
-  </TabItem>
-</Tabs>
 
 Como mencionado acima, em ambos os casos, caso o evento success seja disparado, iremos retornar um `base64` que deverá ser enviado para nossas APIs do motor biométrico.
 
@@ -409,7 +301,11 @@ Como mencionado acima, em ambos os casos, caso o evento success seja disparado, 
 </ol>
 </Steps>
 
-## Ficou com dúvidas?
+
+
+
+
+## Precisando de ajuda?
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
@@ -420,14 +316,5 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 
 Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcionalidade de captura de documentos.
 
-- [Guia para implantação de captura de documentos](reconhecimento-facial);
-- [API Reference do SDK](API);
-
-
-
-
-
-
-
-
-
+- [Guia para implantação de reconhecimento facial](/guias/web/reconhecimento-facial);
+- [API Reference do SDK](/guias/web/API);

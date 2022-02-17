@@ -20,7 +20,7 @@ O componente de captura disponibilizado por meio de nosso SDK da suporte às ver
 
 ### Dispositívos compatíveis
 
-O SDK Android do **Unico Check** é compatível com quase todos os dispositivos que possuam Android 5.0 (API de nível 21) ou versões mais recentes. A tabela a seguir lista os dispositivos testados em nosso laboratório, além da disponibilidade das extensões do fornecedor/fabricante. Algumas extensões listadas podem estar sujeitas a níveis de API ou SKUs específicos do fabricante.
+O SDK Android do **Unico Check** é compatível com quase todos os dispositivos que possuam Android 5.0 (API de nível 21) ou versões mais recentes. A tabela a seguir lista os dispositivos testados em nossos laboratórios, além da disponibilidade das extensões do fornecedor/fabricante. Algumas extensões listadas podem estar sujeitas a níveis de API ou SKUs específicos do fabricante.
 
 
 | Dispositivo |	Versão	| Normal	| Smart	| Tipo de teste |
@@ -87,11 +87,10 @@ Atualmente, nosso SDK Web possui as seguintes funcionalidades disponíveis:
 - Reconhecimento fácil;
     - Captura com Camêra Manual;
     - Captura com Camêra Inteligênte;
+    <!-- TODO Vale a pena mensionar o Facetech aqui? -->
 - Captura de documentos;
 
 :::info Fallback para *Câmera Inteligente* 
-
-<!-- TODO Entender se existe a opção de fallback ou restrições para o Android -->
 
 Alguns celulares antigos podem não possuir suporte aos recursos necessários para o funcionamento das técnologia de visão computacional utilizadas em nossa funcionalidade de *Câmera Inteligente*.
 

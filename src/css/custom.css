@@ -45,6 +45,14 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   font-family: 'Comfortaa', cursive;
 } */
 
+
+.package-name h3 {
+  margin-bottom: 0 !important;
+}
+
+.package-name p {
+  margin-bottom: 0 !important;
+}
 /* Table configuration */
 
 table {
@@ -52,6 +60,13 @@ table {
   display: table;
 }
 
+.markdown h4 {
+  margin-bottom: 5px;
+}
+
+.markdown h4 code{
+  font-weight: normal !important;
+}
 
 .compatibility-table table td{
   text-align: center;

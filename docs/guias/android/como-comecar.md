@@ -10,7 +10,7 @@ hide_title: true
 
 Antes de começar você deve ter certeza de que seu ambiente de desenvolvimento esteja de acordo com os seguintes pré-requisitos:
 
-- Possuir a versão 9 o superior do Android Studio (IDE oficial de desenvolvimento Google) instalado;
+- Possuir a versão 9 ou superior do [Android Studio](https://developer.android.com/sdk?hl=pt-br) (IDE oficial de desenvolvimento Google) instalado;
 - Possuir a versão do SDK Android na versão 21 ou superior;
 - Possuir configurado o gerenciador de pacotes Maven Jitpack;
 
@@ -38,6 +38,8 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 6. Automaticamente, uma nova aba será aberta contendo informações do projeto em formato JSON.
 7. Salve o conteúdo desta nova aba em um novo arquivo JSON;
 8. Adicione o arquivo salvo em seu projeto. (Explicaremos como utilizar o arquivo em nossos guias)
+
+<!-- TODO Destacar que o arquivo precisa estar em um lugar público -->
 
 :::caution Bloqueador de Pop-ups
 Se nada acontecer, verifique o bloqueador de popups de seu navegador
@@ -121,7 +123,7 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 
 Ótimo! Você chegou até aqui =). A seguir vamos te mostrar como importar nosso SDK em seu projeto e como seguir com a implementação.
 
-- [Guia para implantação de reconhecimento facial](/guias/web/reconhecimento-facial)
-- [Guia para implantação de captura de documentos](/guias/web/reconhecimento-facial)
-- [API Reference do SDK](/guias/web/API)
+- [Guia para implantação de reconhecimento facial](reconhecimento-facial)
+- [Guia para implantação de captura de documentos](reconhecimento-facial)
+- [API Reference do SDK](API)
 

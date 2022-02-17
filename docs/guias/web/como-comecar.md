@@ -6,6 +6,70 @@ hide_title: true
 
 # Como começar
 
+Esta página irá te auxiliar na configuração de sua conta da **Unico** para a utilização de nosso SDK, assim como sua instalação e configuração em seu projeto. Após essas etapas, você estará pronto para começar a construir sua integração.
+
+## Obtendo suas credenciais
+
+Para utilizar nossos SDKs você precisará importar suas credenciais (Client API Key) em seu projeto através de um arquivo JSON. Utilize o passo-a-passo a seguir para gerar e importar as credenciais em seu projeto.
+
+### Criando ou editando uma *API Key*;
+
+1. Acesse o portal do cliente da **Unico** com suas credenciais;
+2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
+3. Crie ou edite uma nova *API Key*;
+4. Caso deseje utilizar o **Liveness ativo** em seu app, verifique se o campo "**Utiliza liveness ativo**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso [suporte](mailto:suporte.unicocheck@unico.io) e solicite a habilitação;
+
+:::info Liveness Ativo
+
+Saiba mais sobre o liveness ativo [neste guia](#)
+
+:::
+
+5. Marque o campo **"Utiliza autenticação segura na SDK"** como **SIM**;
+6. Expanda a seção SDK JS, adicione o nome de sua aplicação JS e hostname (incluindo http/https);
+7. Salve as alterações.
+
+### Embarcando as credenciais em seu projeto
+
+1. Acesse o portal do cliente da **Unico** com suas credenciais;
+2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
+3. Ao lado da *API Key* desejada, pressione o botão de **Download**;
+4. Selecione a opção **JS**;
+5. Clique em "**Gerar**";
+6. Uma nova aba será aberta em seu navegador contendo informações do projeto em formato JSON.
+
+:::caution Atenção aos bloqueadores de Pop-up
+Caso a nova aba não abra, por favor, verifique se o seu navegador está bloqueando os popups.
+:::
+
+7. Salve o conteúdo desta nova aba em um novo arquivo **JSON**;
+8. Adicione o arquivo salvo em seu projeto. Explicaremos como e onde utilizar o arquivo ao longo de nossos guias.
+
+<!-- TODO Destacar que o arquivo precisa estar em um lugar público -->
+
+:::info Localização do arquivo em seu projeto
+O arquivo JSON deve estar em um local público e visível para a Web dentro de seu projeto.
+:::
+
+### Embarcando outros arquivos do Unico Check em seu projeto
+
+:::note Passo opcional
+Este passo é opcional e depende da configuração e opções utilizadas em seu projeto
+:::
+
+A tabela abaixo lista arquivos de recursos adicionais disponíveis para inclusão em seu projeto. Você deve baixa-los e incluí-los em seu projeto dependendo das funcionalidades que deseja utilizar.
+
+<!-- TODO Entender o que sao os arquivos adicionais e pra que servem -->
+
+| Descrição	| Link para download |
+| --------- | ------------------ |
+| Recursos adicionais do Unico Check para a funcionalidade de Facetec  | [Download](https://cdn.unico.io/sdk/check/facetec/unico-sdk-resources.zip)  |
+| Arquivos de AI do Unico Check SDK JS | [Download](https://cdn.unico.io/sdk/check/bio/models.zip)  |
+
+:::info Localização do arquivo em seu projeto
+Da mesma forma que o JSON do passo anterior, os arquivos adicionais devem estar em um local público e visível para a Web dentro de seu projeto.
+:::
+
 ## Instalação
 
 Atualmente, disponibilizamos nosso SDK Web através de um pacote npm ou de nosso cdn. Para a instalação, siga os passos abaixo dependendo de sua preferência:
@@ -24,7 +88,7 @@ npm install unico-webframe
 #### Instalação através de nosso cdn
 Para instalar nosso SDK em seu projeto por meio de nosso cdn, basta efetuar o download do arquivo abaixo e importa-lo em seu projeto.
 
-- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-2.0.0.min.js.zip) da versão `2.0.1` 
+- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.0.0.min.js.zip) da versão `3.0.0` 
 
 
 :::note Nota sobre o *Câmera Inteligente* e modelos de IA
@@ -41,17 +105,21 @@ Após a instalação de nosso SDK, basta importa-lo da maneira correta em seu pr
 
 Caso tenha instalado nosso pacote via npm:
 ```javascript
-import * as acessoWebFrame from 'unico-webframe';
+import { Unico } from 'unico-webframe'
 ```
 
 #### Caso tenha instalado o SDK através de nosso cdn
 
 Caso tenha instalado nosso pacote via cdn:
 ```javascript
-import * as acessoWebFrame from '../js/unico-webframe-version.min.js'
+import { Unico } from '../js/unico-webframe-version.min.js'
 ```  
 
 ## Renderização
+
+A forma que nosso componente será renderizada irá depender se você tem ou não a funcionalidade de **Liveness** (Prova de vida) ativa ou não.
+
+### Sem utilizar o **Liveness Ativo Facetec**
 
 O frame para captura será renderizado dentro de um `div` que deverá possuir seu `id` necessáriamente **igual** a `"box-camera"`.
 
@@ -64,18 +132,21 @@ O frame para captura será renderizado dentro de um `div` que deverá possuir se
 O identificador deste div deverá ser sempre igual a `id='box-camera'`.
 :::
 
+### Utilizando o **Liveness Ativo Facetec** 
+
+Caso seu projeto utilize o **Liveness Ativo** você não precisa criar um `div` em seu código para a renderização. Neste caso, abriremos um modal dentro da mesma janela (Que ocupará toda a tela).
+
 ## Precisando de ajuda?
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato através de nosso e-mail [uporte.unicocheck@unico.io](mailto:uporte.unicocheck@unico.io);
+- Entre em contato através de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
 ## Próximos passos
 
 Ótimo! Você chegou até aqui =). A seguir vamos te mostrar como importar nosso SDK em seu projeto e como seguir com a implementação.
 
-- [Guia para implantação de reconhecimento facial](/guias/web/reconhecimento-facial)
-- [Guia para implantação de captura de documentos](/guias/web/reconhecimento-facial)
-- [API Reference do SDK](/guias/web/API)
+- [Guia para implantação de reconhecimento facial](/fluxos/reconhecimento-facial)
+- [Guia para implantação de captura de documentos](/fluxos/reconhecimento-facial)
 

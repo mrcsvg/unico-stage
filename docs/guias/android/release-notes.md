@@ -1,6 +1,6 @@
 ---
-sidebar_label: 'Placeholder'
-sidebar_position: 1
+sidebar_label: 'Release Notes'
+sidebar_position: 9
 ---
 
 # Just a placeholder

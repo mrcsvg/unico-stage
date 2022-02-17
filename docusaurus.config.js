@@ -109,30 +109,30 @@ const config = {
                 label: 'Web SDK',
                 docId: 'guias/web/release-notes',
               },
-              {
-                type: 'doc',
-                label: 'iOS SDK',
-                docId: 'guias/iOS/release-notes',
-              },
+              // {
+              //   type: 'doc',
+              //   label: 'iOS SDK',
+              //   docId: 'guias/iOS/release-notes',
+              // },
 
 
               // ... more items
             ],
           },
 
-          {
-            type: 'dropdown',
-            label: 'SDK APIs',
-            position: 'right',
-            items: [
-              {
-                type: 'doc',
-                label: 'Web SDK',
-                docId: 'guias/web/API',
-              },
-              // ... more items
-            ],
-          },
+          // {
+          //   type: 'dropdown',
+          //   label: 'SDK APIs',
+          //   position: 'right',
+          //   items: [
+          //     {
+          //       type: 'doc',
+          //       label: 'Web SDK',
+          //       docId: 'guias/web/API',
+          //     },
+          //     // ... more items
+          //   ],
+          // },
 
 
           // {to: '/blog', label: 'Blog', position: 'left'},
@@ -237,8 +237,7 @@ const config = {
       prism: {
         theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
-
-
+        additionalLanguages: ['java', 'kotlin'],
       },
       i18n: {
         defaultLocale: 'pt-BR',
