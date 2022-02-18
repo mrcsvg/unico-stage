@@ -134,7 +134,28 @@ internal class MainActivity : AppCompatActivity() {
 
 Note que, conforme o exemplo anterior, o trabalho de implementação da classe [AcessoBioListener](API#acessobiolistener) é, em grande parte, a configuração dos métodos de callback. Cada método será chamado em uma situação específica de retorno de nosso SDK, como detalhado abaixo. 
 
-Basta sobrescrever os métodos exemplificados no passo anterior com as lógicas de negócio de sua aplicação. 
+Basta sobrescrever os métodos exemplificados no passo anterior com as lógicas de negócio de sua aplicação:
+
+#### `onErrorAcessoBio(ErrorBio errorBio)`
+Este método será invocado sempre quando qualquer erro de implementação ocorrer ao utilizar algum de nossos métodos, como por exemplo, ao informar um tipo de documento incorreto para a funcionalidade de captura de documentos.
+
+Ao ser invocado, o método receberá um parâmetro do tipo `ErrorBio` que contem detalhes do erro. Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK.
+
+#### `onUserClosedCameraManually()`
+Este método será invocado sempre quando o usuário fechar a câmera de forma manual, como por exemplo, ao clicar no botão "Voltar".
+
+#### `onSystemClosedCameraTimeoutSession()`
+Este método será invocado assim que o tempo máximo de sessão for atingido (Sem capturar nenhuma imagem).
+
+:::info  Tempo máximo da sessão
+O tempo máximo da sessão pode ser configurado em nosso **builder** através do método `setTimeoutSession`. Este método deve receber uma o tempo máximo da sessão em **segundos**.
+
+<!-- Saiba mais sobre  método `setTimeoutSession()` no [API Reference](API#settimeoutsession) de nosso SDK. -->
+:::
+
+#### `onSystemChangedTypeCameraTimeoutFaceInference()`
+Este método será invocado assim que o tempo máximo para detecção da face de um usuário for atingido (sem ter nada detectado). Neste caso, o modo de câmera é alterado automaticamente para o modo manual (sem o smart frame).
+
 
 <!-- Para mais detalhes sobre os `listeners`, consulte nossa a [API Reference](API#acessobiolistener) de nosso SDK Android. -->
 
@@ -252,9 +273,19 @@ Através da implementação dos *listeners*, você poderá especificar o que aco
 
 ##### Método `onSuccessSelfie`
 
-Ao efetuar uma captura de imagem com sucesso, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. Saiba mais sobre o tipo `ResultCamera` no [API Reference](API#resultcamera) de nosso SDK.
+```javascript
+public void onSuccessSelfie(ResultCamera result) { }
+```
+
+Ao efetuar uma captura de imagem com sucesso, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. 
+
+<!-- Saiba mais sobre o tipo `ResultCamera` no [API Reference](API#resultcamera) de nosso SDK. -->
 
 ##### Método `onErrorSelfie`
+
+```javascript
+public void onErrorSelfie(ErrorBio errorBio) { }
+```
 
 Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`ErrorBio`](#). 
 
@@ -266,17 +297,12 @@ A implementação destes métodos (*listeners*) deverá ser feita através de um
 <!-- Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK. -->
 :::
 
----
-
 #### Preparar e abrir câmera
 Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e o JSON com as credenciais, gerado [nesse passo](#../como-comecar).
 
 Quando estiver tudo certo, dispararemos um evento que deverá ser tratado através do método `onCameraReady`, que recebe como parâmetro um objeto do tipo `UnicoCheckCameraOpener.Selfie`. Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido, através do método `open()`. O método `open()` deverá receber como parâmetro os *listeners* configurados nos passos acima.
 
---- 
-
-#### Juntando todos os passos
-Ao juntar todos os passos, a configuração dos listeners e abertura ficará da seguinte forma:
+O exemplo abaixo ilustra os passos acima (configuração dos listeners e abertura da câmera):
 
  <Tabs>
   <TabItem value="java" label="Java" default>

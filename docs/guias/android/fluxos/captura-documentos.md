@@ -146,9 +146,19 @@ Através da implementação dos *listeners*, você poderá especificar o que aco
 
 ##### Método `onSuccessDocument`
 
-Ao efetuar uma captura de imagem com sucesso, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. Saiba mais sobre o tipo `ResultCamera` no [API Reference](API#resultcamera) de nosso SDK.
+```javascript
+public void onSuccessDocument(ResultCamera result) { }
+```
+
+Ao efetuar uma captura de imagem com sucesso, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. 
+
+<!-- Saiba mais sobre o tipo `ResultCamera` no [API Reference](API#resultcamera) de nosso SDK. -->
 
 ##### Método `onErrorDocument`
+
+```javascript
+public void onErrorDocument(ErrorBio errorBio) { }
+```
 
 Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`ErrorBio`](#). 
 
@@ -160,11 +170,10 @@ A implementação destes métodos (*listeners*) deverá ser feita através de um
 <!-- Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK. -->
 :::
 
-#### Preparar a câmera
-Preparar a câmera para abertura utilizando o método `prepareDocumentCamera`. Este método retornará um objeto do tipo `UnicoCheckCameraOpener.Document`, que quando retornado será utilizado para a abertura da câmera;
+#### Preparar a câmera e abrir a càmera
+Preparar a câmera para abertura utilizando o método `prepareDocumentCamera`. Este método retornará um objeto do tipo `UnicoCheckCameraOpener.Document`, que quando retornado será utilizado para a abertura da câmera.
 
-#### Abrir a câmera
-Abrir a câmera com o objeto do tipo `UnicoCheckCameraOpener.Document`, utilizando o método `open` fornecendo os seguintes parâmetros:
+Em seguida, devemos abrir a câmera com o objeto do tipo `UnicoCheckCameraOpener.Document`, utilizando o método `open` fornecendo os seguintes parâmetros:
 - Tipo de documento a ser capturado, sendo eles:
   - `DocumentCameraTypes.CNH`: Frame para captura de CNH.
   - `DocumentCameraTypes.CPF`: Frame para captura CPF.
@@ -175,19 +184,7 @@ Abrir a câmera com o objeto do tipo `UnicoCheckCameraOpener.Document`, utilizan
   - `DocumentCameraTypes.RG_VERSO_NOVO`: Frame para captura da parte traseira do novo RG.
 - Os listeners configurados acima;
 
-
-Exemplo em Java com a CNH:
-
-```java
-cameraOpener.open(DocumentType.CNH, cameraListener);
-```
-
-
-
---- 
-
-#### Juntando todos os passos
-Ao juntar todos os passos, a configuração dos listeners e abertura ficará da seguinte forma:
+O exemplo abaixo ilustra os passos acima (configuração dos listeners e abertura da câmera):
 
  <Tabs>
   <TabItem value="java" label="Java" default>

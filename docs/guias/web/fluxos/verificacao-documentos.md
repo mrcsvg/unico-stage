@@ -159,6 +159,8 @@ Um dos objetos que devemos passar como parâmetro ao método responsável por re
 
 Este objeto é obrigatório e caso não seja corretamente implementado (contemplando todos os eventos de `success` ou `error` irá gerar uma exceção, que caso não tratada, será exibida no console do usuário).
 
+Para mais detalhes sobre os códigos de erro retornados por nosso SDK, consulte [este guia](../referencias#códigos-de-erro).
+
 <!-- Para mais detalhes sobre o objeto de `callback`, consulte nossa a [API Reference](api/callback) de nosso SDK Web. -->
 
 

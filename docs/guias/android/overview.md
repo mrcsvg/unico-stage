@@ -87,7 +87,7 @@ Atualmente, nosso SDK Web possui as seguintes funcionalidades disponíveis:
 - Reconhecimento fácil;
     - Captura com Camêra Manual;
     - Captura com Camêra Inteligênte;
-    <!-- TODO Vale a pena mensionar o Facetech aqui? -->
+    - Captura com prova de vida (Liveness ativo Facetec);
 - Captura de documentos;
 
 :::info Fallback para *Câmera Inteligente* 
