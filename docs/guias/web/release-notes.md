@@ -9,6 +9,9 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível em nosso cdn ou pacote npm.
 :::
 
+## Versão `2.0.3`
+Correção em um bug nas implementações em Angular > 6. Este bug deixava a tela congelada quando houvesse concorrência entre setTimeout's em nosso SDK e a aplicação do cliente."
+
 ## Versão `2.0.2`
 
 - Remoção dos seguintes tipos de documentos utilizados no método `initDocument()`: 

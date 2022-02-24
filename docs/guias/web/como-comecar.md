@@ -138,6 +138,13 @@ Caso seu projeto utilize o **Liveness Ativo** você não precisa criar um `div` 
 
 ## Precisando de ajuda?
 
+:::info Ajuda com alguns frameworks
+
+Caso esteja utilizando Angular ou React-scripts 5 você poderá encontrar algumas dificuldades. Disponibilizamos algumas soluções rápida através de nosso artigo de [Solução de Problemas](solucao-problemas).
+
+:::
+
+
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
 - Entre em contato através de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);

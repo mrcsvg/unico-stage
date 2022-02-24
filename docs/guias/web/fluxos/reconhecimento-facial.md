@@ -101,7 +101,8 @@ unicoCameraBuilder.setResourceDirectory("/resources");
 Especifique o caminho dos arquivos dos modelos de IA, caso utilize a funcionalidade de Câmera Inteligente
 
 ```javascript
-unicoCameraBuilder.setModelsPath("/models");
+unicoCameraBuilder.setModelsPath(S"https://meusite.com.br/models");
+
 ```
 
 </li>
