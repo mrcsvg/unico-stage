@@ -316,7 +316,7 @@ iAcessoBioSelfie cameraListener = new iAcessoBioSelfie() {
     public void onErrorSelfie(ErrorBio errorBio) { }
 };
 
-unicoCheckCamera.prepareSelfieCamera(new SelfieCameraListener() {
+unicoCheckCamera.prepareSelfieCamera("json-credenciais.json", new SelfieCameraListener() {
     @Override
     public void onCameraReady(UnicoCheckCameraOpener.Selfie cameraOpener) {
         cameraOpener.open(cameraListener);
@@ -339,7 +339,7 @@ val cameraListener: iAcessoBioSelfie = object : iAcessoBioSelfie {
     override fun onErrorSelfie(errorBio: ErrorBio?) {}
 }
 
-unicoCheckCamera.prepareSelfieCamera(object : SelfieCameraListener {
+unicoCheckCamera.prepareSelfieCamera("json-credenciais.json", object : SelfieCameraListener {
     override fun onCameraReady(cameraOpener: UnicoCheckCameraOpener.Selfie?) {
         cameraOpener?.open(cameraListener)
     }

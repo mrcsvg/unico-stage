@@ -19,6 +19,9 @@
   --ifm-code-font-size: 95%;
   --ifm-panel-border-color: #606770;
 
+
+  --ifm-h5-font-size: var(--ifm-h4-font-size)
+
   --aa-search-input-height: 30px;
   /* --doc-sidebar-width */
 }
@@ -129,4 +132,20 @@ td .label {
 
 .table-of-contents__left-border {
   border-left: 2px solid var(--ifm-toc-border-color);
+}
+
+
+
+
+/* Code blocks customization */
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(0 0 0 / 10%);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgb(66 66 66 / 30%);
 }

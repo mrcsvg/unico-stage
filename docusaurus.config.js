@@ -233,7 +233,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} unico. All rights reserved. Built with Docusaurus.`,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/dracula'),
+        theme: require('prism-react-renderer/themes/github'),
         darkTheme: darkCodeTheme,
         additionalLanguages: ['java', 'kotlin', 'swift'],
       },
