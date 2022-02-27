@@ -11,10 +11,10 @@ Para deixar as coisas mais organizadas, dividimos nossos guias por stack técnol
 
 ## SDKs disponíveis
 
-- [Client SDK para Android](guias/android/placeholder);
-- [Client SDK para iOS](guias/iOS/placeholder);
+- [Client SDK para Android](guias/android/overview);
+- [Client SDK para iOS](guias/iOS/overview);
 - [Client SDK para Web](guias/web/overview);
-- [Client SDK utilizando Flutter](guias/flutter/placeholder);
+- Client SDK utilizando Flutter (Em breve!)
 
 ## Estrutura dos guias
 

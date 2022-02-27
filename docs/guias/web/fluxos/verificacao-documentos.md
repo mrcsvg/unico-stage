@@ -11,7 +11,7 @@ Este guia foi elaborado para ajudá-lo a integrar nosso SDK Web de forma rápida
 Buscamos trazer conceitos básicos, exemplos de implementação dos SDKs e também de como interagir com as APIs REST de nosso motor biométrico.
 
 :::info Vale lembrar
-Vale lembrar que este guia foca no processo de captura de imagens. Caso esteja buscando informações sobre as APIs REST do **Unico Check**, sugerimos que visite nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/), nosso guia de APIs ou nossa página de página [Visão Geral](overview).
+Vale lembrar que este guia foca no processo de captura de imagens. Caso esteja buscando informações sobre as APIs REST do **Unico Check**, sugerimos que visite nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/), nosso guia de APIs ou nossa página de página [Visão Geral](../overview).
 :::
 
 Através deste guia, em poucos minutos você será capaz de:
@@ -215,7 +215,7 @@ let unicoCamera = Unico.build();
 ```
 
 A preparação da câmera será efetuada a partir do método `prepareSelfieCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
-- O arquivo JSON com suas credenciais (Gerado através deste [guia](como-comecar#embarcando-as-credenciais-em-seu-projeto));
+- O arquivo JSON com suas credenciais (Gerado através deste [guia](../como-comecar#criando-ou-editando-uma-api-key);
 - Tipo de documento a ser capturado, sendo eles:
   - `Unico.DocumentCameraTypes.CNH`: Frame para captura de CNH.
   - `Unico.DocumentCameraTypes.CPF`: Frame para captura CPF.

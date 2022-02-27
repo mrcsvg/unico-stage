@@ -152,7 +152,7 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 Ótimo! Você chegou até aqui =). A seguir vamos te mostrar como importar nosso SDK em seu projeto e como seguir com a implementação.
 
 - [Como Começar - Importando nosso SDK](como-comecar);
-- [Guia para implantação de reconhecimento facial](reconhecimento-facial);
-- [Guia para implantação de captura de documentos](verificacao-documento);
-- [API Reference do SDK](API);
+- [Guia para implantação de reconhecimento facial](fluxos/reconhecimento-facial);
+- [Guia para implantação de captura de documentos](fluxos/captura-documentos);
+- [Referencias do SDK](referencias);
 

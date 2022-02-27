@@ -11,7 +11,7 @@ Este guia foi elaborado para ajudá-lo a integrar nosso SDK Android de forma rá
 Buscamos trazer conceitos básicos, exemplos de implementação dos SDKs e também de como interagir com as APIs REST de nosso motor biométrico.
 
 :::info Vale lembrar
-Vale lembrar que este guia foca no processo de captura de imagens. Caso esteja buscando informações sobre as APIs REST do **Unico Check**, sugerimos que visite nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/), nosso guia de APIs ou nossa página de página [Visão Geral](overview).
+Vale lembrar que este guia foca no processo de captura de imagens. Caso esteja buscando informações sobre as APIs REST do **Unico Check**, sugerimos que visite nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/), nosso guia de APIs ou nossa página de página [Visão Geral](../overview).
 :::
 
 Através deste guia, em poucos minutos você será capaz de:
@@ -22,7 +22,7 @@ Através deste guia, em poucos minutos você será capaz de:
 
 ## Antes de começar
 
-Certifique-se que você seguiu nosso passo-a-passo para instalação e importação de nosso SDK através [deste guia](como-comecar). É importante também ter em conta as funcionalidades disponíveis neste SDK, como explicado na página de [Visão Geral](overview) deste SDK.
+Certifique-se que você seguiu nosso passo-a-passo para instalação e importação de nosso SDK através [deste guia](../como-comecar). É importante também ter em conta as funcionalidades disponíveis neste SDK, como explicado na página de [Visão Geral](../overview) deste SDK.
 
 ## Recursos disponíveis
 
@@ -71,7 +71,7 @@ import Steps from '@site/src/components/Steps';
 
 ### Inicializar nosso SDK
 
-Para iniciar, crie uma instância do builder (gerado através da interface [`IAcessoBioBuilder`](API#iacessobiobuilder)), fornecendo como parâmetro o *contexto* em questão e a implementação da classe [`AcessoBioListener`](API#acessobiolistener). 
+Para iniciar, crie uma instância do builder (gerado através da interface `IAcessoBioBuilder`, fornecendo como parâmetro o *contexto* em questão e a implementação da classe `AcessoBioListener`. 
 
 A implementação dessa classe é bem simples e pode ser feita com poucas linhas de código. Tudo que precisa fazer é sobrescrever nossos métodos de callback com as lógicas de negócio de sua aplicação.
 
@@ -132,14 +132,14 @@ internal class MainActivity : AppCompatActivity() {
 
 **Implementação das funções de callback**
 
-Note que, conforme o exemplo anterior, o trabalho de implementação da classe [AcessoBioListener](API#acessobiolistener) é, em grande parte, a configuração dos métodos de callback. Cada método será chamado em uma situação específica de retorno de nosso SDK, como detalhado abaixo. 
+Note que, conforme o exemplo anterior, o trabalho de implementação da classe AcessoBioListener é, em grande parte, a configuração dos métodos de callback. Cada método será chamado em uma situação específica de retorno de nosso SDK, como detalhado abaixo. 
 
 Basta sobrescrever os métodos exemplificados no passo anterior com as lógicas de negócio de sua aplicação:
 
 #### `onErrorAcessoBio(ErrorBio errorBio)`
 Este método será invocado sempre quando qualquer erro de implementação ocorrer ao utilizar algum de nossos métodos, como por exemplo, ao informar um tipo de documento incorreto para a funcionalidade de captura de documentos.
 
-Ao ser invocado, o método receberá um parâmetro do tipo `ErrorBio` que contem detalhes do erro. Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK.
+Ao ser invocado, o método receberá um parâmetro do tipo `ErrorBio` que contem detalhes do erro. Saiba mais sobre o tipo `ErrorBio` em nosso documento de [referências](../referencias#errorbio) de nosso SDK.
 
 #### `onUserClosedCameraManually()`
 Este método será invocado sempre quando o usuário fechar a câmera de forma manual, como por exemplo, ao clicar no botão "Voltar".
@@ -292,13 +292,13 @@ Ao ocorrer algum erro na captura de imagem, este método será invocado e retorn
 <!-- Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK. -->
 
 :::note Implementação dos listeners
-A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe [`iAcessoBioSelfie`](API#iacessobioselfie). 
+A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe `iAcessoBioSelfie`.
 
 <!-- Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK. -->
 :::
 
 #### Preparar e abrir câmera
-Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e o JSON com as credenciais, gerado [nesse passo](#../como-comecar).
+Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e o JSON com as credenciais, gerado [nesse passo](../como-comecar).
 
 Quando estiver tudo certo, dispararemos um evento que deverá ser tratado através do método `onCameraReady`, que recebe como parâmetro um objeto do tipo `UnicoCheckCameraOpener.Selfie`. Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido, através do método `open()`. O método `open()` deverá receber como parâmetro os *listeners* configurados nos passos acima.
 

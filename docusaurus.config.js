@@ -11,7 +11,7 @@ const config = {
   tagline: 'Se integre com a único de forma fácil e rápida',
   url: 'https://unico-mvg.github.io',
   baseUrl: '/unico-sdkbio-docs/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'unico-mvg', // Usually your GitHub org/user name.
