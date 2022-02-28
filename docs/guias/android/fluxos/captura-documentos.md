@@ -68,7 +68,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="java" label="Java" default>
 
 ```java
-public class MainActivity extends AppCompatActivity implements AcessoBioListener {
+public class MainActivity extends AppCompatActivity {
 
     private AcessoBioListener callback = new AcessoBioListener() {
         @Override
@@ -170,10 +170,33 @@ A implementação destes métodos (*listeners*) deverá ser feita através de um
 <!-- Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK. -->
 :::
 
-#### Preparar a câmera e abrir a càmera
-Preparar a câmera para abertura utilizando o método `prepareDocumentCamera`. Este método retornará um objeto do tipo `UnicoCheckCameraOpener.Document`, que quando retornado será utilizado para a abertura da câmera.
+#### Preparar e abrir a câmera
 
-Em seguida, devemos abrir a câmera com o objeto do tipo `UnicoCheckCameraOpener.Document`, utilizando o método `open` fornecendo os seguintes parâmetros:
+Finalmente, devemos iniciar a câmera com as configurações feitas até aqui. Para isto, criaremos uma instância de nosso **builder** através do método `build()`. Lembrando que este método é disponibilizado através do objeto gerado com a interface `IAcessoBioBuilder` (classe `AcessoBio`).
+
+<Tabs>
+  <TabItem value="java" label="Java" default>
+
+```java
+UnicoCheckCamera unicoCheckCamera = acessoBioBuilder.build();  
+```
+  </TabItem>
+
+  <TabItem value="kotlin" label="Kotlin">
+
+```kotlin
+val unicoCheckCamera = acessoBioBuilder.build()
+```
+
+  </TabItem>
+</Tabs>
+
+O próximo passo é preparar a câmera utilizando o método `prepareDocumentCamera()` com o objeto retornado pelo **builder** (nomeado como `UnicoCheckCamera` no exemplo acima).
+
+Quando tudo der certo, o método `prepareDocumentCamera()` irá gerar um objeto do tipo `UnicoCheckCameraOpener.Document`, que finalmente será utilizado para abrir a câmera com seu método `open()`, recebendo os seguintes parâmetros:
+
+<!-- TODO Incluir diagrama de atividades -->
+
 - Tipo de documento a ser capturado, sendo eles:
   - `DocumentCameraTypes.CNH`: Frame para captura de CNH.
   - `DocumentCameraTypes.CPF`: Frame para captura CPF.
@@ -182,9 +205,9 @@ Em seguida, devemos abrir a câmera com o objeto do tipo `UnicoCheckCameraOpener
   - `DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
   - `DocumentCameraTypes.RG_FRENTE_NOVO`: Frame para captura da frente do novo RG.
   - `DocumentCameraTypes.RG_VERSO_NOVO`: Frame para captura da parte traseira do novo RG.
-- Os listeners configurados acima;
+- Os listeners configurados [acima](#implementar-listeners-para-eventos-da-câmera);
 
-O exemplo abaixo ilustra os passos acima (configuração dos listeners e abertura da câmera):
+O exemplo abaixo ilustra os passos descritos até aqui (configuração dos listeners, build e abertura da câmera):
 
  <Tabs>
   <TabItem value="java" label="Java" default>
@@ -295,7 +318,7 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 
 
 
-
+<!-- TODO Incluir link para exemplo -->
 
 
 

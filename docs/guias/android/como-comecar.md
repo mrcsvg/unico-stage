@@ -40,7 +40,7 @@ Saiba mais sobre o liveness ativo [neste guia](#)
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Ao lado da *API Key* desejada, pressione o botão de **Download**;
-4. Selecione a opção **JS**;
+4. Selecione a opção **Android**;
 5. Clique em "**Gerar**";
 6. Uma nova aba será aberta em seu navegador contendo informações do projeto em formato JSON.
 
@@ -123,7 +123,7 @@ android {
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato através de nosso e-mail [uporte.unicocheck@unico.io](mailto:uporte.unicocheck@unico.io);
+- Entre em contato através de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
 ## Próximos passos

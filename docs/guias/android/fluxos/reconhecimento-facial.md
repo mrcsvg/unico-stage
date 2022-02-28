@@ -86,7 +86,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="java" label="Java" default>
 
 ```java
-public class MainActivity extends AppCompatActivity implements AcessoBioListener {
+public class MainActivity extends AppCompatActivity {
 
     private AcessoBioListener callback = new AcessoBioListener() {
         @Override
