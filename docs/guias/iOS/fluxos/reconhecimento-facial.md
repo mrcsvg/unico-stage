@@ -385,7 +385,7 @@ func onSuccessSelfie(_ result: SelfieResult!) {
 O objeto `ResultCamera` retornará 2 atributos: `base64` e `encrypted`:
 
 - O atributo `base64` pode ser utilizado caso você queira exibir um preview da imagem em seu app;
-- O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check**;  
+- O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check** (detalhado [neste passo](#chamar-nossas-apis));  
 
 :::caution Conversão do base64 para Bitmap
 Caso queira converter o base64 para bitmap, a maneira padrão não funcionará para o iOS. Será  necessário realizar o split a partir da vírgula(`,`) para que funcione. Caso queira saber mais, sugerimos a leitura do seguinte artigo:

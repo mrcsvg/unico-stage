@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Reconhecimento facial'
+sidebar_label: 'Captura de documentos'
 sidebar_position: 2
 ---
 
@@ -26,38 +26,19 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 ## Recursos disponíveis
 
-Nosso SDK oferece um componente para captura de imagem contendo uma silhueta que ajuda o usuário a se posicionar de forma correta para a foto. A captura da imagem para o reconhecimento facial pode ser feita de duas formas, descritas ao longo desse guia. Sendo elas:
+Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
 
-### Captura Manual
+- **CNH:** Captura da CNH aberta;
+- **CPF:** Captura do documento de CPF;
+- **RG frente:** Captura da frente do RG;
+- **RG verso:** Captura do verso do RG;
+- **Novo RG frente:** Captura a frente do novo tipo de RG;
+- **Novo RG verso:** Captura o verso do novo tipo de RG;
+- **Outros:** Captura documento genérico. Para este tipo de captura você deve informar o título do documento que será mostrado na captura para o usuário usando a propriedade `optional.LABEL_DOCUMENT_TYPE_OTHERS`.
 
-Neste tipo de experiência seu usuário é totalmente responsável por posicionar sua face dentro da área de captura. Após se posicionar corretamente, o usuário deve clicar em um botão para capturar a imagem. 
+import imgDocumento from '/static/img/guias/img_documentos.png';
 
-Neste tipo de captura, nosso SDK não efetua nenhum tipo de validação do que está sendo capturado e isso pode aumentar as chances de problemas ao enviar o `base64` obtido para as APIs de nosso motor de biometria.
-
-import imgCapturaManual from '/static/img/guias/img_cameranormal.png';
-
-<img src={imgCapturaManual} alt="Captura Manual" className="imgCenter" />
-
-
-### Captura Automática
-
-Neste tipo de experiência, identificamos a face do usuário automáticamente através de algorítimos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
-
-Por ajudar o usuário a enquadrar sua face na área de captura, esta opção pode diminuir problemas ao enviar o `base64` às APIs de nosso motor biométrico.
-
-import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
-
-<img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
-
-### Liveness Ativo Facetec
-
-Também conhecido como prova de vida, neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento. 
-
-Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
-
-:::info Ativação do Liveness Ativo Facetec
-Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).
-:::
+<img src={imgDocumento} alt="Captura Manual" className="imgCenter" />
 
 
 ## Implementação
@@ -171,123 +152,10 @@ O tempo máximo da sessão pode ser configurado em nosso **builder** através do
 
 <!-- TODO Criar conteúdo acima nas referencias -->
 
-##### Método `onSystemChangedTypeCameraTimeoutFaceInference()`
-
-Este método será invocado assim que o tempo máximo para detecção da face de um usuário for atingido (sem ter nada detectado). Neste caso, o modo de câmera é alterado automaticamente para o modo manual (sem o smart frame).
-
-
-
-
-
 
 :::caution Atenção
 
 Todos os métodos acima devem devem ser criados da forma indicada em seu projeto (mesmo que sem nenhuma lógica). Caso contrário, o projeto não compilará com sucesso.
-
-:::
-
-</li>
-
-
-
-<li>
-
-### Configurar modo da câmera
-
-Em seguida, iremos configurar o modo de captura da camera. Como explicamos [acima](reconhecimento-facial#recursos-disponíveis) existem três modos de captura disponíveis. Caso **não** esteja utilizando o modo **Liveness Ativo Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
-
-:::tip Dica - Liveness Ativo Facetec
-
-Caso você esteja utilizando o modo **Liveness Ativo Facetec**, a configuração do tipo de câmera passa a ser irrelevante, pois este modo oferece uma experiência pré-definida que não pode ser alterada.
-
-No entanto, sugerimos que você configure um tipo de câmera em seu builder (como descrito neste passo), pois caso você desabilite o modo **Liveness Ativo Facetec** em seu portal do cliente (e gere um novo JSON), você não precisará alterar seu código.
-
-:::
-
-Nosso SDK tem configurado e habilitado por padrão o *enquadramento inteligente* e a *captura automática*. Para utilizar a câmera em modo normal, desabilite ambas funcionalidades através dos métodos `setAutoCapture` e `setSmartFrame`, através do objeto da classe `AcessoBioManager` gerado no [passo acima](#inicializar-nosso-sdk). 
-
-Os exemplos a seguir demonstram como você poderia configurar cada um dos modos de câmera a partir da ação de um botão em sua UI:
-
-#### Modo inteligente (Captura automática - Smart Camera)
-
-Por padrão, nosso SDK possui o enquadramento inteligente e a captura automática habilitados. Caso decida utilizar este modo de câmera, não será necessário alterar nenhuma configuração. 
-
-Caso as configurações da câmera tenham sido alteradas previamente em seu App, é possível restaurá-las através dos métodos `setAutoCapture` e `setSmartFrame`:
-
-<Tabs>
-<TabItem value="objectivec" label="Objective-C" default>
-
-```objectivec {5,6}
-.m:
-- (IBAction)configureSmartCamera:(UIButton *)sender {
-
-    // Objeto unicoCheck da classe AcessoBioManager
-    [unicoCheck setSmartFrame:true];
-    [unicoCheck setAutoCapture:true];
-
-}
-```
-</TabItem>
-
-<TabItem value="swift" label="Swift">
-
-
-```swift {4,5}
-@IBAction func configureSmartCamera(_ sender: Any) 
-
-    // Objeto unicoCheck da classe AcessoBioManager
-    unicoCheck.setSmartFrame(true)
-    unicoCheck.setAutoCapture(true)    
-}
-```
-
-</TabItem>
-</Tabs>
-
-:::caution Atenção
-
-Não é possível implementar o método `setAutoCapture(true)` com o método `setSmartFrame(false)`. Ou seja, não é possível manter a captura automática sem o Smart Frame, pois ele é quem realiza o enquadramento inteligênte.
-
-:::
-
-#### Modo manual 
-
-Por padrão, nosso SDK possui o enquadramento inteligente e a captura automática habilitados. Neste caso, para utilizar o modo manual ambas configurações relacionadas a *Smart Camera* devem ser desligadas através dos métodos `setAutoCapture` e `setSmartFrame`:
-
-<Tabs>
-  <TabItem value="objectivec" label="Objective-C" default>
-
-```objectivec {5-6}
-.m:
-- (IBAction)configureSmartCamera:(UIButton *)sender {
-
-    // Objeto unicoCheck da classe AcessoBioManager
-    [unicoCheck setSmartFrame:false];
-    [unicoCheck setAutoCapture:false];
-
-}
-
-```
-  </TabItem>
-
-  <TabItem value="swift" label="Swift">
-
-```swift {4-5}
-@IBAction func configureSmartCamera(_ sender: Any) 
-
-    // Objeto unicoCheck da classe AcessoBioManager
-    unicoCheck.setSmartFrame(false)
-    unicoCheck.setAutoCapture(false)    
-}
-
-```
-
-  </TabItem>
-</Tabs>
-
-:::tip Dica - SmartFrame
-
-Mesmo em modo manual é possível utilizar o Smart Frame. Neste caso, exibiremos a silhueta para identificar o enquadramento para então habilitar o botão. Para isto, basta configurar `setAutoCapture=false` e `setSmartFrame=true`
 
 :::
 
@@ -300,9 +168,9 @@ Mesmo em modo manual é possível utilizar o Smart Frame. Neste caso, exibiremos
 
 O método de abertura da câmera (que será chamado no próximo passo) precisa saber o que fazer ao conseguir capturar uma imagem com **sucesso** ou ao ter algum **erro** no processo. Informaremos "o que fazer" ao método de abertura da câmera através da configuração de *listeners* que serão chamados em situações de sucesso ou erro.
 
-Através da configuração dos *listeners*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorSelfie`) ou sucesso (método `onSuccessSelfie`) na captura de imagens.
+Através da configuração dos *listeners*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorDocument`) ou sucesso (método `onSuccessDocument`) na captura de imagens.
 
-Para a configuração dos *listeners*, você deverá também deverá implementar as interfaces `SelfieCameraDelegate` e `AcessoBioSelfieDelegate`:
+Para a configuração dos *listeners*, você deverá também deverá implementar as interfaces `DocumentCameraDelegate` e `AcessoBioDocumentDelegate`:
 
 <Tabs>
   <TabItem value="objectivec" label="Objective-C" default>
@@ -315,8 +183,8 @@ Para a configuração dos *listeners*, você deverá também deverá implementar
 
 @interface ViewController : UIViewController < AcessoBioManagerDelegate,
           // highlight-start
-          SelfieCameraDelegate, 
-          AcessoBioSelfieDelegate> {
+          DocumentCameraDelegate, 
+          AcessoBioDocumentDelegate> {
           // highlight-end
 
     AcessoBioManager *unicoCheck;
@@ -336,8 +204,8 @@ import AcessoBio
 class ViewController: UIViewController, 
                       AcessoBioManagerDelegate, 
                       // highlight-start
-                      SelfieCameraDelegate, 
-                      AcessoBioSelfieDelegate {
+                      DocumentCameraDelegate, 
+                      AcessoBioDocumentDelegate {
                         // highlight-end
     
   //Your code from previous and next steps here ;) 
@@ -347,11 +215,7 @@ class ViewController: UIViewController,
   </TabItem>
 </Tabs>
 
-
-
-
-
-#### Método `onSuccessSelfie`
+#### Método `onSuccessDocument`
 
 Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. 
 
@@ -362,7 +226,7 @@ Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e 
 
 ```objectivec 
 
-- (void)onSuccessSelfie:(SelfieResult *)result {
+- (void)onSuccessDocument:(DocumentResult *)result {
     NSLog(@"%@", result.base64);
 }  
 
@@ -373,7 +237,7 @@ Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e 
 
 ```swift
 
-func onSuccessSelfie(_ result: SelfieResult!) {
+func onSuccessDocument(_ result: DocumentResult!) {
     // your code
  }
 
@@ -385,7 +249,7 @@ func onSuccessSelfie(_ result: SelfieResult!) {
 O objeto `ResultCamera` retornará 2 atributos: `base64` e `encrypted`:
 
 - O atributo `base64` pode ser utilizado caso você queira exibir um preview da imagem em seu app;
-- O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check**;  
+- O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check** (detalhado [neste passo](#chamar-nossas-apis));  
 
 :::caution Conversão do base64 para Bitmap
 Caso queira converter o base64 para bitmap, a maneira padrão não funcionará para o iOS. Será  necessário realizar o split a partir da vírgula(`,`) para que funcione. Caso queira saber mais, sugerimos a leitura do seguinte artigo:
@@ -397,7 +261,7 @@ Caso queira converter o base64 para bitmap, a maneira padrão não funcionará p
 
 
 
-#### Método `onErrorSelfie`
+#### Método `onErrorDocument`
 
 Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo `ErrorBio`. 
 
@@ -406,7 +270,7 @@ Ao ocorrer algum erro na captura de imagem, este método será invocado e retorn
 
 ```objectivec 
 
-- (void)onErrorSelfie:(ErrorBio *)errorBio {
+- (void)onErrorDocument:(ErrorBio *)errorBio {
     // Your code
 }
 
@@ -417,7 +281,7 @@ Ao ocorrer algum erro na captura de imagem, este método será invocado e retorn
 
 ```swift
 
-func onErrorSelfie(_ errorBio: ErrorBio!) {
+func onErrorDocument(_ errorBio: ErrorBio!) {
     // Your code
  }
 
@@ -436,7 +300,7 @@ Saiba mais sobre o tipo `ErrorBio` em nossa página de [Referências](../referen
 
 ### Preparar e abrir câmera
 
-Para seguir com a abertura da câmera, primeiro devemos prepará-la utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraDelegate` e o JSON com as credenciais, gerado [nesse passo](#../como-comecar).
+Para seguir com a abertura da câmera, primeiro devemos prepará-la utilizando o método `prepareDocumentCamera`. Este método recebe como parâmetro a implementação da classe `DocumentCameraDelegate` e o JSON com as credenciais, gerado [nesse passo](#../como-comecar).
 
 
 <Tabs>
@@ -451,7 +315,7 @@ Para seguir com a abertura da câmera, primeiro devemos prepará-la utilizando o
 #import "SelfieCameraDelegate.h"
 
 @interface ViewController : UIViewController < AcessoBioManagerDelegate,
-SelfieCameraDelegate, AcessoBioSelfieDelegate> {
+DocumentCameraDelegate, AcessoBioDocumentDelegate> {
 
     AcessoBioManager *unicoCheck;
 }
@@ -459,7 +323,7 @@ SelfieCameraDelegate, AcessoBioSelfieDelegate> {
 .m:
 - (IBAction)openCamera:(UIButton *)sender {
 
-    [[unicoCheck build]prepareSelfieCamera:self];
+    [[unicoCheck build]prepareDocumentCamera:self];
 
 }
 
@@ -473,11 +337,11 @@ import UIKit
 import AcessoBio
 
 class ViewController: UIViewController, AcessoBioManagerDelegate, 
-SelfieCameraDelegate, AcessoBioSelfieDelegate {
+DocumentCameraDelegate, AcessoBioDocumentDelegate {
 
     @IBAction func openCamera(_ sender: Any) {
 
-        unicoCheck.build().prepareSelfieCamera(self, jsonConfigName:
+        unicoCheck.build().prepareDocumentCamera(self, jsonConfigName:
         "json-credenciais.json")
     }
 }
@@ -486,9 +350,18 @@ SelfieCameraDelegate, AcessoBioSelfieDelegate {
   </TabItem>
 </Tabs>
 
-Quando a câmera estiver preparada, dispararemos o evento `onCameraReady`, que recebe como parâmetro um objeto do tipo `AcessoBioCameraOpenerDelegate`. 
+Quando a câmera estiver preparada, dispararemos o evento `onCameraReadyDocument`, que recebe como parâmetro um objeto do tipo `AcessoBioCameraOpenerDelegate`. 
 
-Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido através do método `open()`:
+Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido através do método `openDocument()`, informando os seguintes parâmetros:
+
+- Tipo de documento a ser capturado, sendo eles:
+  - `DocumentEnums.CNH`: Frame para captura de CNH.
+  - `DocumentEnums.CPF`: Frame para captura CPF.
+  - `DocumentEnums.RG`: Frame para captura do RG.
+  - `DocumentEnums.rgFrente`: Frame para captura da parte da frente do RG.
+  - `DocumentEnums.rgVerso`: Frame para captura da parte traseira do RG.
+  - `DocumentEnums.none`: Frame para captura de documento genérico, sem nenhuma silhueta.
+- Os listeners configurados [acima](#implementar-listeners-para-eventos-da-câmera) (aqui descritos como Self);
 
 
 <Tabs>
@@ -497,11 +370,11 @@ Você deverá sobrescrever este método, efetuando a abertura da câmera com o o
 <!-- TODO Obter exemplo em objective c  -->
 
 ```objectivec 
-- (void)onCameraReady:(id)cameraOpener {
-    [cameraOpener open:self];
+- (void)onCameraReadyDocument:(id)cameraOpener {
+    [cameraOpener openDocument:DocumentCNH delegate:self];
 }
 
-- (void)onCameraFailed:(NSString *)message {
+- (void)onCameraFailedDocument:(NSString *)message {
     code
 }
 ```
@@ -510,19 +383,24 @@ Você deverá sobrescrever este método, efetuando a abertura da câmera com o o
   <TabItem value="swift" label="Swift">
 
 ```swift
-func onCameraReady(_ cameraOpener: AcessoBioCameraOpenerDelegate!) {
-    cameraOpener.open(self)
- }
+func onCameraReadyDocument(_ cameraOpener: AcessoBioCameraOpenerDelegate!) {
+    cameraOpener.openDocument(
+        DocumentEnums.CNH, 
+        delegate: self
+    )
+}
  
-func onCameraFailed(_ message: String!) {
+func onCameraFailedDocument(_ message: String!) {
     code
- }
+}
 ```
 
   </TabItem>
 </Tabs>
 
-Caso ocorra algum erro ao preparar a câmera, o evento `onCameraFailed` será disparado. Você devem implementar este método aplicando as regras de negócio de seu App.
+Caso ocorra algum erro ao preparar a câmera, o evento `onCameraFailedDocument` será disparado. Você deve implementar este método aplicando as regras de negócio de seu App.
+
+Em caso de sucesso, o evento `onSuccessDocument` será disparado, conforme explicado [neste passo](#método-onsuccessdocument).
 
 </li>
 

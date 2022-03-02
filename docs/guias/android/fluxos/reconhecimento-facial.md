@@ -356,7 +356,8 @@ unicoCheckCamera.prepareSelfieCamera("json-credenciais.json", object : SelfieCam
 Em caso de sucesso, o objeto `ResultCamera` retornará 2 atributos: `base64` e `encrypted`. O
 
 - O atributo `base64` pode ser utilizado caso você queira exibir um preview da imagem em seu app;
-- O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check**;  
+- O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check** (detalhado [neste passo](#chamar-nossas-apis));  
+
 
 :::caution Conversão do base64 para Bitmap
 Caso queira converter o base64 para bitmap, a maneira padrão não funcionará para o Android. Será  necessário realizar o split a partir da vírgula(`,`) para que funcione. Caso queira saber mais, sugerimos a leitura do seguinte artigo [How to convert a Base64 string into a Bitmap image to show it in a ImageView?](https://stackoverflow.com/questions/4837110/how-to-convert-a-base64-string-into-a-bitmap-image-to-show-it-in-a-imageview)
