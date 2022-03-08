@@ -7,11 +7,13 @@ sidebar_position: 3
 
 Abaixo alguns pontos importantes para sua integração:
 
-- O objetivo da SDK é realizar a captura de imagens (selfie e documento).
-- A SDK não realiza requisições a Rest-API do Unico check (vide [diagrama](/guias/web/overview#como-funciona-este-sdk)).
-- É importante manter o SDK Unico check atualizado com a última versão disponível.
-- O SDK não funciona em emuladores, somente com aparelhos móveis físicos.
-- Verifique a versão mínima dos sistemas operacionais suportados
+- O objetivo da SDK é realizar a captura de imagens (selfie e documento);
+- A SDK não realiza requisições a Rest-API do Unico check (vide [diagrama](/guias/web/overview#como-funciona-este-sdk));
+- É importante manter o SDK Unico check atualizado com a última versão disponível;
+- O SDK não funciona em emuladores, somente com aparelhos móveis físicos;
+- Verifique a versão mínima dos sistemas operacionais suportados;
+- A funcionalidade de liveness com interação depende de contato com o nosso backend;
+- Não damos suporte para versões desatualizadas das nossas SDKs;
 
 Você pode encontrar mais detalhes sobre nossas APIs Rest [nesta página](https://www3.acesso.io/identity/services/v3/docs/#section/Fluxos).
 

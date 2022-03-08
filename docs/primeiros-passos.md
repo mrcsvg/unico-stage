@@ -28,7 +28,8 @@ Dentro da documentação de cada SDK você encontrará guias para implementar no
 | -------------- | ------- | ----------- | ------- | ----------- |
 | Camera com captura manual | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
 | Camera com captura inteligente | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
-| Customizações avançadas | ![Not supported](/img/icons/no.svg)  | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
+| Camera com captura inteligente | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
+| Liveness Ativo Facetec | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
 
 </div>
 

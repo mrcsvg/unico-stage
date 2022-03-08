@@ -41,6 +41,13 @@ import imgDocumento from '/static/img/guias/img_documentos.png';
 
 <img src={imgDocumento} alt="Captura Manual" className="imgCenter" />
 
+:::info Customização dos frames de captura
+
+Através de nosso SDK, você pode configurar o layout do frame de captura. Saiba o que pode ser customizado em nossa página de [Referências](../referencias#customizações) deste SDK.
+
+:::
+
+
 ## Implementação
 
 Ao seguir este passo-a-passo, em poucos minutos você terá todo o potencial de nosso SDK embarcado em sua aplicação Android.

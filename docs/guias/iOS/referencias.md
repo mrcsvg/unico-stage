@@ -16,6 +16,272 @@ Atualmente disponibilizamos apenas alguns objetos e snippets de código que pode
 
 :::
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Customizações
+
+Nossa SDK conta com métodos de customização a fim de personalizar a experiência de acordo com o identidade visual de cada cliente. Segue a lista de métodos que podem ser facilmente implementadas:
+
+### Métodos disponíveis
+
+#### Método `getColorSilhouetteSuccess()`
+Método utilizado para customizar a cor de sucesso da silhueta.
+#### Método `getColorSilhouetteError()`
+Método utilizado para customizar a cor de erro da silhueta.
+#### Método `getColorBackground()`
+Método utilizado para customizar a cor de fundo da silhueta.
+#### Método `getColorBoxMessage()`
+Método utilizado para customizar a cor de fundo da mensagem.
+#### Método `getColorTextMessage()`
+Método utilizado para customizar a cor de texto da mensagem.
+#### Método `getColorTextPopupError()`
+Método utilizado para customizar a cor de texto e ícones do popup.
+#### Método `getColorBackgroundPopupError()`
+Método utilizado para customizar a cor de fundo do popup.
+#### Método `getColorBackgroundButtonPopupError()`
+Método utilizado para customizar a cor de fundo do botão do popup.
+#### Método `getColorTextButtonPopupError()`
+Método utilizado para customizar a cor de texto do botão do popup.
+#### Método `getColorBackgroundTakePictureButton()`
+Método utilizado para customizar a cor de fundo do botão de tirar foto manualmente.
+#### Método `getColorIconTakePictureButton()`
+Método utilizado para customizar a cor de ícone do botão de tirar foto manualmente.
+#### Método `getColorBackgroundBottomDocument()`
+Método utilizado para customizar a cor de fundo do box na captura de documentos.
+#### Método `getColorTextBottomDocument()`
+Método utilizado para customizar a cor de texto do box na captura de documentos.
+#### Método `getImageIconPopupError()`
+Método utilizado para customizar o ícone do Popup de erro, exibido quando a face é posicionada de forma incorreta no frame de captura.
+
+
+### Exemplos de utilização
+
+Abaixo alguns exemplos de como você pode chamar os métodos acima em seu projeto.
+
+<Tabs>
+  <TabItem value="objectivec" label="Objective-C" default>
+
+```objectivec 
+
+.h:
+#import "AcessoBioThemeDelegate.h"
+
+@interface ViewController : UIViewController  {
+
+@end
+
+.m:
+#import "ViewController.h"
+#import <AcessoBio/AcessoBio.h>
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    unicoCheck = [[AcessoBioManager alloc]initWithViewController:self];
+}
+
+- (id)getColorBackground {
+    code
+}
+
+- (id)getColorBackgroundBottomDocument {
+    code
+}
+
+- (id)getColorBackgroundButtonPopupError {
+    code
+}
+
+- (id)getColorBackgroundPopupError {
+    code
+}
+
+- (id)getColorBackgroundTakePictureButton {
+    code
+}
+
+- (id)getColorBoxMessage {
+    code
+}
+
+- (id)getColorIconTakePictureButton {
+    code
+}
+
+- (id)getColorSilhouetteError {
+    code
+}
+
+- (id)getColorSilhouetteSuccess {
+    code
+}
+
+- (id)getColorTextBottomDocument {
+    code
+}
+
+- (id)getColorTextButtonPopupError {
+    code
+}
+
+- (id)getColorTextMessage {
+    code
+}
+
+- (id)getColorTextPopupError {
+    code
+}
+
+@end
+
+```
+  </TabItem>
+
+  <TabItem value="swift" label="Swift">
+
+```swift
+
+import UIKit
+import AcessoBio
+
+class ViewController: UIViewController, AcessoBioManagerDelegate, AcessoBioThemeDelegate {
+
+    var unicoCheck: AcessoBioManager!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        unicoCheck = AcessoBioManager(viewController: self)
+        unicoCheck.setTheme(self)
+    }
+ 
+
+    func getColorBackground() -> Any! {
+        code
+    }
+
+    func getColorBoxMessage() -> Any! {
+        code
+    }
+
+    func getColorTextMessage() -> Any! {
+        code
+    }
+
+    func getColorBackgroundPopupError() -> Any! {
+        code
+    }
+
+    func getColorTextPopupError() -> Any! {
+        code
+    }
+
+    func getColorBackgroundButtonPopupError() -> Any! {
+        code
+    }
+
+    func getColorTextButtonPopupError() -> Any! {
+        code
+    }
+
+    func getColorBackgroundTakePictureButton() -> Any! {
+        code
+    }
+
+    func getColorIconTakePictureButton() -> Any! {
+        code
+    }
+
+    func getColorBackgroundBottomDocument() -> Any! {
+        code
+    }
+
+    func getColorTextBottomDocument() -> Any! {
+        code
+    }
+
+    func getColorSilhouetteSuccess() -> Any! {
+        code
+    }
+
+    func getColorSilhouetteError() -> Any! {
+        code
+    } 
+} 
+
+```
+
+  </TabItem>
+</Tabs>
+
+
+## Configurando os tempos de sessão
+
+È possível alterar o tempo máximo de sessão do seu usuário e o tempo máximo de captura ao utilizar a funcionalidade de detecção da face (Smart Camera). Para isto, através de nosso builder, disponibilizamos 2 métodos:
+
+#### Método `setTimeoutSession`: 
+Configura o tempo máximo de sessão do seu usuário (em segundos). Caso ele ultrapasse o tempo determinado em seu processo para capturar a foto, você poderá apresentar alguma mensagem personalizável ou instrução ao usuário. O valor padrão é de 40 segundos e seu valor mínimo também é de 40 segundos.
+
+#### Método `setTimeoutToFaceInference`: 
+Configura o tempo máximo de captura ao utilizar a detecção da face (smart câmera) em segundos. Caso o usuário encontre alguma dificuldade para capturar a foto através da detecção de face e ultrapasse o tempo determinado em seu processo, a captura será alterada automaticamente para a manual, visando facilitar a ação para o usuário. O valor padrão é de 15 segundos e seu valor mínimo é de 5 segundos.
+
+### Exemplos de utilização
+
+<Tabs>
+  <TabItem value="java" label="Java" default>
+
+```objectivec
+#import "ViewController.h"
+#import <AcessoBio/AcessoBio.h>
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    unicoCheck = [[AcessoBioManager alloc]initWithViewController:self];
+    [unicoCheck setTimeoutSession:50];
+    [unicoCheck setTimeoutToFaceInference:10];
+
+}
+```
+
+  </TabItem>
+
+  <TabItem value="kotlin" label="Kotlin">
+
+```swift
+import UIKit
+import AcessoBio
+
+class ViewController: UIViewController, AcessoBioManagerDelegate {
+           
+var unicoCheck: AcessoBioManager!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        unicoCheck = AcessoBioManager(viewController: self)
+        unicoCheck.setTimeoutSession(50)
+        unicoCheck.setTimeoutToFaceInference(10)
+    }
+}            
+```
+
+  </TabItem>
+</Tabs>
+
 ## Objeto ErrorBio
 
 Objeto retornado sempre que ocorre um erro dentro do SDK do **unico check**. A lista dos possíveis erros e mensagens pode ser vista [aqui](#codigosderro)
@@ -27,7 +293,6 @@ Método utilizado para obter o código de erro ocorrido.
 
 #### `getDescription()`
 Método utilizado para obter a descrição do ocorrido.
-
 
 ## Códigos de erro
 

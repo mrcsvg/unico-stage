@@ -27,6 +27,18 @@ Nossas SDKs contam com recursos de criptografia e segurança contra injection de
 ## Qual é o diferencial da nossa SDK?
 As SDKs da unico possuem funcionalidades de segurança anti fraude e usabilidade adaptados a diferentes fluxos, tais como: Liveness ativo, câmera inteligente, câmera normal e captura de documentos. 
 
+## Quais as camadas de segurança das SDKs unico?
+Nossas SDKs possuem diversas camadas de segurança que funcionam de forma complementar, tanto a nivel da aplicação quanto em relação aos dados que trafegados entre as SDKs e nosso backend. Nossa SDK possui ofuscação de código, bloqueio de emulador e checagem de bundle do aplicativo que a está executando.
+
+## Qual a rigidez da segurança do JWT? Qual o nível de criptografia?
+Os arquivos trafegam em um canal seguro usando criptografia TLS.
+Cada arquivo também é criptografado usando o formato JWS (Json Web Signature), que contém as informações da criptografia, os dados que queremos enviar e uma assinatura para o token gerado.
+A principal ferramenta de segurança do JWS é a assinatura, que é invalidada caso o conteúdo seja alterado.
+Além disso, os prazos de expiração dos tokens são curtos, então a janela para qualquer ataque é pequena.
+
+## Qual é o tamanho do payload do JWT?
+O JWT gerado pelas nossas SDKs tem em média 300kb.
+
 ## Como que eu faço para baixar as novas atualizações da SDK?
 Para baixar as novas atualizações, primeiro confira o descritivo da versão no Release Notes - que se encontra na documentação ao lado da "Implementação" - e posteriormente incremente a tag de implementação dentro do seu projeto.
 

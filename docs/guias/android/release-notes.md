@@ -9,6 +9,18 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível em nosso cdn ou pacote npm.
 :::
 
+## Versão 4.0.5
+
+## Versão 4.0.4
+
+## Versão 4.0.3
+
+## Versão 4.0.2
+
+## Versão 4.0.1
+
+Corrigimos um bug referente a: request prepare camera
+
 ## Versão 4.0.0
 
 ```
