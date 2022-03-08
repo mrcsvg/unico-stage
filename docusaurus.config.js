@@ -107,12 +107,16 @@ const config = {
                 label: 'Web SDK',
                 docId: 'guias/web/release-notes',
               },
-              // {
-              //   type: 'doc',
-              //   label: 'iOS SDK',
-              //   docId: 'guias/iOS/release-notes',
-              // },
-
+              {
+                type: 'doc',
+                label: 'iOS SDK',
+                docId: 'guias/iOS/release-notes',
+              },
+              {
+                type: 'doc',
+                label: 'Android SDK',
+                docId: 'guias/android/release-notes',
+              },
 
               // ... more items
             ],
