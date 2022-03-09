@@ -40,11 +40,17 @@ Não discutiremos aqui conceitos sobre nossas APIs do motor biométrico. Para in
 
 Você poderá começar de forma rápida através de nossos [guias de integração](primeiros-passos#escolha-um-de-nossos-sdks) ou de nossos [projetos de exemplo](recursos-adicionais/exemplos). Também disponibilizamos por aqui a *API References* de cada um de nossos SDKs, onde você poderá encontrar todos os detalhes necessários para customizar sua integração.
 
-## Qual o objetivo destes SDKs?
+## Qual o objetivo de nossos SDKs?
 
-Criamos estes SDKs para te auxiliar na primeira parte de sua jornada com o **unico | check**: A captura das imagens de forma rápida e fácil. 
+Criamos estes SDKs para te auxiliar na primeira parte de sua jornada com o **unico | check**: A captura das imagens de forma rápida, fácil e segura. Nossos SDKs foram desenvolvidos para abstrair toda a complexidade relacionada a manipulação da camera do dispositivo dos usuários e a captura de imagens. Além de outras vantagens:
 
-Nossos SDKs foram desenvolvidos para abstrair toda a complexidade relacionada a manipulação da camera do dispositivo dos usuários e a captura de imagens. Através de nossos SDKs você consegue, em poucos passos, capturar imagens no formato exato que necessitamos em nossas APIs.
+#### Precisão na captura de imagens
+- Recursos que auxiliam o usuário a obter fotos biometricamente válidas, reduzindo o drop das imagens quando comparados a captura realizada pelas câmeras padrões dos dispositivos.
+
+#### Segurança reforçada
+- Recursos de criptografia e segurança contra injection de imagens, possuindo também funcionalidades que previnem fraudes adaptadas a nossos diferentes fluxos, tais como: Liveness ativo, câmera inteligente, câmera normal e captura de documentos. 
+- Camadas de segurança que funcionam de forma complementar, tanto a nível da aplicação quanto em relação aos dados que trafegados entre as SDKs e nosso backend.
+- Ofuscação de código, bloqueio de emulador e checagem de bundle do aplicativo que a está executando.
 
 ## Ficou com dúvidas?
 

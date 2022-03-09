@@ -9,12 +9,12 @@ Nossos guias foram elaborados para ajudá-lo a se familiarizar com alguns concei
 
 Para deixar as coisas mais organizadas, dividimos nossos guias por stack técnológico. Desta forma, para iniciar, escolha abaixo um de nossos Client SDKs ;-).
 
-## SDKs disponíveis
+## Client SDKs disponíveis
 
-- [Client SDK para Android](guias/android/overview);
-- [Client SDK para iOS](guias/iOS/overview);
-- [Client SDK para Web](guias/web/overview);
-- Client SDK utilizando Flutter (Em breve!)
+- [SDK Android](guias/android/overview);
+- [SDK iOS](guias/iOS/overview);
+- [SDK Web](guias/web/overview);
+- SDK Flutter (Em breve!)
 
 ## Estrutura dos guias
 

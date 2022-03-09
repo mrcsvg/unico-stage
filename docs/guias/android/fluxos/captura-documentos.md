@@ -177,6 +177,20 @@ A implementação destes métodos (*listeners*) deverá ser feita através de um
 <!-- Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK. -->
 :::
 
+### Customizar o frame de captura
+
+:::note Passo opcional
+Este é um passo opcional, porém recomendado. 
+:::
+
+Oferecemos a possibilidade de customização do frame de captura por meio do nosso SDK. Para customizar o frame, basta utilizar o método correspondente a propriedade a ser customizada, e posteriormente, aplicar o novo estilo através do método `setTheme()`.
+
+Entenda um pouco mais sobre o método `setTheme()`, exemplos de utilização e o que pode ser customizado em nossa página de [Referências](../referencias#customizações) deste SDK.
+
+</li>
+
+<li>
+
 #### Preparar e abrir a câmera
 
 Finalmente, devemos iniciar a câmera com as configurações feitas até aqui. Para isto, criaremos uma instância de nosso **builder** através do método `build()`. Lembrando que este método é disponibilizado através do objeto gerado com a interface `IAcessoBioBuilder` (classe `AcessoBio`).

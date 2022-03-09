@@ -266,6 +266,20 @@ Mesmo em modo manual é possível utilizar o Smart Frame. Neste caso, exibiremos
 </li>
 <li>
 
+### Customizar o frame de captura
+
+:::note Passo opcional
+Este é um passo opcional, porém recomendado. 
+:::
+
+Oferecemos a possibilidade de customização do frame de captura por meio do nosso SDK. Para customizar o frame, basta utilizar o método correspondente a propriedade a ser customizada, e posteriormente, aplicar o novo estilo através do método `setTheme()`.
+
+Entenda um pouco mais sobre o método `setTheme()`, exemplos de utilização e o que pode ser customizado em nossa página de [Referências](../referencias#customizações) deste SDK.
+
+</li>
+
+<li>
+
 ### Efetuar abertura da câmera
 
 O último passo é disparar a abertura da câmera. Vamos dividir este processo em algumas etapas:
