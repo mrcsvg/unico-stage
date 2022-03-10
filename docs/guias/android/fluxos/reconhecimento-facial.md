@@ -183,11 +183,7 @@ No entanto, sugerimos que você configure um tipo de câmera em seu builder (com
 
 Nosso SDK tem configurado e habilitado por padrão o *enquadramento inteligente* e a *captura automática*. Para utilizar a câmera em modo normal, desabilite ambas funcionalidades através dos métodos `setAutoCapture` e `setSmartFrame`. Os exemplos a seguir demonstram como você pode configurar cada um dos modos de câmera.
 
-:::info Customização dos frames de captura
 
-Você pode configurar o layout do frame de captura caso esteja utilizando os modos **Manual** ou **Inteligente**. Saiba o que pode ser customizado em nossa página de [Referências](../referencias#customizações) deste SDK.
-
-:::
 ----
 
 #### Modo inteligente (Captura automática - Smart Camera)

@@ -208,12 +208,6 @@ Nosso SDK tem configurado e habilitado por padrão o *enquadramento inteligente*
 
 Os exemplos a seguir demonstram como você poderia configurar cada um dos modos de câmera a partir da ação de um botão em sua UI:
 
-:::info Customização dos frames de captura
-
-Você pode configurar o layout do frame de captura caso esteja utilizando os modos **Manual** ou **Inteligente**. Saiba o que pode ser customizado em nossa página de [Referências](../referencias#customizações) deste SDK.
-
-:::
-
 #### Modo inteligente (Captura automática - Smart Camera)
 
 Por padrão, nosso SDK possui o enquadramento inteligente e a captura automática habilitados. Caso decida utilizar este modo de câmera, não será necessário alterar nenhuma configuração. 

@@ -267,7 +267,7 @@ Disponibilizamos abaixo a lista possíveis códigos de erro de nosso SDK Android
 |73800| Could not build encrypted key|
 
 
-<!-- 
-import Feedback from '@site/src/components/Feedback';
+
+<!-- import Feedback from '@site/src/components/Feedback';
 
 <Feedback /> -->

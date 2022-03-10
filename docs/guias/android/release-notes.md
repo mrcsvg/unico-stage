@@ -10,15 +10,19 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 :::
 
 ## Versão 4.0.5
+Latest
 
 ## Versão 4.0.4
+Update GSON library to version 2.8.9
+Open camera document in prepare camera
 
 ## Versão 4.0.3
+Corrigimos um bug no modulo de abertura da câmera de documentos
 
 ## Versão 4.0.2
+Corrigimos um bug que esteva deixando o debug lento ao utilizar nosso SDK.
 
 ## Versão 4.0.1
-
 Corrigimos um bug referente a: request prepare camera
 
 ## Versão 4.0.0
