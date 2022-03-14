@@ -28,7 +28,6 @@ Através de nossas APIs somos capazes de oferecer a solução mais completa do m
 - **FaceMatch**: Comparamos a foto do documento com a foto capturada com a maior acuracidade.
 - **OCR de RG, CNH e CRM**: Extraímos automaticamente os dados dos documento com a maior assertividade.
 - **Tipificação**: De forma automática analisamos se o documento corresponde ao que foi solicitado.
-- **Assinatura Eletrônica**: Única solução que oferece a maior segurança e praticidade na hora de assinar um documento.
 
 ## O que você encontrará por aqui
 
@@ -48,7 +47,7 @@ Criamos estes SDKs para te auxiliar na primeira parte de sua jornada com o **uni
 - Recursos que auxiliam o usuário a obter fotos biometricamente válidas, reduzindo o drop das imagens quando comparados a captura realizada pelas câmeras padrões dos dispositivos.
 
 #### Segurança reforçada
-- Recursos de criptografia e segurança contra injection de imagens, possuindo também funcionalidades que previnem fraudes adaptadas a nossos diferentes fluxos, tais como: Liveness ativo, câmera inteligente, câmera normal e captura de documentos. 
+- Recursos de criptografia e segurança contra injection de imagens, possuindo também funcionalidades que previnem fraudes adaptadas a nossos diferentes fluxos, tais como: Liveness com interação, câmera inteligente, câmera normal e captura de documentos. 
 - Camadas de segurança que funcionam de forma complementar, tanto a nível da aplicação quanto em relação aos dados que trafegados entre as SDKs e nosso backend.
 - Ofuscação de código, bloqueio de emulador e checagem de bundle do aplicativo que a está executando.
 
