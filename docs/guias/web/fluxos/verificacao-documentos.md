@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Verificação de documentos'
+sidebar_label: 'Captura de documentos'
 sidebar_position: 4
 ---
 
