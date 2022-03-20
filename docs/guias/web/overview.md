@@ -8,7 +8,7 @@ hide_title: true
 
 ## Sobre este SDK
 
-O SDK Web do **Unico Check** permite a construção, de forma rápida e fácil, de uma grande experiência de reconhecimento facial em suas aplicações Web. Fornecemos um componente para que você possa capturar imagens de forma flúida em seu aplicativo, utilizando mecanismos de abertura de câmera modernos e algorítimos de visão computacional.
+O SDK Web do **Unico Check** permite a construção, de forma rápida e fácil, de uma grande experiência de captura de Selfies em suas aplicações Web. Fornecemos um componente para que você possa capturar imagens de forma flúida em seu aplicativo, utilizando mecanismos de abertura de câmera modernos e algorítimos de visão computacional.
 
 Além de abstrair toda a complexidade referente a manipulação da câmera, nosso SDK também tem o objetivo de auxiliar no enquadramento das imagens, as otimizando para aumentar a acurácia na resposta do nosso motor biométrico.
 
@@ -132,6 +132,6 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 Ótimo! Você chegou até aqui =). A seguir vamos te mostrar como importar nosso SDK em seu projeto e como seguir com a implementação.
 
 - [Como Começar - Importando nosso SDK](como-comecar);
-- [Guia para implantação de reconhecimento facial](fluxos/reconhecimento-facial)
+- [Guia para implantação de captura de Selfies](fluxos/reconhecimento-facial)
 - [Guia para implantação de captura de documentos](fluxos/reconhecimento-facial)
 

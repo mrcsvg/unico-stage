@@ -13,7 +13,7 @@ slug: /
 
 ## Sobre nós
 
-O **unico | check**, solução de reconhecimento facial da unico, é a principal ferramenta de autenticação e prevenção à fraude de identidade do país.
+O **unico | check**, solução de captura de Selfies da unico, é a principal ferramenta de autenticação e prevenção à fraude de identidade do país.
 
 Possuimos a maior base biométrica do Brasil, através da qual, identificamos todos os meses aproximadamente 6 milhões de faces. Nossa base já é composta por mais da metade da população economicamente ativa do país e isso nos permite atingir indices de acuracidade de 99,9%. 
 

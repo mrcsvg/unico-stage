@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Reconhecimento facial'
+sidebar_label: 'Captura de Selfies'
 sidebar_position: 1
 ---
 
-# Reconhecimento facial
+# Captura de Selfies
 
 ## Sobre este guia
 
@@ -26,7 +26,7 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 ## Recursos disponíveis
 
-Nosso SDK oferece um componente para captura de imagem contendo uma silhueta que ajuda o usuário a se posicionar de forma correta para a foto. A captura da imagem para o reconhecimento facial pode ser feita de duas formas, descritas ao longo desse guia. Sendo elas:
+Nosso SDK oferece um componente para captura de imagem contendo uma silhueta que ajuda o usuário a se posicionar de forma correta para a foto. A captura da imagem para o captura de Selfies pode ser feita de duas formas, descritas ao longo desse guia. Sendo elas:
 
 ### Captura Manual
 
