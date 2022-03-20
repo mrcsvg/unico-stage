@@ -285,5 +285,5 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 
 Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcionalidade de captura de documentos.
 
-- [Guia para implantação de captura de Selfies](/guias/web/fluxos/reconhecimento-facial);
+- [Guia para implantação de captura de Selfies](/guias/web/fluxos/captura-selfies);
 <!-- - [API Reference do SDK](/guias/web/API); -->

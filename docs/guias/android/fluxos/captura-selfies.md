@@ -171,7 +171,7 @@ Todos os métodos acima devem devem ser criados da forma indicada em seu projeto
 
 ### Configurar modo da câmera
 
-Em seguida, iremos configurar o modo de captura da camera. Como explicamos [acima](reconhecimento-facial#recursos-disponíveis) existem três modos de captura disponíveis. Caso **não** esteja utilizando o modo **Liveness com interação Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
+Em seguida, iremos configurar o modo de captura da camera. Como explicamos [acima](captura-selfies#recursos-disponíveis) existem três modos de captura disponíveis. Caso **não** esteja utilizando o modo **Liveness com interação Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
 
 :::tip Dica
 
@@ -423,7 +423,7 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 
 Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcionalidade de captura de documentos.
 
-- [Guia para implantação de captura de documentos](reconhecimento-facial);
+- [Guia para implantação de captura de documentos](captura-selfies);
 <!-- - [API Reference do SDK](API); -->
 
 
