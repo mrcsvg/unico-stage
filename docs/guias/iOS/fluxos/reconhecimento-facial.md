@@ -74,7 +74,7 @@ import Steps from '@site/src/components/Steps';
 
 Para iniciar com SDK iOS do **Unico Check**, importe nosso SDK e implemente a interface `AcessoBioManagerDelegate` dentro da *ViewController* que deseja utilizar.
 
-A implementação dessa classe é bem simples e pode ser feita com poucas linhas de código. Tudo que precisa fazer é intanciar nosso *builder* informando o contexto em questão e sobrescrever nossos métodos de callback com as lógicas de negócio de sua aplicação:
+A implementação dessa classe é bem simples e pode ser feita com poucas linhas de código. Tudo que precisa fazer é instanciar nosso *builder* informando o contexto em questão e sobrescrever nossos métodos de callback com as lógicas de negócio de sua aplicação:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -246,7 +246,7 @@ Caso as configurações da câmera tenham sido alteradas previamente em seu App,
 
 :::caution Atenção
 
-Não é possível implementar o método `setAutoCapture(true)` com o método `setSmartFrame(false)`. Ou seja, não é possível manter a captura automática sem o Smart Frame, pois ele é quem realiza o enquadramento inteligênte.
+Não é possível implementar o método `setAutoCapture(true)` com o método `setSmartFrame(false)`. Ou seja, não é possível manter a captura automática sem o Smart Frame, pois ele é quem realiza o enquadramento inteligente.
 
 :::
 
@@ -296,13 +296,13 @@ Mesmo em modo manual é possível utilizar o Smart Frame. Neste caso, exibiremos
 
 <li> 
 
-### Implementar listeners para eventos da câmera
+### Implementar *delegates* para eventos da câmera
 
-O método de abertura da câmera (que será chamado no próximo passo) precisa saber o que fazer ao conseguir capturar uma imagem com **sucesso** ou ao ter algum **erro** no processo. Informaremos "o que fazer" ao método de abertura da câmera através da configuração de *listeners* que serão chamados em situações de sucesso ou erro.
+O método de abertura da câmera (que será chamado no próximo passo) precisa saber o que fazer ao conseguir capturar uma imagem com **sucesso** ou ao ter algum **erro** no processo. Informaremos "o que fazer" ao método de abertura da câmera através da configuração de *delegates* que serão chamados em situações de sucesso ou erro.
 
-Através da configuração dos *listeners*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorSelfie`) ou sucesso (método `onSuccessSelfie`) na captura de imagens.
+Através da configuração dos *delegates*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorSelfie`) ou sucesso (método `onSuccessSelfie`) na captura de imagens.
 
-Para a configuração dos *listeners*, você deverá também deverá implementar as interfaces `SelfieCameraDelegate` e `AcessoBioSelfieDelegate`:
+Para a configuração dos *delegates*, você deverá também deverá implementar as interfaces `SelfieCameraDelegate` e `AcessoBioSelfieDelegate`:
 
 <Tabs>
   <TabItem value="objectivec" label="Objective-C" default>
@@ -353,9 +353,9 @@ class ViewController: UIViewController,
 
 #### Método `onSuccessSelfie`
 
-Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. 
+Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e retornará um objeto do tipo `SelfieResult` que será utilizado posteriormente na chamada de nossas APIs REST. 
 
-<!-- Saiba mais sobre o tipo `ResultCamera` no [API Reference](API#resultcamera) de nosso SDK. -->
+<!-- Saiba mais sobre o tipo `SelfieResult` no [API Reference](API#SelfieResult) de nosso SDK. -->
 
 <Tabs>
   <TabItem value="objectivec" label="Objective-C" default>
@@ -382,7 +382,7 @@ func onSuccessSelfie(_ result: SelfieResult!) {
   </TabItem>
 </Tabs>
 
-O objeto `ResultCamera` retornará 2 atributos: `base64` e `encrypted`:
+O objeto `SelfieResult` retornará 2 atributos: `base64` e `encrypted`:
 
 - O atributo `base64` pode ser utilizado caso você queira exibir um preview da imagem em seu app;
 - O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check** (detalhado [neste passo](#chamar-nossas-apis));  

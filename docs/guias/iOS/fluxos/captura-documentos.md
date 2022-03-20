@@ -3,7 +3,7 @@ sidebar_label: 'Captura de documentos'
 sidebar_position: 2
 ---
 
-# Reconhecimento facial
+# Captura de documentos
 
 ## Sobre este guia
 
@@ -28,13 +28,14 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
 
-- **CNH:** Captura da CNH aberta;
-- **CPF:** Captura do documento de CPF;
+- **Sem silhueta:** Captura documento genérico;
+- **RG:** Captura do RG (inteiro);
 - **RG frente:** Captura da frente do RG;
 - **RG verso:** Captura do verso do RG;
-- **Novo RG frente:** Captura a frente do novo tipo de RG;
-- **Novo RG verso:** Captura o verso do novo tipo de RG;
-- **Outros:** Captura documento genérico. Para este tipo de captura você deve informar o título do documento que será mostrado na captura para o usuário usando a propriedade `optional.LABEL_DOCUMENT_TYPE_OTHERS`.
+- **CNH:** Captura da CNH aberta;
+- **CNH frente:** Captura da frente da CNH;
+- **CNH verso:** Captura do verso da CNH;
+- **CPF:** Captura do documento de CPF;
 
 import imgDocumento from '/static/img/guias/img_documentos.png';
 
@@ -164,13 +165,13 @@ Todos os métodos acima devem devem ser criados da forma indicada em seu projeto
 
 <li> 
 
-### Implementar listeners para eventos da câmera
+### Implementar *delegates* para eventos da câmera
 
-O método de abertura da câmera (que será chamado no próximo passo) precisa saber o que fazer ao conseguir capturar uma imagem com **sucesso** ou ao ter algum **erro** no processo. Informaremos "o que fazer" ao método de abertura da câmera através da configuração de *listeners* que serão chamados em situações de sucesso ou erro.
+O método de abertura da câmera (que será chamado no próximo passo) precisa saber o que fazer ao conseguir capturar uma imagem com **sucesso** ou ao ter algum **erro** no processo. Informaremos "o que fazer" ao método de abertura da câmera através da configuração de *delegates* que serão chamados em situações de sucesso ou erro.
 
-Através da configuração dos *listeners*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorDocument`) ou sucesso (método `onSuccessDocument`) na captura de imagens.
+Através da configuração dos *delegates*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorDocument`) ou sucesso (método `onSuccessDocument`) na captura de imagens.
 
-Para a configuração dos *listeners*, você deverá também deverá implementar as interfaces `DocumentCameraDelegate` e `AcessoBioDocumentDelegate`:
+Para a configuração dos *delegates*, você deverá também deverá implementar as interfaces `DocumentCameraDelegate` e `AcessoBioDocumentDelegate`:
 
 <Tabs>
   <TabItem value="objectivec" label="Objective-C" default>
@@ -369,13 +370,16 @@ Quando a câmera estiver preparada, dispararemos o evento `onCameraReadyDocument
 Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido através do método `openDocument()`, informando os seguintes parâmetros:
 
 - Tipo de documento a ser capturado, sendo eles:
-  - `DocumentEnums.CNH`: Frame para captura de CNH.
-  - `DocumentEnums.CPF`: Frame para captura CPF.
-  - `DocumentEnums.RG`: Frame para captura do RG.
-  - `DocumentEnums.rgFrente`: Frame para captura da parte da frente do RG.
-  - `DocumentEnums.rgVerso`: Frame para captura da parte traseira do RG.
-  - `DocumentEnums.none`: Frame para captura de documento genérico, sem nenhuma silhueta.
-- Os listeners configurados [acima](#implementar-listeners-para-eventos-da-câmera) (aqui descritos como Self);
+  - `DocumentEnums.none`: Frame para captura de documento genérico, sem nenhuma silhueta;
+  - `DocumentEnums.RG`: Frame para captura do RG;
+  - `DocumentEnums.rgFrente`: Frame para captura da parte da frente do RG;
+  - `DocumentEnums.rgVerso`: Frame para captura da parte traseira do RG;
+  - `DocumentEnums.CNH`: Frame para captura de CNH;
+  - `DocumentEnums.cnhFrente`: Frame para captura da parte da frente da CNH;
+  - `DocumentEnums.cnhVerso`: Frame para captura da parte traseira da CNH;
+  - `DocumentEnums.CPF`: Frame para captura CPF;
+
+- Os **delegates** implementados [acima](#implementar-delegates-para-eventos-da-câmera) (aqui descritos como Self);
 
 
 <Tabs>

@@ -235,7 +235,7 @@ Configura o tempo máximo de captura ao utilizar a detecção da face (smart câ
 ### Exemplos de utilização
 
 <Tabs>
-  <TabItem value="java" label="Java" default>
+  <TabItem value="objectivec" label="Objective-C" default>
 
 ```objectivec
 #import "ViewController.h"
@@ -259,7 +259,7 @@ Configura o tempo máximo de captura ao utilizar a detecção da face (smart câ
 
   </TabItem>
 
-  <TabItem value="kotlin" label="Kotlin">
+  <TabItem value="swift" label="Swift">
 
 ```swift
 import UIKit

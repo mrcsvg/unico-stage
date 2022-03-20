@@ -8,17 +8,21 @@ hide_title: true
 
 ## Pré requisitos
 
-Antes de começar você deve ter certeza de que seu ambiente de desenvolvimento esteja de acordo com os seguintes pré-requisitos:
 
+### Ambiente de desenvolvimento 
+Antes de começar você deve ter certeza de que seu ambiente de desenvolvimento esteja de acordo com os seguintes pré-requisitos:
 - Possuir a versão 13 ou superior do [XCode](https://developer.apple.com/xcode/) (IDE oficial de desenvolvimento Apple) instalado;
 - Possuir a versão do SDK iOS na versão 11 ou superior;
-- Possuir configurado o gerenciador de pacotes CocoaPods;
 
-## Obtendo suas credenciais
+Caso use Swift em seu projeto:
+- Swift CI Compiler > 5.4.2
+- Swift Syntax > 4.2
 
-Para utilizar nossos SDKs você precisará importar suas credenciais (Client API Key) em seu projeto através de um arquivo JSON. Utilize o passo-a-passo a seguir para gerar e importar as credenciais em seu projeto.
+### Obtendo suas credenciais
 
-### Gerando as credenciais;
+Para utilizar nossos SDKs você precisará importar suas credenciais (Client API Key) em seu projeto por meio de um arquivo JSON. Utilize o passo-a-passo a seguir para gerar e importar as credenciais em seu projeto.
+
+#### Gerando as credenciais;
 
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
@@ -28,7 +32,7 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 6. Expanda a seção SDK iOS, adicione o nome de sua aplicação iOS e o Bundle ID;
 7. Salve as alterações.
 
-### Embarcando as credenciais em seu projeto
+#### Embarcando as credenciais em seu projeto
 
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
@@ -47,71 +51,22 @@ Se nada acontecer, verifique o bloqueador de popups de seu navegador
 
 ## Configuração e instalação
 
-### CocoaPods
+### Utilizando o CocoaPods
 
-Siga a documentação do [cocoapods](https://cocoapods.org/) para instalar o gerenciador em sua máquina, caso ainda não o possua.
+#### Instalação 
 
-### Permissões para utilização da câmera
+CocoaPods é um gerenciador de dependências para projetos Cocoa. Para instruções de uso e instalação, visite a documentação do oficial do [cocoapods](https://cocoapods.org/). Para integrar o SDK do **unico check**  em seu projeto Xcode usando CocoaPods, siga os passos abaixo:
 
-Para utilizar o método de abertura de câmera em seu projeto é necessário adicionar as permissões antes de compilar a sua aplicação. Segue o exemplo:
+Inclua o ´unicocheck-ios´ em seu *Podfile*:
 
-```xml 
-<key>NSCameraUsageDescription</key>
-<string>Camera usage description</string>
+```bash 
+pod ‘unicocheck-ios’
 ```
 
-### Instalação 
+Nosso SDK utiliza intra-dependências que possuem `xcconfigs` (configurações) que precisam ser alteradas em tempo de compilação. Para ter o SDK funcionando corretamente em seu projeto, você deve implementar o snippet abaixo em seu *Podfile* para garantir as configurações adequadas do `xcconfigs`.
 
-Para iniciar a instalação do SDK iOS, abra o terminal e navegue até o diretório raiz da sua aplicação. Após isso, digite no terminal:
+```bash
 
-```
-pod init
-```
-
-Um arquivo *Podfile* será criado em seu diretório. Abra este arquivo e adicione a seguinte linha: 
-
-
-```
-  pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios'
-```
-
-ou
-```
-  pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios'
-, :tag => ‘1.2.4’
-```
-
-Em seguida, utilize o comando abaixo em seu terminal para instalar as dependências.
-
-```
-pod install --repo-update
-```
-
-### Configuração do `xcconfigs`
-
-Nosso SDK utiliza intra-dependências que possuem `xcconfigs` (configurações) que precisam ser alteradas em tempo de compilação. 
-
-Para ter o SDK funcionando corretamente em seu projeto, você deve implementar o snippet abaixo em seu *Podfile* para garantir as configurações adequadas do `xcconfigs`.
-
-```
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if ["CryptoSwift", "JOSESwift"].include? target.name
-            target.build_configurations.each do |config|
-                config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-            end
-        end
-    end
-end  
-```
-
-:::info Mais detalhes
-Para mais informações, acesse o [link](https://github.com/CocoaPods/CocoaPods/issues/9775#issuecomment-722298424).
-:::
-
-A seguir um exemplo de como deve ficar seu *Podfile*:
-
-```
 target 'YOUR_TARGET' do
 
     # Comment the next line if you don't want to use dynamic frameworks
@@ -129,12 +84,44 @@ post_install do |installer|
             end
         end
     end
-end 
+end        
+
+```
+
+:::info Mais detalhes
+Para mais informações sobre o `xcconfigs`, acesse o [link](https://github.com/CocoaPods/CocoaPods/issues/9775#issuecomment-722298424).
+:::
+
+
+Em seguida, basta utilizar o comando abaixo em seu terminal para instalar as dependências.
+
+```
+pod install --repo-update
+```
+
+### Utilizando o Swift Package Manager (SPM)
+
+O Swift Package Manager é uma ferramenta para gerenciar a distribuição do código Swift. Ele é integrado ao sistema de compilação Swift para automatizar o processo de download, compilação e vinculação de dependências. Para adicionar o SDK do **unico check** ao seu projeto, basta incluir a dependência em seu arquivo `Package.swift`, conforme abaixo:
+
+```bash title="Package.swift"
+dependencies: [
+    .package(url: "https://github.com/acesso-io/unico-check-ios.git", .upToNextMajor(from: "2.1.0"))
+]
+```
+
+### Permissões para utilização da câmera
+
+Para utilizar o método de abertura de câmera em seu projeto é necessário adicionar as permissões antes de compilar a sua aplicação. Segue o exemplo:
+
+```xml 
+<key>NSCameraUsageDescription</key>
+<string>Camera usage description</string>
 ```
 
 :::caution Atenção
 Se estiver executando o projeto em .xcodeproj é necessário abrir o projeto em .xcworkspace!
 ::: 
+
 
 ## Precisando de ajuda?
 
