@@ -114,7 +114,7 @@ Esta versão possui correções e melhorias importantes em relação a versão a
 
 - A SDK está mais rápida com os novos modelos de IA para o câmera inteligente.
 
-- Removemos todos os métodos que permitiam acesso ao Liveness Ativo (até segunda ordem).
+- Removemos todos os métodos que permitiam acesso ao Liveness com interação (até segunda ordem).
 
 Entre outras limpezas que sempre estamos realizando ;)
 
@@ -206,7 +206,7 @@ pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios', :tag 
 pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios', :tag => ‘1.1.3’
 ```
 
-- Agora é possível customizar a imagem do ícone de popup de reset de sessão dentro do fluxo do Liveness Ativo.
+- Agora é possível customizar a imagem do ícone de popup de reset de sessão dentro do fluxo do Liveness com interação.
 
 
 ## Versão `1.0.1`

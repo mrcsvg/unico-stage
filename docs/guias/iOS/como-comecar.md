@@ -27,7 +27,7 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Crie ou edite uma nova `API Key`;
-4. Marque o campo "Utiliza liveness ativo" como **SIM** caso queira habilitar a câmera interativa;
+4. Marque o campo "Utiliza liveness com interação" como **SIM** caso queira habilitar a câmera interativa;
 5. Marque o campo "Utiliza autenticação segura na SDK" como **SIM**;
 6. Expanda a seção SDK iOS, adicione o nome de sua aplicação iOS e o Bundle ID;
 7. Salve as alterações.

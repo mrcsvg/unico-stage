@@ -17,11 +17,11 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Crie ou edite uma nova *API Key*;
-4. Caso deseje utilizar o **Liveness ativo** em seu app, verifique se o campo "**Utiliza liveness ativo**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso [suporte](mailto:suporte.unicocheck@unico.io) e solicite a habilitação;
+4. Caso deseje utilizar o **Liveness com interação** em seu app, verifique se o campo "**Utiliza liveness com interação**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso [suporte](mailto:suporte.unicocheck@unico.io) e solicite a habilitação;
 
-:::info Liveness Ativo
+:::info Liveness com interação
 
-Saiba mais sobre o liveness ativo [neste guia](#)
+Saiba mais sobre o liveness com interação [neste guia](#)
 
 :::
 
@@ -119,7 +119,7 @@ import { Unico } from '../js/unico-webframe-version.min.js'
 
 A forma que nosso componente será renderizada irá depender se você tem ou não a funcionalidade de **Liveness** (Prova de vida) ativa ou não.
 
-### Sem utilizar o **Liveness Ativo Facetec**
+### Sem utilizar o **Liveness com interação Facetec**
 
 O frame para captura será renderizado dentro de um `div` que deverá possuir seu `id` necessáriamente **igual** a `"box-camera"`.
 
@@ -132,9 +132,9 @@ O frame para captura será renderizado dentro de um `div` que deverá possuir se
 O identificador deste div deverá ser sempre igual a `id='box-camera'`.
 :::
 
-### Utilizando o **Liveness Ativo Facetec** 
+### Utilizando o **Liveness com interação Facetec** 
 
-Caso seu projeto utilize o **Liveness Ativo** você não precisa criar um `div` em seu código para a renderização. Neste caso, abriremos um modal dentro da mesma janela (Que ocupará toda a tela).
+Caso seu projeto utilize o **Liveness com interação** você não precisa criar um `div` em seu código para a renderização. Neste caso, abriremos um modal dentro da mesma janela (Que ocupará toda a tela).
 
 ## Precisando de ajuda?
 

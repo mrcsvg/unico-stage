@@ -170,7 +170,7 @@ Esta versão possui correções e melhorias importantes em relação a versão a
 
 - A SDK está mais rápida com os novos modelos de IA para o câmera inteligente.
 
-- Removemos todos os métodos que permitiam acesso ao Liveness Ativo (até segunda ordem).
+- Removemos todos os métodos que permitiam acesso ao Liveness com interação (até segunda ordem).
 
 Entre outras limpezas que sempre estamos realizando ;)
 
@@ -258,7 +258,7 @@ implementation 'com.github.acesso-io:acessobio-android:1.1.13'
 implementation 'com.github.acesso-io:acessobio-android:1.1.12'
 ```
 
-- Agora é possível customizar a imagem do ícone de popup de reset de sessão dentro do fluxo do Liveness Ativo.
+- Agora é possível customizar a imagem do ícone de popup de reset de sessão dentro do fluxo do Liveness com interação.
 
 - Removemos a obrigatoriedade da tag allowBackups em AndroidManifest.
 
@@ -268,7 +268,7 @@ implementation 'com.github.acesso-io:acessobio-android:1.1.12'
 implementation 'com.github.acesso-io:acessobio-android:1.1.11'
 ```
 
-- Limpeza geral na SDK e corrigimos pequenos bugs no fluxo do Liveness Ativo.
+- Limpeza geral na SDK e corrigimos pequenos bugs no fluxo do Liveness com interação.
 
 
 
@@ -409,7 +409,7 @@ Esta versão possui correções e melhorias importantes em relação a versão a
 
 - A SDK está mais rápida com os novos modelos de IA para o câmera inteligente.
 
-- Removemos todos os métodos que permitiam acesso ao Liveness Ativo (até segunda ordem).
+- Removemos todos os métodos que permitiam acesso ao Liveness com interação (até segunda ordem).
 
 Entre outras limpezas que sempre estamos realizando ;)
 
@@ -475,7 +475,7 @@ implementation 'com.github.acesso-io:acessobio-android:1.1.13'
 
 implementation 'com.github.acesso-io:acessobio-android:1.1.12'
 
-- Agora é possível customizar a imagem do ícone de popup de reset de sessão dentro do fluxo do Liveness Ativo.
+- Agora é possível customizar a imagem do ícone de popup de reset de sessão dentro do fluxo do Liveness com interação.
 
 - Removemos a obrigatoriedade da tag allowBackups em AndroidManifest.
 
@@ -483,4 +483,4 @@ implementation 'com.github.acesso-io:acessobio-android:1.1.12'
 
 implementation 'com.github.acesso-io:acessobio-android:1.1.11'
 
-- Limpeza geral na SDK e corrigimos pequenos bugs no fluxo do Liveness Ativo.
+- Limpeza geral na SDK e corrigimos pequenos bugs no fluxo do Liveness com interação.

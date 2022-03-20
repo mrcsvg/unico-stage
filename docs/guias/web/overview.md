@@ -62,7 +62,7 @@ Atualmente, nosso SDK Web possui as seguintes funcionalidades disponíveis:
 - Reconhecimento fácil;
     - Captura com Camêra Manual;
     - Captura com Camêra Inteligênte;
-    - Captura com prova de vida (Liveness ativo Facetec);
+    - Captura com prova de vida (Liveness com interação Facetec);
 - Captura de documentos;
 
 <!-- Acho que vale a pena trazer a explicação do que é cada funcionalidade pra ca... Validar com o Truffi -->
@@ -73,7 +73,7 @@ Alguns celulares antigos, como aparelhos com Android 6 ou iPhone 4, podem não p
 
 Nestes casos, a funcionalidade de *Câmera Normal* irá ser acionada como fallback, permitindo que o usuário faça a captura manual.
 
-Este tipo de fallback não está disponível para a captura com prova de vida (Liveness ativo);
+Este tipo de fallback não está disponível para a captura com prova de vida (Liveness com interação);
 
 :::
 
@@ -114,7 +114,7 @@ User <- YourApp : Feedback
 1. O Usuário acessa sua aplicação;
 2. Através de nosso SDK, sua aplicação solicita o frame para captura (conforme configurado em sua aplicação);
 3. Sua aplicação renderiza nosso frame para captura em um placeholder pré estabelecido;
-4. Sua aplicação captura a imagem (de forma automática, manual ou com o liveness ativo), gerando um token `JWT`;
+4. Sua aplicação captura a imagem (de forma automática, manual ou com o liveness com interação), gerando um token `JWT`;
 5. Sua aplicação repassa o `JWT` para seu servidor; 
 6. Seu servidor interage com as nossas APIs para validar a imagens (A documentação de nossas APIs pode ser encontrada [neste link](https://www3.acesso.io/identity/services/v3/docs/))
 7. Nossos servidores retornam a resposta da validação biométrica, que é repassada para sua aplicação;

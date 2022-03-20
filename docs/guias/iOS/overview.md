@@ -30,7 +30,7 @@ Atualmente, nosso SDK possui as seguintes funcionalidades disponíveis:
 - Reconhecimento fácil;
     - Captura com Camêra Manual;
     - Captura com Camêra Inteligênte;
-    - Captura com prova de vida (Liveness ativo Facetec);
+    - Captura com prova de vida (Liveness com interação Facetec);
 - Captura de documentos;
 
 :::info Fallback para *Câmera Inteligente* 
