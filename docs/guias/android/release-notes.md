@@ -9,12 +9,22 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível em nosso cdn ou pacote npm.
 :::
 
+## Versão 4.0.8
+Correção na encriptação
+
+## Versão 4.0.7
+Ajuste de dependencias para tornar nossas bibliotecas compativeis com minCompileSdk 30
+
+## Versão 4.0.6
+Adicionada compatibilidade com java 8
+Adicionado frames de captura de CNH frente e CNH verso
+
 ## Versão 4.0.5
-Latest
+Correção de erro no jitpack
 
 ## Versão 4.0.4
-Update GSON library to version 2.8.9
-Open camera document in prepare camera
+Update da biblioteca GSON para versão 2.8.9
+Ajuste no modulo de abertura de câmera
 
 ## Versão 4.0.3
 Corrigimos um bug no modulo de abertura da câmera de documentos
