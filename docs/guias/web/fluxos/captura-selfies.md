@@ -33,9 +33,9 @@ Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se a
 
 ### Captura Manual
 
-Neste tipo de experiência seu usuário é totalmente responsável por posicionar sua face dentro da área de captura. Após se posicionar corretamente, o usuário deve clicar em um botão para capturar a imagem. 
+Neste tipo de experiência existe um frame de captura para auxiliar o usuário a posicionar sua face corretamente. Após se posicionar corretamente, o usuário deve clicar em um botão para capturar a imagem. 
 
-Neste tipo de captura, nosso SDK não efetua nenhum tipo de validação do que está sendo capturado e isso pode aumentar as chances de problemas ao enviar o `base64` obtido para o motor de biometria.
+A SDK não efetua nenhum tipo de validação do que está sendo capturado. Caso a imagem capturada não possua uma face biométricamente válida, o `JWT` será recusado pelas APIs de nosso motor de biometria.
 
 import imgCapturaManual from '/static/img/guias/img_cameranormal.png';
 
@@ -44,9 +44,9 @@ import imgCapturaManual from '/static/img/guias/img_cameranormal.png';
 
 ### Captura Automática
 
-Neste tipo de experiência, identificamos a face do usuário automáticamente através de algorítimos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
+Neste tipo de experiência, identificamos a face do usuário automaticamente através de algoritmos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
 
-Por ajudar o usuário a enquadrar sua face na área de captura, esta opção pode diminuir problemas ao enviar o `base64` às APIs de nosso motor biométrico.
+Por ajudar o usuário a enquadrar sua face na área de captura, esta opção pode diminuir problemas ao enviar o `JWT` às APIs de nosso motor biométrico.
 
 import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
 
@@ -54,9 +54,10 @@ import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
 
 ### Liveness com interação Facetec
 
-Também conhecido como prova de vida, neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento. 
+Neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento.
 
 Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
+Tal como na Captura Automática a imagem é capturada sem a necessidade do usuário pressionar um botão. Desta forma tende a diminuir problemas ao enviar o `JWT` às APIs de nosso motor biométrico.
 
 :::info Ativação do Liveness com interação Facetec
 Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).

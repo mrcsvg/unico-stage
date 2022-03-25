@@ -17,12 +17,12 @@ const config = {
   organizationName: 'unico-mvg', // Usually your GitHub org/user name.
   projectName: 'unico-sdkbio-docs', // Usually your repo name.
 
-  plugins: [
+  plugins: [    
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // Options here
       docsRouteBasePath: '/',
       // language: "pt",
-    }]
+    }]    
   ],
   presets: [
     [
