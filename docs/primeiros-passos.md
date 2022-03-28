@@ -24,12 +24,12 @@ Dentro da documentação de cada SDK você encontrará guias para implementar no
 
 <div className="compatibility-table">
 
-| Funcionalidade | SDK Web | SDK Android | SDK iOS | SDK Flutter |
-| -------------- | ------- | ----------- | ------- | ----------- |
-| Camera com captura manual | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
-| Camera com captura inteligente | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
-| Camera com captura inteligente | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
-| Liveness com interação Facetec | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) |
+| Funcionalidade | SDK Web | SDK Android | SDK iOS | 
+| -------------- | ------- | ----------- | ------- | 
+| Camera de selfie com captura manual | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | 
+| Camera de selfie com captura inteligente | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | 
+| Liveness com interação Facetec | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | 
+| Camera de documentos com captura manual | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | ![Supported](/img/icons/yes.svg) | 
 
 </div>
 

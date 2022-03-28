@@ -11,7 +11,7 @@ Abaixo alguns pontos importantes para sua integração:
 - A SDK não realiza requisições a Rest-API do Unico check (vide [diagrama](/guias/web/overview#como-funciona-este-sdk));
 - É importante manter o SDK Unico check atualizado com a última versão disponível;
 - O SDK não funciona em emuladores, somente com aparelhos móveis físicos;
-- Verifique a versão mínima dos sistemas operacionais suportados;
+- Verifique a versão mínima dos sistemas operacionais suportados por cada versão da SDK (Android, iOS ou Web) em seus respectivos guias,
 - A funcionalidade de liveness com interação depende de contato com o nosso backend;
 - Não damos suporte para versões desatualizadas das nossas SDKs;
 

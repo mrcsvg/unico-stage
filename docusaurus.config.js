@@ -53,11 +53,8 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },        
-        googleAnalytics: {
-          trackingID: 'UA-168684880-1',
-          anonymizeIP: true,
-        },
         
+
 
       }),
 
@@ -256,6 +253,10 @@ const config = {
       i18n: {
         defaultLocale: 'pt-BR',
         locales: ['pt-BR'],
+      },
+      gtag: {
+        trackingID: 'G-5LCWFXWSWB',
+        // anonymizeIP: true,
       },
     }),
 };
