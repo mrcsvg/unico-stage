@@ -6,7 +6,7 @@ sidebar_position: 9
 # O que há de novo
 
 :::tip Dica
-Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível em nosso cdn ou pacote npm.
+Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
 

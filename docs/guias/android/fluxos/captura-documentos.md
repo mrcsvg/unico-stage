@@ -29,6 +29,8 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
 
 - **CNH:** Captura da CNH aberta;
+- **CNH frente:** Captura da frente da CNH;
+- **CNH verso:** Captura do verso da CNH;
 - **CPF:** Captura do documento de CPF;
 - **RG frente:** Captura da frente do RG;
 - **RG verso:** Captura do verso do RG;
