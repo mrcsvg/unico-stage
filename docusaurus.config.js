@@ -9,12 +9,12 @@ const simplePlantUML = require("@akebifiky/remark-simple-plantuml");
 const config = {
   title: 'Unico Check - SDKs',
   tagline: 'Se integre com a único de forma fácil e rápida',
-  url: 'https://unico-mvg.github.io',
-  baseUrl: '/unico-sdkbio-docs/',
+  url: 'https://developers.unico.io',
+  baseUrl: '/',
   onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'unico-mvg', // Usually your GitHub org/user name.
+  organizationName: 'unico-labs', // Usually your GitHub org/user name.
   projectName: 'unico-sdkbio-docs', // Usually your repo name.
 
   plugins: [    
