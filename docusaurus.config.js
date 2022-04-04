@@ -11,7 +11,7 @@ const config = {
   tagline: 'Se integre com a único de forma fácil e rápida',
   url: 'https://developers.unico.io',
   baseUrl: '/',
-  onBrokenLinks: 'error',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'unico-labs', // Usually your GitHub org/user name.
