@@ -20,8 +20,9 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn build
-
-      # This Action deploys the static content to gh-pages branch
+      - name: Adding CNAME file
+        run: |
+          echo "developers.unico.io" > ./build/CNAME
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
