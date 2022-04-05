@@ -9,6 +9,37 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão `2.1.3`
+
+```bash
+pod ‘unicocheck-ios’, '2.1.3'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Feature flag para poder selecionar a exibição ou não do logo da unico.
+ 
+## Versão `2.1.2`
+
+```bash
+pod ‘unicocheck-ios’, '2.1.2'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Correções nas configurações, que estavam impedindo o upload do archive/.ipa para a loja Apple.
+ 
+## Versão `2.1.0`
+
+```bash
+pod ‘unicocheck-ios’, '2.1.0'
+```
+
+Essa nova versão conta com as seguintes melhorias:
+
+- Oferecemos o suporte do gerenciador de pacotes Swift Package Manager (SPM).
+
+- Adicionamos dois novos frames de documentos: CNH frente e CNH verso.
 
 
 ## Versão `2.0.5`
