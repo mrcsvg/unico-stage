@@ -9,6 +9,36 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## `3.4.1`
+- Melhoria em tratamento anti-injection
+
+## `3.4.0`
+- Lançamento de frames de captura de documentos com CNH frente e CNH verso.
+- Captura de documentos em modo paisagem no desktop
+
+## `3.3.1`
+- Ajuste para utilização de função ao invés de classes
+- Ajuste na inicialização da camera após a segunda abertura
+
+## `3.3.0` 
+- Ajuste na abertura da camera para Motorola Edge 20
+- Ajuste nas informações criptografadas retornadas para o cliente
+
+## `3.2.2`
+- Ajuste no fechamento da camera da Facetec quando um erro é retornado
+
+## `3.2.1`
+- Remoção da tela de permissão de camera da facetec
+
+### `3.1.0` 
+- Feature Flag para exibição do logo da unico
+
+### `3.0.1`
+- Remoção do logo da unico
+
+## `3.0.0` 
+- Inclusão da funcionalidade de captura com liveness com interação
+
 ## Versão `2.0.3`
 Correção em um bug nas implementações em Angular > 6. Este bug deixava a tela congelada quando houvesse concorrência entre setTimeout's em nosso SDK e a aplicação do cliente."
 
