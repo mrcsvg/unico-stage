@@ -9,6 +9,18 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão 4.0.11
+Ajuste para otimizar performance da SDK
+Ajuste no seletor de câmera para dispositivos com múltiplas câmeras
+
+## Versão 4.0.10
+Correções em configuração de Temas
+Resolução de conflitos com bugfender
+
+## Versão 4.0.9
+Downgrade do Kotlin para 1.4.0
+Ajuste ao abrir a câmera pela segunda vez
+
 ## Versão 4.0.8
 Correção na encriptação
 
