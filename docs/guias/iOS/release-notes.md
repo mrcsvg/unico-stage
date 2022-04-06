@@ -9,6 +9,17 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão `2.2.1`
+
+```bash
+pod ‘unicocheck-ios’, '2.2.1'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Ajuste no tema padrão para o modo de baixa luminosidade do frame com interação.
+- Ajuste na customização do frame com interação.
+
 ## Versão `2.1.3`
 
 ```bash
