@@ -29,6 +29,8 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
 
 - **CNH:** Captura da CNH aberta;
+- **CNH frente:** Captura da frente da CNH;
+- **CNH verso:** Captura do verso da CNH;
 - **CPF:** Captura do documento de CPF;
 - **RG frente:** Captura da frente do RG;
 - **RG verso:** Captura do verso do RG;
@@ -60,7 +62,7 @@ Como primeiro passo, você deverá efetuar 3 passos simples em seu projeto:
 Instancie um novo Builder:
 
 ```javascript
-let unicoCameraBuilder = new Unico.UnicoCheckBuilder();
+const unicoCameraBuilder = new UnicoCheckBuilder();
 ```
 
 Especifique o caminho dos arquivos adicionais (caso adicionados em seu projeto):
@@ -177,7 +179,7 @@ Este é um passo opcional, porém recomendado.
 Oferecemos a possibilidade de customização do frame de captura por meio do nosso **Theme Builder**. Para efetuar a customização do frame basta gerar uma instância da classe `UnicoThemeBuilder` e invocar os métodos que customizam cada uma das propriedades do frame de captura, como exemplificados abaixo:
 
 ```javascript
-const unicoTheme = new Unico.UnicoThemeBuilder()
+const unicoTheme = new UnicoThemeBuilder()
 .setColorSilhouetteSuccess("#0384fc")
 .setColorSilhouetteError("#D50000")
 .setColorSilhouetteNeutral("#fcfcfc")
@@ -197,7 +199,7 @@ translate(50%, -50%); z-index: 10; text-align: center;">Carregando...</div>`)
 Após a geração do objeto de tema, conforme exemplificado acima, devemos passa-lo como parâmetro para o método `setTheme` do builder `unicoCameraBuilder`
 
 ```javascript
-unicoCameraBuilder.setTheme(theme);
+unicoCameraBuilder.setTheme(unicoTheme);
 ```
 
 <!-- Para mais detalhes sobre o `UnicoThemeBuilder`, consulte nossa a [API Reference](api/UnicoThemeBuilder) de nosso SDK Web. -->
@@ -211,19 +213,21 @@ unicoCameraBuilder.setTheme(theme);
 Finalmente, devemos iniciar a câmera com as configurações feitas até aqui. Para isto, criaremos uma instância de nosso **builder** através do método `build()`.
 
 ```javascript
-let unicoCamera = Unico.build();
+const unicoCamera = unicoCameraBuilder.build();
 ```
 
 A preparação da câmera será efetuada a partir do método `prepareSelfieCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
 - O arquivo JSON com suas credenciais (Gerado através deste [guia](../como-comecar#criando-ou-editando-uma-api-key);
 - Tipo de documento a ser capturado, sendo eles:
-  - `Unico.DocumentCameraTypes.CNH`: Frame para captura de CNH.
-  - `Unico.DocumentCameraTypes.CPF`: Frame para captura CPF.
-  - `Unico.DocumentCameraTypes.OUTROS("descrição")`: Frame somente com o retângulo onde pode ser usado para outros tipos de documentos. Neste tipo, haverá um parâmetro com a descrição do documento. (Ex. contrato)
-  - `Unico.DocumentCameraTypes.RG_FRENTE`: Frame para captura da frente do RG.
-  - `Unico.DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
-  - `Unico.DocumentCameraTypes.RG_FRENTE_NOVO`: Frame para captura da frente do novo RG.
-  - `Unico.DocumentCameraTypes.RG_VERSO_NOVO`: Frame para captura da parte traseira do novo RG.
+  - `DocumentCameraTypes.CNH`: Frame para captura de CNH.
+  - `DocumentCameraTypes.CNH_FRENTE`: Frame para captura da frente da CNH.
+  - `DocumentCameraTypes.CNH_VERSO`: Frame para captura do verso da CNH.
+  - `DocumentCameraTypes.CPF`: Frame para captura CPF.
+  - `DocumentCameraTypes.OUTROS("descrição")`: Frame somente com o retângulo onde pode ser usado para outros tipos de documentos. Neste tipo, haverá um parâmetro com a descrição do documento. (Ex. contrato)
+  - `DocumentCameraTypes.RG_FRENTE`: Frame para captura da frente do RG.
+  - `DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
+  - `DocumentCameraTypes.RG_FRENTE_NOVO`: Frame para captura da frente do novo RG.
+  - `DocumentCameraTypes.RG_VERSO_NOVO`: Frame para captura da parte traseira do novo RG.
 
 Este método gera uma *promisse* que ao ser resolvida, devolve um objeto que será utilizado para efetivamente abrir a câmera através do método `open`, que recebe como parâmetro as funções de `callback` configuradas [neste passo](#configurar-funções-de-callback).
 
@@ -232,7 +236,7 @@ Este método gera uma *promisse* que ao ser resolvida, devolve um objeto que ser
 Abaixo um exemplo utilizando a captura de CPF:
 
 ```javascript
-let cameraPromised = unicoCamera.prepareDocumentCamera("/services.json",
+const cameraPromised = unicoCamera.prepareDocumentCamera("/services.json",
 DocumentCameraTypes.CNH);
 
 cameraPromised.then(cameraOpener => cameraOpener.open(callback));
