@@ -10,46 +10,46 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 :::
 
 ## Versão 4.0.12
-Customização do botão de fechar camera
-Correções de erros na customização de sucesso
+- Customização do botão de fechar camera
+- Correções de erros na customização de sucesso
 
 ## Versão 4.0.11
-Ajuste para otimizar performance da SDK
-Ajuste no seletor de câmera para dispositivos com múltiplas câmeras
+- Ajuste para otimizar performance da SDK
+- Ajuste no seletor de câmera para dispositivos com múltiplas câmeras
 
 ## Versão 4.0.10
-Correções em configuração de Temas
-Resolução de conflitos com bugfender
+- Correções em configuração de Temas
+- Resolução de conflitos com bugfender
 
 ## Versão 4.0.9
-Downgrade do Kotlin para 1.4.0
-Ajuste ao abrir a câmera pela segunda vez
+- Downgrade do Kotlin para 1.4.0
+- Ajuste ao abrir a câmera pela segunda vez
 
 ## Versão 4.0.8
-Correção na encriptação
+- Correção na encriptação
 
 ## Versão 4.0.7
-Ajuste de dependencias para tornar nossas bibliotecas compativeis com minCompileSdk 30
+- Ajuste de dependencias para tornar nossas bibliotecas compativeis com minCompileSdk 30
 
 ## Versão 4.0.6
-Adicionada compatibilidade com java 8
-Adicionado frames de captura de CNH frente e CNH verso
+- Adicionada compatibilidade com java 8
+- Adicionado frames de captura de CNH frente e CNH verso
 
 ## Versão 4.0.5
-Correção de erro no jitpack
+- Correção de erro no jitpack
 
 ## Versão 4.0.4
-Update da biblioteca GSON para versão 2.8.9
-Ajuste no modulo de abertura de câmera
+- Update da biblioteca GSON para versão 2.8.9
+- Ajuste no modulo de abertura de câmera
 
 ## Versão 4.0.3
-Corrigimos um bug no modulo de abertura da câmera de documentos
+- Corrigimos um bug no modulo de abertura da câmera de documentos
 
 ## Versão 4.0.2
-Corrigimos um bug que esteva deixando o debug lento ao utilizar nosso SDK.
+- Corrigimos um bug que esteva deixando o debug lento ao utilizar nosso SDK.
 
 ## Versão 4.0.1
-Corrigimos um bug referente a: request prepare camera
+- Corrigimos um bug referente a: request prepare camera
 
 ## Versão 4.0.0
 
