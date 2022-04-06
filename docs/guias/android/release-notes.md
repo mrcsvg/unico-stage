@@ -9,6 +9,10 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão 4.0.12
+Customização do botão de fechar camera
+Correções de erros na customização de sucesso
+
 ## Versão 4.0.11
 Ajuste para otimizar performance da SDK
 Ajuste no seletor de câmera para dispositivos com múltiplas câmeras
