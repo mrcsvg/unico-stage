@@ -88,7 +88,7 @@ npm install unico-webframe
 #### Instalação através de nosso cdn
 Para instalar nosso SDK em seu projeto por meio de nosso cdn, basta efetuar o download do arquivo abaixo e importa-lo em seu projeto.
 
-- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.0.0.min.js.zip) da versão `3.0.0` 
+- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.3.0.min.js.zip) da versão `3.3.0` 
 
 
 :::note Nota sobre o *Câmera Inteligente* e modelos de IA
@@ -105,14 +105,14 @@ Após a instalação de nosso SDK, basta importa-lo da maneira correta em seu pr
 
 Caso tenha instalado nosso pacote via npm:
 ```javascript
-import { Unico } from 'unico-webframe'
+import { UnicoCheckBuilder, SelfieCameraTypes, UnicoThemeBuilder, DocumentCameraTypes } from 'unico-webframe'
 ```
 
 #### Caso tenha instalado o SDK através de nosso cdn
 
 Caso tenha instalado nosso pacote via cdn:
 ```javascript
-import { Unico } from '../js/unico-webframe-version.min.js'
+import { UnicoCheckBuilder, SelfieCameraTypes, UnicoThemeBuilder, DocumentCameraTypes } from '../js/unico-webframe-version.min.js'
 ```  
 
 ## Renderização

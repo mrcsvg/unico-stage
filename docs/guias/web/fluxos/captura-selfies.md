@@ -90,7 +90,7 @@ Como primeiro passo, você deverá efetuar 3 passos simples em seu projeto:
 Instancie um novo Builder:
 
 ```javascript
-let unicoCameraBuilder = new Unico.UnicoCheckBuilder();
+const unicoCameraBuilder = new UnicoCheckBuilder();
 ```
 
 Especifique o caminho dos arquivos adicionais (caso adicionados em seu projeto):
@@ -102,7 +102,7 @@ unicoCameraBuilder.setResourceDirectory("/resources");
 Especifique o caminho dos arquivos dos modelos de IA, caso utilize a funcionalidade de Câmera Inteligente
 
 ```javascript
-unicoCameraBuilder.setModelsPath(S"https://meusite.com.br/models");
+unicoCameraBuilder.setModelsPath("https://meusite.com.br/models");
 
 ```
 
@@ -220,7 +220,7 @@ Este é um passo opcional, porém recomendado.
 Oferecemos a possibilidade de customização do frame de captura por meio do nosso **Theme Builder**. Para efetuar a customização do frame basta gerar uma instância da classe `UnicoThemeBuilder` e invocar os métodos que customizam cada uma das propriedades do frame de captura, como exemplificados abaixo:
 
 ```javascript
-const unicoTheme = new Unico.UnicoThemeBuilder()
+const unicoTheme = new UnicoThemeBuilder()
 .setColorSilhouetteSuccess("#0384fc")
 .setColorSilhouetteError("#D50000")
 .setColorSilhouetteNeutral("#fcfcfc")
@@ -240,7 +240,7 @@ translate(50%, -50%); z-index: 10; text-align: center;">Carregando...</div>`)
 Após a geração do objeto de tema, conforme exemplificado acima, devemos passa-lo como parâmetro para o método `setTheme` do builder `unicoCameraBuilder`
 
 ```javascript
-unicoCameraBuilder.setTheme(theme);
+unicoCameraBuilder.setTheme(unicoTheme);
 ```
 
 <!-- Para mais detalhes sobre o `UnicoThemeBuilder`, consulte nossa a [API Reference](api/UnicoThemeBuilder) de nosso SDK Web. -->
@@ -255,7 +255,7 @@ unicoCameraBuilder.setTheme(theme);
 Finalmente, devemos iniciar a câmera com as configurações feitas até aqui. Para isto, criaremos uma instância de nosso **builder** através do método `build()`.
 
 ```javascript
-let unicoCamera = Unico.build();
+const unicoCamera = unicoCameraBuilder.build();
 ```
 
 Em seguida, com a câmera "montada", iremos configurar o modo de captura da camera. Como explicamos [acima](captura-selfies#recursos-disponíveis) existem três modos de captura disponíveis.
@@ -274,8 +274,8 @@ No entanto, sugerimos que você configure um tipo de câmera em seu builder (com
 A preparação da câmera será efetuada a partir do método `prepareSelfieCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
 - O arquivo JSON com suas credenciais (Gerado através deste [guia](../como-comecar#criando-ou-editando-uma-api-key);
 - Modo de câmera desejado, sendo eles:
-  - `Unico.SelfieCameraTypes.NORMAL` para o modo de câmera normal;
-  - `Unico.SelfieCameraTypes.SMART` para o modo de câmera inteligênte;
+  - `SelfieCameraTypes.NORMAL` para o modo de câmera normal;
+  - `SelfieCameraTypes.SMART` para o modo de câmera inteligênte;
 
 Este método gera uma *promisse* que ao ser resolvida, devolve um objeto que será utilizado para efetivamente abrir a câmera através do método `open`, que recebe como parâmetro as funções de `callback` configuradas [neste passo](#configurar-funções-de-callback).
 
@@ -291,7 +291,7 @@ Caso deseje utilizar a captura manual, passe o parâmetro `Unico.SelfieCameraTyp
 
 ```javascript
 
-  let cameraPromised = unicoCamera.prepareSelfieCamera("/services.json",Unico.SelfieCameraTypes.NORMAL);
+  const cameraPromised = unicoCamera.prepareSelfieCamera("/services.json", SelfieCameraTypes.NORMAL);
   
   cameraPromised.then(cameraOpener => cameraOpener.open(callback));
 ```
@@ -307,7 +307,7 @@ Caso deseje utilizar a captura automática, passe o parâmetro `Unico.SelfieCame
 Para a captura inteligente, os modelos de visão computacional também devem ser carregados através do método `setModelsPath`, conforme explicado no primeiro passo deste guia.
 
 ```javascript
-  let cameraPromised = unicoCamera.prepareSelfieCamera("/services.json",Unico.SelfieCameraTypes.SMART);
+  const cameraPromised = unicoCamera.prepareSelfieCamera("/services.json", SelfieCameraTypes.SMART);
 
   cameraPromised.then(cameraOpener => cameraOpener.open(callback));
 ```

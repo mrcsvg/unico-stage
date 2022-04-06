@@ -67,7 +67,7 @@ Disponibilizamos abaixo a lista possíveis códigos de erro de nosso SDK Web:
 
 ## Declaração de tipos para uso em TypeScript
 
-Caso esteja utilizando TypeScript em seu projeto dentro de src/ crie uma pasta @types, adicione o arquivo `unico-webframe.d.ts` com a declaração dos seguinte tipos:
+Caso esteja utilizando TypeScript em seu projeto dentro de src/ crie uma pasta @types, adicione o arquivo `unico-webframe.d.ts` com a seguinte declaração de tipos:
 
 ```javascript
 
@@ -103,8 +103,6 @@ declare module 'unico-webframe' {
 		setBackgroundColorButtons(color: string): UnicoThemeBuilder
 		setColorTextButtons(color: string): UnicoThemeBuilder
 		setBackgroundColorBoxMessage(color: string): UnicoThemeBuilder
-		2
-		Atualização SDK SmartLive Ativo
 		setColorTextBoxMessage(color: string): UnicoThemeBuilder
 		setHtmlPopupLoading(content: string): UnicoThemeBuilder;
 		build(): UnicoTheme;
@@ -118,14 +116,16 @@ declare module 'unico-webframe' {
 		name: string;
 		code: number;
 		description: string;
-		constructor(name: string, code: number, description ? : string)
+		constructor(name: string, code: number, description?: string)
 	}
 	export const SelfieCameraTypes: {
 		NORMAL: SelfieCameraType,
-		SMART: SelfieCameraType,
+		SMART: SelfieCameraType
 	};
 	export const DocumentCameraTypes: {
 		CNH: DocumentCameraType;
+		CNH_FRENTE: DocumentCameraType;
+    CNH_VERSO: DocumentCameraType;
 		CPF: DocumentCameraType;
 		OTHERS: (description: string) => DocumentCameraType;
 		RG_FRENTE: DocumentCameraType;
@@ -135,11 +135,11 @@ declare module 'unico-webframe' {
 	};
 	export interface MainView {
 		prepareSelfieCamera: (jsonPath: string, cameraType: SelfieCameraType) =>
-			Promise < CameraOpener > ;
+			Promise <CameraOpener>;
 		prepareDocumentCamera: (
 			jsonPath: string,
 			cameraType: DocumentCameraType
-		) => Promise < CameraOpener > ;
+		) => Promise <CameraOpener>;
 	}
 	export type SuccessPictureResponse = {
 		encrypted: string;
@@ -151,8 +151,6 @@ declare module 'unico-webframe' {
 		type: string;
 		stack: any[];
 	}
-	3
-	Atualização SDK SmartLive Ativo
 	export type SupportPictureResponse = {
 		code: number;
 		message: string;
