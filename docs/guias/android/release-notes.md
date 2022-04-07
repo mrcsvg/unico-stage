@@ -9,6 +9,9 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão 4.0.13
+- Ajuste no tema padrão para o modo de baixa luminosidade do frame com interação
+
 ## Versão 4.0.12
 - Customização do botão de fechar camera
 - Correções de erros na customização de sucesso
