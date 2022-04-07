@@ -42,7 +42,7 @@ Você poderá começar de forma rápida através de nossos [guias de integraçã
 
 ## Qual o objetivo de nossos SDKs?
 
-Criamos estes SDKs para te ajudar a potencializar a segurança do seu negócio e dos seus clientes sem prejudicar a experiencia, uma vez que ele permite personalizar a experiência aplicando sua própria identidade visual. Nossos SDKs foram desenvolvidos para abstrair a complexidade relacionada a manipulação da camera do dispositivo dos usuários e a captura de imagens. Além de outras vantagens:
+Criamos estes SDKs para te ajudar a potencializar a segurança do seu negócio e dos seus clientes sem prejudicar a experiência do usuário, permitindo inclusive personalizar a experiência de uso aplicando a identidade visual da sua marca. Nossos SDKs foram desenvolvidos para abstrair a complexidade relacionada a manipulação da camera do dispositivo dos usuários e a captura de imagens. Além de outras vantagens:
 
 #### Precisão na captura de imagens
 - Recursos que auxiliam o usuário a obter fotos biometricamente válidas, reduzindo o drop das imagens quando comparados a captura realizada pelas câmeras padrões dos dispositivos. Adicionamos SmartFrames, “elementos chave“ que se ajustam automaticamente à silhueta e proporção da tela do usuário permitindo uma melhor captura da imagem.
