@@ -18,7 +18,7 @@ pod ‘unicocheck-ios’, '2.2.1'
 Essa nova versão conta com o seguinte ajuste:
 
 - Ajuste no tema padrão para o modo de baixa luminosidade do frame com interação.
-- Ajuste na customização do frame com interação.
+- Ajuste na customização para o botão de fechar do frame com interação.
 
 ## Versão `2.1.3`
 
