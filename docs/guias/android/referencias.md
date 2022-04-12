@@ -174,7 +174,7 @@ acessoBioBuilder.setTheme(unicoTheme)
   </TabItem>
 </Tabs>
 
-É possivel também realizar customizações de forma estática, no seu arquivo **colors.xml** adicione o
+É possível também realizar customizações de forma estática, no seu arquivo **colors.xml** adicione o
 seguinte codigo:
 
 ```xml
