@@ -26,6 +26,8 @@ Nossa SDK conta com métodos de customização a fim de personalizar a experiên
 Método utilizado para customizar a cor de sucesso da silhueta.
 #### Método `getColorSilhouetteError()`
 Método utilizado para customizar a cor de erro da silhueta.
+#### Método `getColorSilhouetteNeutral()`
+Método utilizado para customizar a cor neutra da silhueta.
 #### Método `getColorBackground()`
 Método utilizado para customizar a cor de fundo da silhueta.
 #### Método `getColorBoxMessage()`
@@ -48,9 +50,6 @@ Método utilizado para customizar a cor de ícone do botão de tirar foto manual
 Método utilizado para customizar a cor de fundo do box na captura de documentos.
 #### Método `getColorTextBottomDocument()`
 Método utilizado para customizar a cor de texto do box na captura de documentos.
-#### Método `getImageIconPopupError()`
-Método utilizado para customizar o ícone do Popup de erro, exibido quando a face é posicionada de forma incorreta no frame de captura.
-
 
 ### Exemplos de utilização
 
@@ -165,6 +164,8 @@ val unicoTheme = object: IAcessoBioTheme {
     override fun getColorSilhouetteSuccess() = R.color.your_color
 
     override fun getColorSilhouetteError() = R.color.your_color
+    
+    override fun getColorSilhouetteNeutral() = R.color.your_color
 }
 
 acessoBioBuilder.setTheme(unicoTheme)
@@ -173,6 +174,26 @@ acessoBioBuilder.setTheme(unicoTheme)
   </TabItem>
 </Tabs>
 
+É possivel também realizar customizações de forma estática, no seu arquivo **colors.xml** adicione o
+seguinte codigo:
+
+```xml
+<color name="unico_color_background"> #YourColor </color> <!-- Utilizado para customizar a cor de fundo da silhueta. -->
+<color name="unico_color_silhouette_success"> #YourColor </color> <!-- Utilizado para customizar a cor de sucesso da silhueta. -->
+<color name="unico_color_silhouette_error"> #YourColor </color> <!-- Utilizado para customizar a cor de erro da silhueta. -->
+<color name="unico_color_silhouette_neutral"> #YourColor </color> <!-- Utilizado para customizar a cor neutra da silhueta. -->
+<color name="unico_color_box_message"> #YourColor </color> <!-- Utilizado para customizar a cor de fundo da mensagem. -->
+<color name="unico_color_text_message"> #YourColor </color> <!-- Utilizado para customizar a cor de texto da mensagem. -->
+<color name="unico_color_background_popup_error"> #YourColor </color> <!-- Utilizado para customizar a cor de fundo do popup. -->
+<color name="unico_color_text_popup_error"> #YourColor </color> <!-- Utilizado para customizar a cor de texto e ícones do popup. -->
+<color name="unico_color_background_button_popup_error"> #YourColor </color> <!-- Utilizado para customizar a cor de fundo do botão do popup. -->
+<color name="unico_color_text_button_popup_error"> #YourColor </color> <!-- Utilizado para customizar a cor de texto do botão do p -->
+<color name="unico_color_background_take_picture_button"> #YourColor </color> <!-- Utilizado para customizar a cor de fundo do botão de tirar foto manualmente. -->
+<color name="unico_color_icon_take_picture_button"> #YourColor </color> <!-- Utilizado para customizar a cor de ícone do botão de tirar foto manualmente. -->
+<color name="unico_color_background_bottom_document"> #YourColor </color> <!-- Utilizado para customizar a cor de fundo do box na captura de documentos. -->
+<color name="unico_color_text_bottom_document"> #YourColor </color> <!-- Utilizado para customizar a cor de texto do box na captura de documentos. -->
+<color name="unico_color_button_cancel"> #YourColor </color> <!-- Utilizado para customizar a cor botão de fechar camera -->
+```
 
 ## Configurando os tempos de sessão
 
