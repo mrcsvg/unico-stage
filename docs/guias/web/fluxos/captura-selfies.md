@@ -321,7 +321,7 @@ Para a captura inteligente, os modelos de visão computacional também devem ser
 
 ### Chamar nossas APIs
 
-A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `base64` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs/#section/Introducao)). 
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `base64` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs)). 
 
   
 ## Ficou com dúvidas?
