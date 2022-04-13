@@ -173,7 +173,8 @@ Para mais detalhes sobre os códigos de erro retornados por nosso SDK, consulte 
 ### Configurar layout do frame
 
 :::note Passo opcional
-Este é um passo opcional, porém recomendado. 
+Este é um passo opcional, porém recomendado.
+  
 :::
 
 Oferecemos a possibilidade de customização do frame de captura por meio do nosso **Theme Builder**. Para efetuar a customização do frame basta gerar uma instância da classe `UnicoThemeBuilder` e invocar os métodos que customizam cada uma das propriedades do frame de captura, como exemplificados abaixo:
@@ -250,7 +251,7 @@ cameraPromised.then(cameraOpener => cameraOpener.open(callback));
 
 ### Chamar nossas APIs
 
-A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `base64` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs)). 
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs). 
 
 
 ## Precisando de ajuda?
