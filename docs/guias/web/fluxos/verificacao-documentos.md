@@ -173,7 +173,8 @@ Para mais detalhes sobre os códigos de erro retornados por nosso SDK, consulte 
 ### Configurar layout do frame
 
 :::note Passo opcional
-Este é um passo opcional, porém recomendado. 
+Este é um passo opcional, porém recomendado.
+  
 :::
 
 Oferecemos a possibilidade de customização do frame de captura por meio do nosso **Theme Builder**. Para efetuar a customização do frame basta gerar uma instância da classe `UnicoThemeBuilder` e invocar os métodos que customizam cada uma das propriedades do frame de captura, como exemplificados abaixo:
