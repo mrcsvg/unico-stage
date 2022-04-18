@@ -217,7 +217,7 @@ Finalmente, devemos iniciar a câmera com as configurações feitas até aqui. P
 const unicoCamera = unicoCameraBuilder.build();
 ```
 
-A preparação da câmera será efetuada a partir do método `prepareDocumentCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
+A preparação da câmera será efetuada a partir do método `prepareSelfieCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
 - O arquivo JSON com suas credenciais (Gerado através deste [guia](../como-comecar#criando-ou-editando-uma-api-key);
 - Tipo de documento a ser capturado, sendo eles:
   - `DocumentCameraTypes.CNH`: Frame para captura de CNH.
@@ -251,7 +251,36 @@ cameraPromised.then(cameraOpener => cameraOpener.open(callback));
 
 ### Chamar nossas APIs
 
+<<<<<<< HEAD
 A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs). 
+=======
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `base64` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [neste artigo](#)). Exemplo abaixo:
+
+```bash
+curl --location --request POST 'https://example.com/services/v3/AcessoService.svc/processes' \
+--header 'APIKEY: 11111111-1111-1111-1111-111111111111' \
+--header 'Authorization: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "subject": {
+    "Code": "12345678910",
+    "Name": "Bob",
+    "Gender": "M",
+    "BirthDate": "01/01/0001",
+    "Email": "email@example.com",
+    "Phone": "5543999999999"
+  },
+  "onlySelfie": true,
+  "imagebase64": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAgSURBVDhPY/wPBAwUACYoTTYYNWDUABAYNWDgDWBgAABrygQclUTopgAAAABJRU5ErkJggg=="
+}'
+
+```
+
+</li>
+
+</ol>
+</Steps>
+>>>>>>> parent of 70d82be (Merge pull request #31 from unico-labs/MTruffi-patch-8)
 
 
 ## Precisando de ajuda?
