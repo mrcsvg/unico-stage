@@ -322,8 +322,11 @@ Para a captura inteligente, os modelos de visão computacional também devem ser
 ### Chamar nossas APIs
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs). 
 =======
+=======
+>>>>>>> parent of 70d82be (Merge pull request #31 from unico-labs/MTruffi-patch-8)
 A captura das imagens é apenas a primeira parte da nossa jornada. Após a captura, você deverá enviar o token `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [neste artigo](#)). Exemplo abaixo:
 
 ```bash
@@ -351,6 +354,9 @@ curl --location --request POST 'https://example.com/services/v3/AcessoService.sv
 
 </ol>
 </Steps>
+<<<<<<< HEAD
+>>>>>>> parent of 70d82be (Merge pull request #31 from unico-labs/MTruffi-patch-8)
+=======
 >>>>>>> parent of 70d82be (Merge pull request #31 from unico-labs/MTruffi-patch-8)
 
 ## Ficou com dúvidas?
