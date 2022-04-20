@@ -18,7 +18,6 @@ Aqui estão os problemas comuns que você pode encontrar ao usar o SDK e como re
 
 Se o seu problema ainda não estiver listado aqui ou você precisar de outro tipo de dúvida, disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato através de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
 

@@ -17,7 +17,7 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Crie ou edite uma nova *API Key*;
-4. Caso deseje utilizar o **Liveness com interação** em seu app, verifique se o campo "**Utiliza liveness com interação**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso [suporte](mailto:suporte.unicocheck@unico.io) e solicite a habilitação;
+4. Caso deseje utilizar o **Liveness com interação** em seu app, verifique se o campo "**Utiliza liveness com interação**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso suporte e solicite a habilitação;
 
 :::info Liveness com interação
 
@@ -88,7 +88,7 @@ npm install unico-webframe
 #### Instalação através de nosso cdn
 Para instalar nosso SDK em seu projeto por meio de nosso cdn, basta efetuar o download do arquivo abaixo e importa-lo em seu projeto.
 
-- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.3.0.min.js.zip) da versão `3.3.0` 
+- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.4.2.zip) da versão `3.4.2` 
 
 
 :::note Nota sobre o *Câmera Inteligente* e modelos de IA
@@ -147,7 +147,6 @@ Caso esteja utilizando Angular ou React-scripts 5 você poderá encontrar alguma
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato através de nosso e-mail [suporte.unicocheck@unico.io](mailto:suporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
 ## Próximos passos
