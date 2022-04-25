@@ -338,8 +338,13 @@ DocumentCameraDelegate, AcessoBioDocumentDelegate> {
 .m:
 - (IBAction)openCamera:(UIButton *)sender {
 
-    [[unicoCheck build]prepareDocumentCamera:self];
+    // with AcessoBioConfigDataSource implementation
+    [[unicoCheck build] prepareDocumentCamera:self config: [YourUnicoConfigClass new]];
 
+    // or
+
+    // with JSON config
+    [[unicoCheck build] prepareDocumentCamera:self jsonConfigName: @""];
 }
 
 ```
@@ -356,6 +361,12 @@ DocumentCameraDelegate, AcessoBioDocumentDelegate {
 
     @IBAction func openCamera(_ sender: Any) {
 
+        // with AcessoBioConfigDataSource implementation
+        unicoCheck.build().prepareDocumentCamera(self, config: YourUnicoConfigClass())
+
+        // or
+
+        // with JSON config
         unicoCheck.build().prepareDocumentCamera(self, jsonConfigName:
         "json-credenciais.json")
     }
