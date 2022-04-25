@@ -63,36 +63,6 @@ Inclua o ´unicocheck-ios´ em seu *Podfile*:
 pod ‘unicocheck-ios’
 ```
 
-Nosso SDK utiliza intra-dependências que possuem `xcconfigs` (configurações) que precisam ser alteradas em tempo de compilação. Para ter o SDK funcionando corretamente em seu projeto, você deve implementar o snippet abaixo em seu *Podfile* para garantir as configurações adequadas do `xcconfigs`.
-
-```bash
-
-target 'YOUR_TARGET' do
-
-    # Comment the next line if you don't want to use dynamic frameworks
-    use_frameworks!
-
-    pod ‘unicocheck-ios’
-
-end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if ["CryptoSwift", "JOSESwift"].include? target.name
-            target.build_configurations.each do |config|
-                config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-            end
-        end
-    end
-end        
-
-```
-
-:::info Mais detalhes
-Para mais informações sobre o `xcconfigs`, acesse o [link](https://github.com/CocoaPods/CocoaPods/issues/9775#issuecomment-722298424).
-:::
-
-
 Em seguida, basta utilizar o comando abaixo em seu terminal para instalar as dependências.
 
 ```
