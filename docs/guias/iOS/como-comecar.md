@@ -20,7 +20,7 @@ Caso use Swift em seu projeto:
 
 ### Obtendo suas credenciais
 
-Para utilizar nossos SDKs você precisará importar suas credenciais (Client API Key) em seu projeto por meio de um arquivo JSON. Utilize o passo-a-passo a seguir para gerar e importar as credenciais em seu projeto.
+Para utilizar nossos SDKs você precisará importar as credenciais unico (Client API Key) em seu projeto. Utilize o passo-a-passo a seguir para gerar e importar as credenciais.
 
 #### Gerando as credenciais;
 
@@ -38,16 +38,132 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Ao lado da `API Key` desejada, pressione o botão de **Download**;
 4. Selecione a opção **iOS**;
-5. Clique em "**Gerar**";
-6. Automaticamente, uma nova aba será aberta contendo informações do projeto em formato JSON.
-7. Salve o conteúdo desta nova aba em um novo arquivo JSON;
-8. Adicione o arquivo salvo em seu projeto. (Explicaremos como utilizar o arquivo em nossos guias)
-
+5. Clique em "**Gerar**" e automaticamente, uma nova aba será aberta contendo informações de credenciais do projeto em formato JSON.
 <!-- TODO Destacar que o arquivo precisa estar em um lugar público -->
 
 :::caution Bloqueador de Pop-ups
 Se nada acontecer, verifique o bloqueador de popups de seu navegador
 :::
+6. Atualmente temos duas opções para associar as informações contidas no JSON ao projeto: **Implementando o protocolo** `AcessoBioConfigDataSource` ou **Embarcando o arquivo JSON**. Veja abaixo: 
+
+#### Opcão 1: Implementação do protocolo `AcessoBioConfigDataSource`
+
+1. Implemente o protocolo `AcessoBioConfigDataSource` em sua classe.  
+2. Copie e cole as informações contidas no JSON em seus respectivos métodos, como exemplificado abaixo: 
+
+Arquivo JSON: 
+
+```json
+{
+	"project_info":{
+		"project_number":"<YOUR_PROJECT_NUMBER>",
+		"project_id":"<YOUR_PROJECT_ID>"
+	},
+	"client_info":{
+		"mobilesdk_app_id":"<YOUR_MOBILE_SDK_APP_ID>",
+		"ios_client_info":{
+			"bundle_identifier":"<YOUR_MOBILE_BUNDLE_IDENTIFIER>"
+		}
+	},
+	"host_info":{
+		"host_info":"<YOUR_HOST_INFO>",
+		"host_key":"<YOUR_HOST_KEY>"
+	}
+}
+```
+
+Implementação de exemplo:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="objectivec" label="Objective-c" default>
+
+```objectivec 
+
+.h:
+#import <AcessoBio/AcessoBioManager.h>
+#import <AcessoBio/AcessoBio-Swift.h>
+
+@interface YourUnicoConfigClass : AcessoBioConfigDataSource {}
+
+@end
+
+.m:
+@implementation YourUnicoConfigClass
+
+- (NSString * _Nonnull)getBundleIdentifier {
+    return @"<YOUR_MOBILE_BUNDLE_IDENTIFIER>"
+}
+
+- (NSString * _Nonnull)getHostInfo {
+    return @"<YOUR_HOST_INFO>"
+}
+
+- (NSString * _Nonnull)getHostKey {
+    return @"<YOUR_HOST_KEY>"
+}
+
+- (NSString * _Nonnull)getMobileSdkAppId {
+    return @"<YOUR_MOBILE_SDK_APP_ID>"
+}
+
+- (NSString * _Nonnull)getProjectId {
+    return @"<YOUR_PROJECT_ID>"
+}
+
+- (NSString * _Nonnull)getProjectNumber {
+    return @"<YOUR_PROJECT_NUMBER>"
+}
+
+@end
+
+```
+  </TabItem>
+
+  <TabItem value="swift" label="Swift">
+
+```swift
+
+import AcessoBio
+
+class YourUnicoConfigClass : AcessoBioConfigDataSource {
+    
+    func getProjectNumber() -> String {
+        return "<YOUR_PROJECT_NUMBER>"
+    }
+    
+    func getProjectId() -> String {
+        return "<YOUR_PROJECT_ID>"
+    }
+    
+    func getMobileSdkAppId() -> String {
+        return "<YOUR_MOBILE_SDK_APP_ID>"
+    }
+    
+    func getBundleIdentifier() -> String {
+        eturn "<YOUR_MOBILE_BUNDLE_IDENTIFIER>"
+    }
+    
+    func getHostInfo() -> String {
+        return "<YOUR_HOST_INFO>"
+    }
+    
+    func getHostKey() -> String {
+        return "<YOUR_HOST_KEYO>"
+    }
+}
+
+```
+
+  </TabItem>
+</Tabs>
+
+#### Opcão 2: Embarcando o arquivo JSON
+
+Adicione o arquivo salvo na raiz do seu projeto.
+
 
 ## Configuração e instalação
 
