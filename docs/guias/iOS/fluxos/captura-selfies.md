@@ -474,8 +474,13 @@ SelfieCameraDelegate, AcessoBioSelfieDelegate> {
 .m:
 - (IBAction)openCamera:(UIButton *)sender {
 
-    [[unicoCheck build]prepareSelfieCamera:self];
+    // with AcessoBioConfigDataSource implementation
+    [[unicoCheck build] prepareSelfieCamera:self config: [YourUnicoConfigClass new]];
 
+    // or
+
+    // with JSON config
+    [[unicoCheck build] prepareSelfieCamera:self jsonConfigName: @""];
 }
 
 ```
@@ -492,6 +497,12 @@ SelfieCameraDelegate, AcessoBioSelfieDelegate {
 
     @IBAction func openCamera(_ sender: Any) {
 
+        // with AcessoBioConfigDataSource implementation
+        unicoCheck.build().prepareSelfieCamera(self, config: YourUnicoConfigClass())
+
+        // or
+
+        // with JSON config
         unicoCheck.build().prepareSelfieCamera(self, jsonConfigName:
         "json-credenciais.json")
     }
