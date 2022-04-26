@@ -9,6 +9,9 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## `3.4.3`
+- Correção no frame de captura de CNH Aberta em desktop
+
 ## `3.4.2`
 - Melhoria na qualidade da imagem retornada no base64
 - Melhoria em requests de autenticação
