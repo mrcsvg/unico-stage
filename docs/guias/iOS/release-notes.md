@@ -9,6 +9,17 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão `2.3.0`
+
+```bash
+pod ‘unicocheck-ios’, '2.3.0'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Atualização da versão da SDK do Smartlive.
+- Possibilidade de executar os métodos ```prepareSelfieCamera``` e ```prepareDocumentCamera``` sem o arquivo ```json```, utilizando uma classe do tipo `AcessoBioConfigDataSource`.
+
 ## Versão `2.2.1`
 
 ```bash
