@@ -25,6 +25,7 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 - Ajuste no seletor de câmera para dispositivos com múltiplas câmeras
 
 ## Versão 4.0.10
+- Ajuste nas configurações que geram o objeto encriptado unico
 - Correções em configuração de Temas
 - Resolução de conflitos com bugfender
 
