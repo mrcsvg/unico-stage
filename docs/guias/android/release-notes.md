@@ -9,6 +9,10 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão 4.0.14
+- Atualização da versão do SDK do Smartlive.
+- Remoção de pedidos de permissões que não estavam sendo usados.
+
 ## Versão 4.0.13
 - Ajuste no tema padrão para o modo de baixa luminosidade do frame com interação
 
