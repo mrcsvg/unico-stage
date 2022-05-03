@@ -48,7 +48,7 @@ Criamos estes SDKs para te ajudar a potencializar a segurança do seu negócio e
 - Recursos que auxiliam o usuário a obter fotos biometricamente válidas, reduzindo o drop das imagens quando comparados a captura realizada pelas câmeras padrões dos dispositivos. Adicionamos SmartFrames, “elementos chave“ que se ajustam automaticamente à silhueta e proporção da tela do usuário permitindo uma melhor captura da imagem.
 
 #### Segurança reforçada
-- Recursos de criptografia e segurança contra injection de imagens, possuindo também funcionalidades que previnem fraudes adaptadas a nossos diferentes fluxos, tais como: Liveness com interação, câmera inteligente, câmera normal e captura de documentos. 
+- Recursos de criptografia e segurança contra injection de imagens, possuindo também funcionalidades que previnem fraudes adaptadas a nossos diferentes fluxos, tais como: Smartlive com interação, câmera inteligente, câmera normal e captura de documentos. 
 - Camadas de segurança que funcionam de forma complementar, tanto a nível da aplicação quanto em relação aos dados que trafegados entre as SDKs e nosso backend.
 - Ofuscação de código, bloqueio de emulador e checagem de bundle do aplicativo que a está executando.
 

@@ -23,11 +23,11 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Crie ou edite uma nova `API Key`;
-4. Caso deseje utilizar o **Liveness com interação** em seu app, verifique se o campo "**Utiliza liveness com interação**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso suporte e solicite a habilitação;
+4. Caso deseje utilizar o **Smartlive com interação** em seu app, verifique se o campo "**Utiliza liveness com interação**" está como **SIM**, caso esteja como **NÃO** (ou não esteja aparecendo) entre em contato com nosso suporte e solicite a habilitação;
 
-:::info Liveness com interação
+:::info Smartlive com interação
 
-Saiba mais sobre o liveness com interação [neste guia](#)
+Saiba mais sobre o Smartlive com interação [neste guia](#)
 
 :::
 
