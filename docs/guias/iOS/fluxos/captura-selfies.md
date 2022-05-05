@@ -274,7 +274,7 @@ Por padrão, nosso SDK possui o enquadramento inteligente e a captura automátic
   <TabItem value="swift" label="Swift">
 
 ```swift {4-5}
-@IBAction func configureSmartCamera(_ sender: Any) 
+@IBAction func configureSmartCamera(_ sender: Any) {
 
     // Objeto unicoCheck da classe AcessoBioManager
     unicoCheck.setSmartFrame(false)
