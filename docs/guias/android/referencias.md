@@ -197,7 +197,7 @@ seguinte codigo:
 
 ## Configurando os tempos de sessão
 
-È possível alterar o tempo máximo de sessão do seu usuário e o tempo máximo de captura ao utilizar a funcionalidade de detecção da face (Smart Camera). Para isto, através de nosso builder, disponibilizamos 2 métodos:
+É possível alterar o tempo máximo de sessão do seu usuário e o tempo máximo de captura ao utilizar a funcionalidade de detecção da face (Smart Camera). Para isto, através de nosso builder, disponibilizamos 2 métodos:
 
 #### Método `setTimeoutSession`: 
 Configura o tempo máximo de sessão do seu usuário (em segundos). Caso ele ultrapasse o tempo determinado em seu processo para capturar a foto, você poderá apresentar alguma mensagem personalizável ou instrução ao usuário. O valor padrão é de 40 segundos e seu valor mínimo também é de 40 segundos.
