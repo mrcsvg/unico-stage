@@ -89,6 +89,36 @@ Adicione também o módulo 'util' em allowedCommonJsDependencies no bloco build 
 },
 ```
 
+### Next.js
+
+Caso você esteja utilizando o Next.js para desenvolver sua aplicação, temos algumas orientações.
+
+Diferentemente de outros frameworks, no Next.js caso tente acessar um objeto no escopo do browser (ex: navigator) fora dos métodos de ciclo de vida como componentDidMount() ou useEffect() um erro é gerado.
+
+Para correção do erro relatado acima sugerimos que importe os componentes do SDK da seguinte maneira:
+```
+useEffect(() => {
+  (async () => {
+    const {
+      UnicoCheckBuilder,
+      UnicoThemeBuilder,
+      SelfieCameraTypes,
+      DocumentCameraTypes
+    } = await import('unico-webframe');
+  })();
+}, []);
+```
+
+Caso esteja utilizando TypeScript no projeto, siga as orientações em [Declaração de tipos para uso em TypeScript](referencias/#declaração-de-tipos-para-uso-em-typescript). As tipagens podem ser importadas acima do seu componente junto com outras importações. Exemplo:
+```
+import ...
+import ...
+import ...
+import ...
+
+import { UnicoTheme, MainView, SuccessPictureResponse } from "unico-webframe";
+```
+
 ### React com react-scripts 5
 
 Caso você esteja utilizando a versão 5 do create-react-app para desenvolver sua aplicação, é preciso realizar os seguintes passos.
