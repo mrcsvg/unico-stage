@@ -85,7 +85,7 @@ android.enableJetifier=true
 
 Adicione permissão para utilização da câmera em seu arquivo `AndroidManifest.xml`:
 
-```xml title="gradle.properties"
+```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
@@ -97,7 +97,7 @@ Após configurar nosso SDK em seu projeto, basta importa-lo da maneira correta e
 Por favor, note que a dependência deve ser incluída em um arquivo diferente do que foi utilizado no passo anterior. Neste passo, utilizamos o arquivo `build.gradle` referente ao módulo e não ao projeto.
 :::
 
-```java title="app/gradle.properties"
+```java title="app/build.gradle"
 /* unico */
 implementation 'com.github.acesso-io:acessobio-android:+'
 ```

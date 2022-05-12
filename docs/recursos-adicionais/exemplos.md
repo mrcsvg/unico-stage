@@ -14,6 +14,7 @@ Abaixo você encontrará uma coleção de projetos de exemplo para entender melh
 | Stack  | Descrição  | Link |
 |--------------------|---------|----------|
 | Angular | Prova de conceito em Angular que implementa o unico-webframe para Web Mobile | [Github](https://github.com/acesso-io/unico-webframe-poc-angular) |
+| React JS | Prova de conceito em React JS que implementa o unico-webframe para Web | [Github](https://github.com/acesso-io/unico-webframe-poc-react) |
 
 ## Projetos Mobile
 
