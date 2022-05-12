@@ -109,7 +109,7 @@ useEffect(() => {
 }, []);
 ```
 
-Caso esteja utilizando TypeScript no projeto, siga as orientações em Declaração de tipos para uso em TypeScript. As tipagens podem ser importadas acima do seu componente junto com outras importações. Exemplo:
+Caso esteja utilizando TypeScript no projeto, siga as orientações em [Declaração de tipos para uso em TypeScript](https://developers.unico.io/guias/web/referencias#declara%C3%A7%C3%A3o-de-tipos-para-uso-em-typescript). As tipagens podem ser importadas acima do seu componente junto com outras importações. Exemplo:
 ```
 import ...
 import ...
