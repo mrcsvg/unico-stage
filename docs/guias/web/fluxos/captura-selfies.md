@@ -196,8 +196,8 @@ Um dos objetos que devemos passar como parâmetro ao método responsável por re
         console.error(error)
         //confira na aba "Configurações" sobre os tipos de erros
       },
-      support: (error) => {
-        console.log(error);
+      support: (supportMessage) => {
+        console.log(supportMessage);
       }
     }
   };
