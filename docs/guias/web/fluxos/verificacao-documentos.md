@@ -147,12 +147,16 @@ Um dos objetos que devemos passar como parâmetro ao método responsável por re
 ```javascript
   var callback = {
     on: {
-      success: function(obj) {
+      success: (obj) => {
         console.log(obj.base64);
+        console.log(obj.encrypted);
       },
-      error: function(error) {
+      error: (error) => {
         console.error(error)
         //confira na aba "Configurações" sobre os tipos de erros
+      },
+      support: (error) => {
+        console.log(error);
       }
     }
   };
