@@ -9,6 +9,10 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão 4.0.15
+- Melhoria da resolução da imagem gerada pelo Smartlive com interação para celulares de qualidade média/alta
+- Atualização do google play services ML Kit face detection para a versão 17.0.1.
+
 ## Versão 4.0.14
 - Atualização da versão do SDK do Smartlive.
 - Remoção de pedidos de permissões que não estavam sendo usados.
