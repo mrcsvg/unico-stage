@@ -62,7 +62,7 @@ Atualmente, nosso SDK Web possui as seguintes funcionalidades disponíveis:
 - Reconhecimento fácil;
     - Captura com Camêra Manual;
     - Captura com Camêra Inteligênte;
-    - Captura com prova de vida (Liveness com interação Facetec);
+    - Captura com prova de vida (Smartlive com interação Facetec);
 - Captura de documentos;
 
 <!-- Acho que vale a pena trazer a explicação do que é cada funcionalidade pra ca... Validar com o Truffi -->
@@ -73,7 +73,7 @@ Alguns celulares antigos, como aparelhos com Android 6 ou iPhone 4, podem não p
 
 Nestes casos, a funcionalidade de *Câmera Normal* irá ser acionada como fallback, permitindo que o usuário faça a captura manual.
 
-Este tipo de fallback não está disponível para a captura com prova de vida (Liveness com interação);
+Este tipo de fallback não está disponível para a captura com prova de vida (Smartlive com interação);
 
 :::
 

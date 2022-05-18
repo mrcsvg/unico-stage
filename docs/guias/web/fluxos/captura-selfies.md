@@ -52,25 +52,25 @@ import imgCapturaAutomatica from '/static/img/guias/img_camerainteligente.png';
 
 <img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
 
-### Liveness com interação Facetec
+### Smartlive com interação Facetec
 
 Neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento.
 
 Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
 Tal como na Captura Automática a imagem é capturada sem a necessidade do usuário pressionar um botão. Desta forma tende a diminuir problemas ao enviar o `JWT` às APIs de nosso motor biométrico.
 
-:::info Ativação do Liveness com interação Facetec
+:::info Ativação do Smartlive com interação Facetec
 Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).
 :::
 
 ## Implementação
-### Liveness com interação Facetec
+### Smartlive com interação Facetec
 
 Também conhecido como prova de vida, neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento. 
 
 Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
 
-:::info Ativação do Liveness com interação Facetec
+:::info Ativação do Smartlive com interação Facetec
 Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).
 :::
 
@@ -112,13 +112,13 @@ unicoCameraBuilder.setModelsPath("https://meusite.com.br/models");
 
 ### Configurar o tamanho do frame
 
-:::note Passo não requerido para modo **Liveness com interação Facetec**
+:::note Passo não requerido para modo **Smartlive com interação Facetec**
 
-Este passo só é necessário caso você **não** esteja utilizando o **Liveness com interação Facetec**, pois neste modo o SDK renderiza um frame que ocupa todo o espaço da tela e se ajusta automaticamente.
+Este passo só é necessário caso você **não** esteja utilizando o **Smartlive com interação Facetec**, pois neste modo o SDK renderiza um frame que ocupa todo o espaço da tela e se ajusta automaticamente.
 
 :::
 
-Caso não esteja utilizando **Liveness com interação Facetec**, sugerimos que você configure o tamanho de nosso frame dentro de sua aplicação, a fim de otimizar a área de captura dentro de seu WebApp. Confira abaixo como fazer esta configuração para Web Desktop ou Mobile.
+Caso não esteja utilizando **Smartlive com interação Facetec**, sugerimos que você configure o tamanho de nosso frame dentro de sua aplicação, a fim de otimizar a área de captura dentro de seu WebApp. Confira abaixo como fazer esta configuração para Web Desktop ou Mobile.
 
 :::tip Dica
 
@@ -264,12 +264,12 @@ const unicoCamera = unicoCameraBuilder.build();
 
 Em seguida, com a câmera "montada", iremos configurar o modo de captura da camera. Como explicamos [acima](captura-selfies#recursos-disponíveis) existem três modos de captura disponíveis.
 
-Caso **não** esteja utilizando o modo **Liveness com interação Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
+Caso **não** esteja utilizando o modo **Smartlive com interação Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
 
 
 :::tip Dica
 
-Caso você esteja utilizando o modo **Liveness com interação Facetec**, a configuração do tipo de câmera passa a ser irrelevante, pois este modo oferece uma experiência pré-definida que não pode ser alterada.
+Caso você esteja utilizando o modo **Smartlive com interação Facetec**, a configuração do tipo de câmera passa a ser irrelevante, pois este modo oferece uma experiência pré-definida que não pode ser alterada.
 
 No entanto, sugerimos que você configure um tipo de câmera em seu builder (como descrito neste passo), pois caso você desabilite o modo **Liveness com interação Facetec** em seu portal do cliente (e gere um novo JSON), você não precisará alterar seu código.
 

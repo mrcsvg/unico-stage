@@ -25,7 +25,7 @@ O SDK iOS da Unico aumenta o tamanho do seu aplicativo em 4,9 MB.
 Nossas SDKs contam com recursos de criptografia e segurança contra injection de imagens. Além disso, nossas SDKs possuem recursos que auxiliam o usuário a obter fotos biometricamente válidas, reduzindo o drop das imagens quando comparados a captura realizada pelas câmeras padrões dos dispositivos.
 
 ## Qual é o diferencial da nossa SDK?
-As SDKs da unico possuem funcionalidades de segurança anti fraude e usabilidade adaptados a diferentes fluxos, tais como: Liveness com interação, câmera inteligente, câmera normal e captura de documentos. 
+As SDKs da unico possuem funcionalidades de segurança anti fraude e usabilidade adaptados a diferentes fluxos, tais como: Smartlive com interação, câmera inteligente, câmera normal e captura de documentos. 
 
 ## Quais as camadas de segurança das SDKs unico?
 Nossas SDKs possuem diversas camadas de segurança que funcionam de forma complementar, tanto a nivel da aplicação quanto em relação aos dados que trafegados entre as SDKs e nosso backend. Nossa SDK possui ofuscação de código, bloqueio de emulador e checagem de bundle do aplicativo que a está executando.
