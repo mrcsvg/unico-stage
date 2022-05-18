@@ -21,7 +21,7 @@ Para utilizar nossos SDKs você precisará importar suas credenciais (Client API
 
 :::info Smartlive com interação
 
-Saiba mais sobre o Smartlive com interação [neste guia](#)
+Saiba mais sobre o Smartlive com interação [aqui](/conceitos-importantes#smartlive-com-interação)
 
 :::
 

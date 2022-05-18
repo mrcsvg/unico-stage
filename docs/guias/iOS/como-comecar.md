@@ -28,6 +28,13 @@ Para utilizar nossos SDKs você precisará importar as credenciais unico (Client
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Crie ou edite uma nova `API Key`;
 4. Marque o campo "Utiliza liveness com interação" como **SIM** caso queira habilitar a câmera interativa;
+
+:::info Smartlive com interação
+
+Saiba mais sobre o Smartlive com interação [aqui](/conceitos-importantes#smartlive-com-interação)
+
+:::
+
 5. Marque o campo "Utiliza autenticação segura na SDK" como **SIM**;
 6. Expanda a seção SDK iOS, adicione o nome de sua aplicação iOS e o Bundle ID;
 7. Salve as alterações.
@@ -213,7 +220,6 @@ Se estiver executando o projeto em .xcodeproj é necessário abrir o projeto em 
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
-- Entre em contato através de nosso e-mail [uporte.unicocheck@unico.io](mailto:uporte.unicocheck@unico.io);
 - Caso já seja um parceiro, você também pode entrar em contato através de nossa [Central de Ajuda](https://ajuda.unico.io/hc/pt-br/categories/360002344171);
 
 ## Próximos passos
