@@ -9,6 +9,16 @@ sidebar_position: 9
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
 :::
 
+## Versão `2.3.1`
+
+```bash
+pod ‘unicocheck-ios’, '2.3.1'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Melhoria da resolução da imagem gerada pelo Smartlive com interação para celulares de qualidade média/alta.
+
 ## Versão `2.3.0`
 
 ```bash
