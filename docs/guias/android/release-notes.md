@@ -7,6 +7,8 @@ sidebar_position: 9
 
 :::tip Dica
 Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a ultima versão disponível.
+
+Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
 ## Versão 4.0.15
