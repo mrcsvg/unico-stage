@@ -19,7 +19,7 @@ pod ‘unicocheck-ios’, '2.3.2'
 
 Essa nova versão conta com o seguinte ajuste:
 
-- Ajuste no fechamento manual do frame de captura com interação.
+- Hot fix: ajuste no callback do fechamento manual do frame de captura com interação.
 
 ## Versão `2.3.1`
 
