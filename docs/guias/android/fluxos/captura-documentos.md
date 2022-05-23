@@ -244,7 +244,7 @@ iAcessoBioDocument cameraListener = new iAcessoBioDocument() {
     public void onErrorDocument(ErrorBio errorBio) { }
 };
 
-unicoCheckCamera.prepareDocumentCamera(new DocumentCameraListener() {
+unicoCheckCamera.prepareDocumentCamera("json-credenciais.json", new DocumentCameraListener() {
     @Override
     public void onCameraReady(UnicoCheckCameraOpener.Document cameraOpener) {
         cameraOpener.open(DocumentType.CNH, cameraListener);
@@ -267,7 +267,7 @@ val cameraListener: iAcessoBioDocument = object : iAcessoBioDocument {
     override fun onErrorDocument(errorBio: ErrorBio?) {}
 }
 
-unicoCheckCamera.prepareDocumentCamera(object : DocumentCameraListener {
+unicoCheckCamera.prepareDocumentCamera("json-credenciais.json", object : DocumentCameraListener {
     override fun onCameraReady(cameraOpener: UnicoCheckCameraOpener.Document?) {
         cameraOpener?.open(DocumentType.CNH, cameraListener)
     }
