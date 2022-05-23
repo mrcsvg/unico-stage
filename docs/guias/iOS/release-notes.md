@@ -11,6 +11,16 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## Versão `2.3.2`
+
+```bash
+pod ‘unicocheck-ios’, '2.3.2'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Ajuste no fechamento manual do frame de captura com interação.
+
 ## Versão `2.3.1`
 
 ```bash
