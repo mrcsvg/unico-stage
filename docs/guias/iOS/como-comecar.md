@@ -18,7 +18,53 @@ Caso use Swift em seu projeto:
 - Swift CI Compiler > 5.4.2
 - Swift Syntax > 4.2
 
-### Obtendo suas credenciais
+### Credeciais unico
+Para utilizar nossos SDKs você precisará importar as credenciais unico (Client API Key) em seu projeto. Utilize [este](/guias/iOS/como-comecar#obtendo-suas-credenciais) passo-a-passo para gerar e importar as credenciais.
+
+## Configuração e instalação
+
+### Utilizando o CocoaPods
+
+#### Instalação 
+
+CocoaPods é um gerenciador de dependências para projetos Cocoa. Para instruções de uso e instalação, visite a documentação do oficial do [cocoapods](https://cocoapods.org/). Para integrar o SDK do **unico check**  em seu projeto Xcode usando CocoaPods, siga os passos abaixo:
+
+Inclua o ´unicocheck-ios´ em seu *Podfile*:
+
+```bash 
+pod ‘unicocheck-ios’
+```
+
+Em seguida, basta utilizar o comando abaixo em seu terminal para instalar as dependências.
+
+```
+pod install --repo-update
+```
+
+### Utilizando o Swift Package Manager (SPM)
+
+O Swift Package Manager é uma ferramenta para gerenciar a distribuição do código Swift. Ele é integrado ao sistema de compilação Swift para automatizar o processo de download, compilação e vinculação de dependências. Para adicionar o SDK do **unico check** ao seu projeto, basta incluir a dependência em seu arquivo `Package.swift`, conforme abaixo:
+
+```bash title="Package.swift"
+dependencies: [
+    .package(url: "https://github.com/acesso-io/unico-check-ios.git", .upToNextMajor(from: "2.3.2"))
+]
+```
+
+### Permissões para utilização da câmera
+
+Para utilizar o método de abertura de câmera em seu projeto é necessário adicionar as permissões antes de compilar a sua aplicação. Segue o exemplo:
+
+```xml 
+<key>NSCameraUsageDescription</key>
+<string>Camera usage description</string>
+```
+
+:::caution Atenção
+Se estiver executando o projeto em .xcodeproj é necessário abrir o projeto em .xcworkspace!
+::: 
+
+## Obtendo suas credenciais
 
 Para utilizar nossos SDKs você precisará importar as credenciais unico (Client API Key) em seu projeto. Utilize o passo-a-passo a seguir para gerar e importar as credenciais.
 
@@ -51,7 +97,8 @@ Saiba mais sobre o Smartlive com interação [aqui](/conceitos-importantes#smart
 :::caution Bloqueador de Pop-ups
 Se nada acontecer, verifique o bloqueador de popups de seu navegador
 :::
-6. Atualmente temos duas opções para associar as informações contidas no JSON ao projeto: **Implementando o protocolo** `AcessoBioConfigDataSource` ou **Embarcando o arquivo JSON**. Veja abaixo: 
+6. Atualmente temos duas opções para associar as informações contidas no JSON ao projeto: **Implementando o protocolo** `AcessoBioConfigDataSource` ou **Embarcando o arquivo JSON**.
+Veja abaixo: 
 
 #### Opcão 1: Implementação do protocolo `AcessoBioConfigDataSource`
 
@@ -170,51 +217,6 @@ class YourUnicoConfigClass : AcessoBioConfigDataSource {
 #### Opcão 2: Embarcando o arquivo JSON
 
 Adicione o arquivo salvo na raiz do seu projeto.
-
-
-## Configuração e instalação
-
-### Utilizando o CocoaPods
-
-#### Instalação 
-
-CocoaPods é um gerenciador de dependências para projetos Cocoa. Para instruções de uso e instalação, visite a documentação do oficial do [cocoapods](https://cocoapods.org/). Para integrar o SDK do **unico check**  em seu projeto Xcode usando CocoaPods, siga os passos abaixo:
-
-Inclua o ´unicocheck-ios´ em seu *Podfile*:
-
-```bash 
-pod ‘unicocheck-ios’
-```
-
-Em seguida, basta utilizar o comando abaixo em seu terminal para instalar as dependências.
-
-```
-pod install --repo-update
-```
-
-### Utilizando o Swift Package Manager (SPM)
-
-O Swift Package Manager é uma ferramenta para gerenciar a distribuição do código Swift. Ele é integrado ao sistema de compilação Swift para automatizar o processo de download, compilação e vinculação de dependências. Para adicionar o SDK do **unico check** ao seu projeto, basta incluir a dependência em seu arquivo `Package.swift`, conforme abaixo:
-
-```bash title="Package.swift"
-dependencies: [
-    .package(url: "https://github.com/acesso-io/unico-check-ios.git", .upToNextMajor(from: "2.1.0"))
-]
-```
-
-### Permissões para utilização da câmera
-
-Para utilizar o método de abertura de câmera em seu projeto é necessário adicionar as permissões antes de compilar a sua aplicação. Segue o exemplo:
-
-```xml 
-<key>NSCameraUsageDescription</key>
-<string>Camera usage description</string>
-```
-
-:::caution Atenção
-Se estiver executando o projeto em .xcodeproj é necessário abrir o projeto em .xcworkspace!
-::: 
-
 
 ## Precisando de ajuda?
 
