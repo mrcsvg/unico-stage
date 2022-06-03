@@ -228,7 +228,7 @@ A preparação da câmera será efetuada a partir do método `prepareDocumentCam
   - `DocumentCameraTypes.CNH_FRENTE`: Frame para captura da frente da CNH.
   - `DocumentCameraTypes.CNH_VERSO`: Frame para captura do verso da CNH.
   - `DocumentCameraTypes.CPF`: Frame para captura CPF.
-  - `DocumentCameraTypes.OUTROS("descrição")`: Frame somente com o retângulo onde pode ser usado para outros tipos de documentos. Neste tipo, haverá um parâmetro com a descrição do documento. (Ex. contrato)
+  - `DocumentCameraTypes.OTHERS("descrição")`: Frame somente com o retângulo onde pode ser usado para outros tipos de documentos. Neste tipo, haverá um parâmetro com a descrição do documento. (Ex. contrato)
   - `DocumentCameraTypes.RG_FRENTE`: Frame para captura da frente do RG.
   - `DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
   - `DocumentCameraTypes.RG_FRENTE_NOVO`: Frame para captura da frente do novo RG.
