@@ -49,7 +49,7 @@ Caso a nova aba não abra, por favor, verifique se o seu navegador está bloquea
 :::
 
 7. Salve o conteúdo desta nova aba em um novo arquivo **JSON**;
-8. Adicione o arquivo salvo em seu projeto. Explicaremos como e onde utilizar o arquivo ao longo de nossos guias.
+8. Adicione o arquivo salvo em seu projeto Android, no caminho "/app/src/main/assets/<nome_do_arquivo>.json".
 
 
 ## Instalação
