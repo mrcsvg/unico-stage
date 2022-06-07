@@ -19,7 +19,7 @@ Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aq
 ## Versões legadas
 
 :::caution Atenção
-Não utilizar as versões legagas do SDK Flutter. Se você utiliza alguma versão antes da 3.0, por favor, atualize para as novas versões.
+Não utilizar as versões legadas do SDK Flutter. Se você utiliza alguma versão antes da 3.0, por favor, atualize para as novas versões.
 :::
 
 ## 2.0.2 `deprecated`

@@ -87,7 +87,7 @@ Você pode conferir a lista com esses dispositivos nos [canais de suporte](https
 
 ## Funcionalidades disponíveis 
 
-Atualmente, nosso SDK Web possui as seguintes funcionalidades disponíveis:
+Atualmente, nosso SDK Flutter possui as seguintes funcionalidades disponíveis:
 
 - Reconhecimento fácil;
     - Captura com Camêra Manual;
