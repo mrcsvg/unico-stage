@@ -306,7 +306,6 @@ Em caso de sucesso, o objeto `ResultCamera` retornará 2 atributos: `base64` e `
 - O atributo `base64` pode ser utilizado caso você queira exibir um preview da imagem em seu app;
 - O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check** (detalhado [neste passo](#chamar-nossas-apis));  
 
-
 </li>
 
 <li>

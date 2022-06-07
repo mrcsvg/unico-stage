@@ -11,15 +11,17 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
-<!-- TODO: Arrumar versões -->
 
-## Versões estáveis 
+## 3.0.0-beta.1
+- Nova versão de nosso SDK que contém a técnologia de SmartLive com interação.
 
-### 2.0.2
+
+## Versões legadas
+
+:::caution Atenção
+Não utilizar as versões legagas do SDK Flutter. Se você utiliza alguma versão antes da 3.0, por favor, atualize para as novas versões.
+:::
+
+## 2.0.2 `deprecated`
 - Maior versão estável de nosso SDK Flutter. Contém apenas captura manual e automática.
-
-## Versões em pré-release
-
-### 3.0.0-beta.1
-- Nova versäo de nosso SDK que contém a técnologia de Liveness ativo.
 

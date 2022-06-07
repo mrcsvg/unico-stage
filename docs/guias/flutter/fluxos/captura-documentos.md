@@ -81,7 +81,33 @@ class _MyHomePageState extends State<MyHomePage> implements UnicoListener {
 
     late UnicoCheckBuilder _unicoCheck;
 
-    ...
+    /// Unico callbacks
+      @override
+      void onErrorUnico(UnicoError error) {}
+
+      @override
+      void onUserClosedCameraManually() {}
+
+      @override
+      void onSystemChangedTypeCameraTimeoutFaceInference() {}
+
+      @override
+      void onSystemClosedCameraTimeoutSession() {}
+
+      /// Selfie callbacks
+      @override
+      void onSuccessSelfie(ResultCamera result) {}
+
+      @override
+      void onErrorSelfie(UnicoError error) {}
+
+      /// Document callbacks
+      @override
+      void onSuccessDocument(ResultCamera resultCamera) { }
+
+      @override
+      void onErrorDocument(UnicoError error) { }
+
 }
 ```
 
