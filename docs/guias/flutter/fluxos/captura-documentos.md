@@ -180,12 +180,12 @@ Ao efetuar uma captura de imagem com sucesso, este método será invocado e reto
 public void onErrorDocument(UnicoError error) { }
 ```
 
-Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`UnicoError`](#). 
+Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`UnicoError`](/guias/flutter/referencias#objeto-unicoerror). 
 
 <!-- Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK. -->
 
 :::note Implementação dos listeners
-A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe `UnicoSelfie`. 
+A implementação destes métodos (*listeners*) deverá ser feita através de uma instância da classe `UnicoDocument`. 
 
 <!-- Saiba mais sobre a classe `iAcessoBioSelfie` no [API Reference](API#iacessobioselfie) de nosso SDK. -->
 :::

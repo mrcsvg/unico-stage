@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> implements UnicoListener {
 
     late UnicoCheckBuilder _unicoCheck;
 
-    /// Unico callbacks
+    
       @override
       void onErrorUnico(UnicoError error) {}
 
@@ -103,21 +103,6 @@ class _MyHomePageState extends State<MyHomePage> implements UnicoListener {
 
       @override
       void onSystemClosedCameraTimeoutSession() {}
-
-      /// Selfie callbacks
-      @override
-      void onSuccessSelfie(ResultCamera result) {}
-
-      @override
-      void onErrorSelfie(UnicoError error) {}
-
-      /// Document callbacks
-      @override
-      void onSuccessDocument(ResultCamera resultCamera) { }
-
-      @override
-      void onErrorDocument(UnicoError error) { }
-
 }
 ```
 
@@ -217,8 +202,8 @@ Por padrão, nosso SDK possui o enquadramento inteligente e a captura automátic
 
 ```dart {2-3}
 UnicoCheckCameraOpener _opener = new UnicoCheck (this)
-    .setAutoCapture(autoCapture: true)
-    .setSmartFrame(smartFrame: true)
+    .setAutoCapture(autoCapture: false)
+    .setSmartFrame(smartFrame: false)
     .build();
 ```
   </TabItem>
