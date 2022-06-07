@@ -126,6 +126,11 @@ const config = {
                 label: 'Android SDK',
                 docId: 'guias/android/release-notes',
               },
+              {
+                type: 'doc',
+                label: 'Flutter SDK',
+                docId: 'guias/flutter/release-notes',
+              },
 
               // ... more items
             ],
