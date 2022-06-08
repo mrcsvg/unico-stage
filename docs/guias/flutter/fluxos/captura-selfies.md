@@ -128,7 +128,7 @@ Este método será invocado sempre quando o usuário fechar a câmera de forma m
 Este método será invocado assim que o tempo máximo de sessão for atingido (Sem capturar nenhuma imagem).
 
 :::info  Tempo máximo da sessão
-O tempo máximo da sessão pode ser configurado em nosso **builder** através do método `setTimeoutSession`. Este método deve receber uma o tempo máximo da sessão em **segundos**.
+O tempo máximo da sessão pode ser configurado em nosso **builder** através do método `setTimeoutSession`. Este método deve receber o tempo máximo da sessão em **segundos**.
 
 <!-- Saiba mais sobre  método `setTimeoutSession()` no [API Reference](API#settimeoutsession) de nosso SDK. -->
 :::
@@ -141,7 +141,7 @@ Este método será invocado assim que o tempo máximo para detecção da face de
 
 :::caution Atenção
 
-Todos os métodos acima devem devem ser criados da forma indicada em seu projeto (mesmo que sem nenhuma lógica). Caso contrário, o projeto não compilará com sucesso.
+Todos os métodos acima devem ser criados da forma indicada em seu projeto (mesmo que sem nenhuma lógica). Caso contrário, o projeto não compilará com sucesso.
 
 :::
 

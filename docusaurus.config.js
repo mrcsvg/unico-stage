@@ -253,7 +253,7 @@ const config = {
       prism: {
         theme: require('prism-react-renderer/themes/github'),
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['java', 'kotlin', 'swift'],
+        additionalLanguages: ['java', 'kotlin', 'swift', 'dart'],
       },
       i18n: {
         defaultLocale: 'pt-BR',

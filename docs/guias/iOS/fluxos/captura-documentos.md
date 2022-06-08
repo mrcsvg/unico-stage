@@ -156,7 +156,7 @@ O tempo máximo da sessão pode ser configurado em nosso **builder** através do
 
 :::caution Atenção
 
-Todos os métodos acima devem devem ser criados da forma indicada em seu projeto (mesmo que sem nenhuma lógica). Caso contrário, o projeto não compilará com sucesso.
+Todos os métodos acima devem ser criados da forma indicada em seu projeto (mesmo que sem nenhuma lógica). Caso contrário, o projeto não compilará com sucesso.
 
 :::
 
