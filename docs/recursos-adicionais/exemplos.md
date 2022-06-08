@@ -21,6 +21,9 @@ Abaixo você encontrará uma coleção de projetos de exemplo para entender melh
 | Stack  | Descrição  | Link |
 |--------------------|---------|----------|
 | React Native | Prova de conceito em React Native que implementa os SDK mobile nativas Android e iOS | [Github](https://github.com/acesso-io/acessobio-reactnative) |
+| Flutter | Prova de conceito em Dart que implementa a SDK Flutter | [Github](https://github.com/acesso-io/poc_flutter) |
+| Swift | Prova de conceito em Swift que implementa a SDK iOS | [Github](https://github.com/acesso-io/unicocheck-sample-swift) |
+| ObjC | Prova de conceito em ObjC que implementa a SDK iOS | [Github](https://github.com/acesso-io/unicocheck-sample-objc) |
 
 ## Precisando de ajuda?
 
