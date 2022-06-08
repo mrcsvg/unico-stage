@@ -11,6 +11,9 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## Versão 4.0.16
+- Hot fix: ajuste no lifecycle do frame de captura com interação.
+
 ## Versão 4.0.15
 - Melhoria da resolução da imagem gerada pelo Smartlive com interação para celulares de qualidade média/alta
 - Atualização do google play services ML Kit face detection para a versão 17.0.1.
