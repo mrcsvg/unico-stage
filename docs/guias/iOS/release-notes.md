@@ -11,6 +11,17 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## Versão `2.3.3`
+
+```bash
+pod ‘unicocheck-ios’, '2.3.3'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Hot fix: JWT encode nos modos de liveness ativo
+
+
 ## Versão `2.3.2`
 
 ```bash
