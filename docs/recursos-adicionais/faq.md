@@ -36,9 +36,6 @@ Cada arquivo também é criptografado usando o formato JWS (Json Web Signature),
 A principal ferramenta de segurança do JWS é a assinatura, que é invalidada caso o conteúdo seja alterado.
 Além disso, os prazos de expiração dos tokens são curtos, então a janela para qualquer ataque é pequena.
 
-## Qual é o tamanho do payload do JWT?
-O JWT gerado pelas nossas SDKs tem em média 300kb.
-
 ## Como que eu faço para baixar as novas atualizações da SDK?
 Para baixar as novas atualizações, primeiro confira o descritivo da versão no Release Notes - que se encontra na documentação ao lado da "Implementação" - e posteriormente incremente a tag de implementação dentro do seu projeto.
 
