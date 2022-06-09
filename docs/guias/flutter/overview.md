@@ -24,6 +24,10 @@ O componente de captura disponibilizado por meio de nosso SDK da suporte às seg
 
 O SDK Flutter do **Unico Check** é compatível com quase todos os dispositivos que possuam iOS 11 ou aceitem a partir da versão 21 do SDK Android. 
 
+#### Dispositívos iOS.
+
+Você pode conferir a lista com esses dispositivos nos [canais de suporte](https://support.apple.com/pt-br/HT209574) oficiais da Apple.
+
 #### Dispositívos Android.
 
 A tabela a seguir lista os dispositivos Android testados em nossos laboratórios, além da disponibilidade das extensões do fornecedor/fabricante. Algumas extensões listadas podem estar sujeitas a níveis de API ou SKUs específicos do fabricante.
@@ -80,10 +84,6 @@ A tabela a seguir lista os dispositivos Android testados em nossos laboratórios
 | HUAWEY MHA-L29 | 7.0  | Sim	| Sim	| Físico (TestLab) |
 | HUAWEY NEO-L29 | 9  | Sim	| Sim	| Físico (TestLab) |
 | HUAWEY COR-L29 | 8.1.0  | Sim	| Sim	| Físico (TestLab) |
-
-#### Dispositívos iOS.
-
-Você pode conferir a lista com esses dispositivos nos [canais de suporte](https://support.apple.com/pt-br/HT209574) oficiais da Apple.
 
 ## Funcionalidades disponíveis 
 

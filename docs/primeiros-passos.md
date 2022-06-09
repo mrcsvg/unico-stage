@@ -14,7 +14,7 @@ Para deixar as coisas mais organizadas, dividimos nossos guias por stack técnol
 - [SDK Android](guias/android/overview);
 - [SDK iOS](guias/iOS/overview);
 - [SDK Web](guias/web/overview);
-- SDK Flutter (Em breve!)
+- [SDK Flutter](guias/flutter/overview);
 
 ## Estrutura dos guias
 

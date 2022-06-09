@@ -93,18 +93,13 @@ Caso a nova aba não abra, por favor, verifique se o seu navegador está bloquea
 :::
 
 7. Salve o conteúdo desta nova aba em um novo arquivo **JSON**;
-8. Adicione o arquivo salvo em seu projeto. Explicaremos como e onde utilizar o arquivo ao longo de nossos guias.
+8. Embarque as credenciais obtidas em seu projeto. Você precisará efetuar configurações distintas para Android e iOS. Veja abaixo:
 
-#### Embarcando as credenciais IOS em seu projeto `setUnicoConfigIos`
+#### Configurando as credenciais para iOS
 
-1. Instancie o objeto `UnicoConfig` e informe como parâmetro na classe `UnicoCheckBuilder` utilizando o método `setUnicoConfigIos`.
-2. Copie e cole as informações contidas no JSON em seus respectivos métodos, como exemplificado abaixo: 
+Para configurar suas credenciais para iOS, você deverá utilizar o método `setUnicoConfigIos` dentro de seu projeto (em seus arquivos Dart). Este método é disponibilizado nos objetos da classe `UnicoCheck`. Este método deve receber como parâmetro as informações contidas no JSON, conforme o seguinte exemplo:
 
-
-
-Arquivo JSON: 
-
-```json
+```json title="Arquivo JSON coms suas credenciais.json"
 {
 	"project_info":{
 		"project_number":"<YOUR_PROJECT_NUMBER>",
@@ -123,6 +118,44 @@ Arquivo JSON:
 }
 ```
 
+Exemplo de implementação: 
+
+```dart title="main.dart"  
+// highlight-start
+ final _configIos = UnicoConfig(
+      getProjectNumber: YOUR_PROJECT_NUMBER,
+      getProjectId: YOUR_PROJECT_ID,
+      getMobileSdkAppId: YOUR_MOBILE_SDK_APP_ID,
+      getBundleIdentifier: YOUR_MOBILE_BUNDLE_IDENTIFIER,
+      getHostInfo: YOUR_HOST_INFO,
+      getHostKey: YOUR_HOST_KEY);
+// highlight-end
+
+  @override
+  void initState() {
+    super.initState();
+    initUnicoCamera();
+    configUnicoCamera();
+  }
+
+  void initUnicoCamera() {
+    _unicoCheck = new UnicoCheck(this);
+  }
+
+  void configUnicoCamera() {
+    _unicoCheck
+        .setTheme(unicoTheme: _theme)
+		// highlight-start
+        .setUnicoConfigIos(unicoConfig: _configIos)
+		// highlight-end
+        .setTimeoutSession(timeoutSession: 55);
+  }
+```
+
+
+#### Configurando as credenciais para Android
+
+Adicione o arquivo salvo em seu projeto Android, no caminho "/app/src/main/assets/<nome_do_arquivo>.json".
 
 ## Precisando de ajuda?
 
