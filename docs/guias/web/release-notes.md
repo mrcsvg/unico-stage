@@ -11,6 +11,14 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## `3.5.0`
+- Atualização da versão do SDK do Smartlive.
+
+:::caution Atenção
+Caso você já tenha o SDK instalado e deseja atualizá-lo, será necessário baixar novamente os Recursos adicionais do Unico Check para a captura com Smartlive com interação.
+Veja isso na sessão [Embarcando outros arquivos do Unico Check em seu projeto](como-comecar/#embarcando-outros-arquivos-do-unico-check-em-seu-projeto).
+:::
+
 ## `3.4.3`
 - Correção no frame de captura de CNH Aberta em desktop
 

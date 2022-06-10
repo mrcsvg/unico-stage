@@ -63,7 +63,7 @@ A tabela abaixo lista arquivos de recursos adicionais disponíveis para inclusã
 
 | Descrição	| Link para download |
 | --------- | ------------------ |
-| Recursos adicionais do Unico Check para a funcionalidade de Facetec  | [Download](https://cdn.unico.io/sdk/check/facetec/unico-sdk-resources.zip)  |
+| Recursos adicionais do Unico Check para a captura com Smartlive com interação | [Download](https://cdn.unico.io/sdk/check/facetec/browser-v9.4.11/resources.zip)  |
 | Arquivos de AI do Unico Check SDK JS | [Download](https://cdn.unico.io/sdk/check/bio/models.zip)  |
 
 :::info Localização do arquivo em seu projeto
@@ -88,7 +88,7 @@ npm install unico-webframe
 #### Instalação através de nosso cdn
 Para instalar nosso SDK em seu projeto por meio de nosso cdn, basta efetuar o download do arquivo abaixo e importa-lo em seu projeto.
 
-- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.4.2.zip) da versão `3.4.2` 
+- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.5.0.zip) da versão `3.5.0` 
 
 
 :::note Nota sobre o *Câmera Inteligente* e modelos de IA
