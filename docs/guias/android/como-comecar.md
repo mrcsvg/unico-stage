@@ -41,16 +41,134 @@ Saiba mais sobre o Smartlive com interação [aqui](/conceitos-importantes#smart
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Ao lado da *API Key* desejada, pressione o botão de **Download**;
 4. Selecione a opção **Android**;
-5. Clique em "**Gerar**";
-6. Uma nova aba será aberta em seu navegador contendo informações do projeto em formato JSON.
+5. Clique em "**Gerar**" e automaticamente uma nova aba será aberta em seu navegador contendo informações do projeto em formato JSON.
 
 :::caution Atenção aos bloqueadores de Pop-up
 Caso a nova aba não abra, por favor, verifique se o seu navegador está bloqueando os popups.
 :::
 
-7. Salve o conteúdo desta nova aba em um novo arquivo **JSON**;
-8. Adicione o arquivo salvo em seu projeto Android, no caminho "/app/src/main/assets/<nome_do_arquivo>.json".
+6. Atualmente temos duas opções para associar as informações contidas no JSON ao projeto: **Implementando o protocolo** `AcessoBioConfigDataSource` ou **Embarcando o arquivo JSON**.
+Veja abaixo: 
 
+#### Opcão 1: Implementação do protocolo `AcessoBioConfigDataSource`
+
+1. Implemente o protocolo `AcessoBioConfigDataSource` em sua classe.  
+2. Copie e cole as informações contidas no JSON em seus respectivos métodos, como exemplificado abaixo: 
+
+Arquivo JSON: 
+
+```json
+{
+	"project_info":{
+		"project_number":"<YOUR_PROJECT_NUMBER>",
+		"project_id":"<YOUR_PROJECT_ID>"
+	},
+	"client_info":{
+		"mobilesdk_app_id":"<YOUR_MOBILE_SDK_APP_ID>",
+		"ios_client_info":{
+			"bundle_identifier":"<YOUR_MOBILE_BUNDLE_IDENTIFIER>"
+		}
+	},
+	"host_info":{
+		"host_info":"<YOUR_HOST_INFO>",
+		"host_key":"<YOUR_HOST_KEY>"
+	}
+}
+```
+
+Implementação de exemplo:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="java" label="Java" default>
+
+```java 
+
+import com.acesso.acessobio_android.onboarding.AcessoBioConfigDataSource;
+
+public class UnicoConfig implements AcessoBioConfigDataSource {
+    @NonNull
+    @Override
+    public String getProjectNumber() {
+        return PROJECT_NUMBER;
+    }
+    
+    @NonNull
+    @Override
+    public String getProjectId() {
+        return PROJECT_ID;
+    }
+    
+    @NonNull
+    @Override
+    public String getMobileSdkAppId() {
+        return MOBILE_SDK_APP_ID;
+    }
+    
+    @NonNull
+    @Override
+    public String getBundleIdentifier() {
+        return BUNDLE_IDENTIFIER;
+    }
+    
+    @NonNull
+    @Override
+    public String getHostInfo() {
+        return HOST_INFO;
+    }
+    
+    @NonNull
+    @Override
+    public String getHostKey() {
+        return HOST_KEY;
+    }
+}
+
+```
+  </TabItem>
+
+  <TabItem value="kotlin" label="Koltin">
+
+```kotlin
+
+import com.acesso.acessobio_android.onboarding.AcessoBioConfigDataSource
+
+class UnicoConfig : AcessoBioConfigDataSource {
+    override fun getProjectNumber(): String {
+        return PROJECT_NUMBER
+    }
+
+    override fun getProjectId(): String {
+        return PROJECT_ID
+    }
+
+    override fun getMobileSdkAppId(): String {
+        return MOBILE_SDK_APP_ID
+    }
+
+    override fun getBundleIdentifier(): String {
+        return BUNDLE_IDENTIFIER
+    }
+
+    override fun getHostInfo(): String {
+        return HOST_INFO
+    }
+
+    override fun getHostKey(): String {
+        return HOST_KEY
+    }
+}
+
+```
+
+  </TabItem>
+</Tabs>
+
+#### Opcão 2: Embarcando o arquivo JSON
+
+Adicione o arquivo salvo na pasta assets do seu projeto.
 
 ## Instalação
 
