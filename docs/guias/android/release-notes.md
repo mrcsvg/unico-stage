@@ -11,6 +11,10 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## Versão 4.1.0-beta
+- Depreciamos o uso do json e adicionamos o objeto de configuração.
+- Indicador de atividade agora possui mesma cor que da mensagem na costumização.
+
 ## Versão 4.0.16
 - Hot fix: ajuste no lifecycle do frame de captura com interação.
 
