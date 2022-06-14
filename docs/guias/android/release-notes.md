@@ -13,7 +13,7 @@ Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aq
 
 ## Versão 4.1.0
 - Indicador de atividade agora possui mesma cor que a mensagem na customização.
-- Possibilidade de executar os métodos ```prepareSelfieCamera``` e ```prepareDocumentCamera``` sem o arquivo ```json```, utilizando uma classe do tipo `AcessoBioConfigDataSource`.
+- Possibilidade de executar os métodos ```prepareSelfieCamera``` e ```prepareDocumentCamera``` sem o arquivo ```json```, utilizando uma interface do tipo `AcessoBioConfigDataSource`.
 
 ## Versão 4.0.16
 - Hot fix: ajuste no lifecycle do frame de captura com interação.
