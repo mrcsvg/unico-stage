@@ -28,16 +28,12 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
 
+- **CPF:** Captura do documento de CPF;
 - **CNH:** Captura da CNH aberta;
 - **CNH frente:** Captura da frente da CNH;
 - **CNH verso:** Captura do verso da CNH;
-- **CPF:** Captura do documento de CPF;
 - **RG frente:** Captura da frente do RG;
 - **RG verso:** Captura do verso do RG;
-- **Novo RG frente:** Captura a frente do novo tipo de RG;
-- **Novo RG verso:** Captura o verso do novo tipo de RG;
-- **Outros:** Captura documento genérico. Para este tipo de captura você deve informar o título do documento que será mostrado na captura para o usuário usando a propriedade `optional.LABEL_DOCUMENT_TYPE_OTHERS`.
-
 
 import imgDocumento from '/static/img/guias/img_documentos.png';
 
@@ -222,12 +218,12 @@ Quando tudo der certo, o método `prepareDocumentCamera()` irá gerar um objeto 
 
 - Tipo de documento a ser capturado, sendo eles:
   - `DocumentCameraTypes.CNH`: Frame para captura de CNH.
+  - `DocumentCameraTypes.CNH_FRENTE`: Frame para captura da frente da CNH.
+  - `DocumentCameraTypes.CNH_VERSO`: Frame para captura da parte traseira da CNH.
   - `DocumentCameraTypes.CPF`: Frame para captura CPF.
-  - `DocumentCameraTypes.OUTROS("descrição")`: Frame somente com o retângulo onde pode ser usado para outros tipos de documentos. Neste tipo, haverá um parâmetro com a descrição do documento. (Ex. contrato)
   - `DocumentCameraTypes.RG_FRENTE`: Frame para captura da frente do RG.
   - `DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
-  - `DocumentCameraTypes.RG_FRENTE_NOVO`: Frame para captura da frente do novo RG.
-  - `DocumentCameraTypes.RG_VERSO_NOVO`: Frame para captura da parte traseira do novo RG.
+
 - Os listeners configurados [acima](#implementar-listeners-para-eventos-da-câmera);
 
 O exemplo abaixo ilustra os passos descritos até aqui (configuração dos listeners, build e abertura da câmera):
@@ -267,7 +263,7 @@ val cameraListener: iAcessoBioDocument = object : iAcessoBioDocument {
     override fun onErrorDocument(errorBio: ErrorBio?) {}
 }
 
-unicoCheckCamera.prepareDocumentCamera("json-credenciais.json", object : DocumentCameraListener {
+unicoCheckCamera.prepareDocumentCamera(UnicoConfig(), object : DocumentCameraListener {
     override fun onCameraReady(cameraOpener: UnicoCheckCameraOpener.Document?) {
         cameraOpener?.open(DocumentType.CNH, cameraListener)
     }
