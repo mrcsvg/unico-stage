@@ -84,7 +84,7 @@ Saiba mais sobre o Smartlive com interação [aqui](/conceitos-importantes#smart
 1. Acesse o portal do cliente da **Unico** com suas credenciais;
 2. No menu *Configurações* navegue até *Integração* e em seguida até *API Key*;
 3. Ao lado da *API Key* desejada, pressione o botão de **Download**;
-4. Selecione a opção **Flutter**;
+4. Selecione a opção **iOS**;
 5. Clique em "**Gerar**";
 6. Uma nova aba será aberta em seu navegador contendo informações do projeto em formato JSON.
 
@@ -93,7 +93,8 @@ Caso a nova aba não abra, por favor, verifique se o seu navegador está bloquea
 :::
 
 7. Salve o conteúdo desta nova aba em um novo arquivo **JSON**;
-8. Embarque as credenciais obtidas em seu projeto. Você precisará efetuar configurações distintas para Android e iOS. Veja abaixo:
+8. Repita os passos 1 a 7 para criar uma credencial para seu aplicativo **Android**;
+9. Embarque as credenciais obtidas em seu projeto. Você precisará efetuar configurações distintas para Android e iOS. Veja abaixo:
 
 #### Configurando as credenciais para iOS
 
