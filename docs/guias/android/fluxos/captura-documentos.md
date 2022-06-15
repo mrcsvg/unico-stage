@@ -34,6 +34,7 @@ Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se a
 - **CNH verso:** Captura do verso da CNH;
 - **RG frente:** Captura da frente do RG;
 - **RG verso:** Captura do verso do RG;
+- **Outros:** Captura de documento genérico;
 
 import imgDocumento from '/static/img/guias/img_documentos.png';
 
@@ -217,12 +218,13 @@ Quando tudo der certo, o método `prepareDocumentCamera()` irá gerar um objeto 
 <!-- TODO Incluir diagrama de atividades -->
 
 - Tipo de documento a ser capturado, sendo eles:
-  - `DocumentCameraTypes.CNH`: Frame para captura de CNH.
-  - `DocumentCameraTypes.CNH_FRENTE`: Frame para captura da frente da CNH.
-  - `DocumentCameraTypes.CNH_VERSO`: Frame para captura da parte traseira da CNH.
-  - `DocumentCameraTypes.CPF`: Frame para captura CPF.
-  - `DocumentCameraTypes.RG_FRENTE`: Frame para captura da frente do RG.
-  - `DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
+  - `DocumentCameraType.CNH`: Frame para captura de CNH.
+  - `DocumentCameraType.CNH_FRENTE`: Frame para captura da frente da CNH.
+  - `DocumentCameraType.CNH_VERSO`: Frame para captura da parte traseira da CNH.
+  - `DocumentCameraType.CPF`: Frame para captura CPF.
+  - `DocumentCameraType.RG_FRENTE`: Frame para captura da frente do RG.
+  - `DocumentCameraType.RG_VERSO`: Frame para captura da parte traseira do RG.
+  - `DocumentCameraType.None`: Frame para captura de documento genérico;
 
 - Os listeners configurados [acima](#implementar-listeners-para-eventos-da-câmera);
 
@@ -292,29 +294,7 @@ Caso queira converter o base64 para bitmap, a maneira padrão não funcionará p
 
 ### Chamar nossas APIs
 
-<!-- TODO Revisar chamada de API -->
-
-A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `encrypted` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [neste artigo](#)). Exemplo abaixo:
-
-```bash
-curl --location --request POST 'https://example.com/services/v3/AcessoService.svc/processes' \
---header 'APIKEY: 11111111-1111-1111-1111-111111111111' \
---header 'Authorization: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "subject": {
-    "Code": "12345678910",
-    "Name": "Bob",
-    "Gender": "M",
-    "BirthDate": "01/01/0001",
-    "Email": "email@example.com",
-    "Phone": "5543999999999"
-  },
-  "imagebase64": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAgSURBVDhPY/wPBAwUACYoTTYYNWDUABAYNWDgDWBgAABrygQclUTopgAAAABJRU5ErkJggg=="
-}'
-
-```
-
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs).
 
 </li>
 
