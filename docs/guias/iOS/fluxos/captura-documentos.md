@@ -29,9 +29,7 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
 
 - **Sem silhueta:** Captura documento genérico;
-- **RG:** Captura do RG (inteiro);
-- **RG frente:** Captura da frente do RG;
-- **RG verso:** Captura do verso do RG;
+- **RG:** Captura do RG (separado em frente e verso);
 - **CNH:** Captura da CNH aberta;
 - **CNH frente:** Captura da frente da CNH;
 - **CNH verso:** Captura do verso da CNH;
@@ -382,7 +380,7 @@ Você deverá sobrescrever este método, efetuando a abertura da câmera com o o
 
 - Tipo de documento a ser capturado, sendo eles:
   - `DocumentEnums.none`: Frame para captura de documento genérico, sem nenhuma silhueta;
-  - `DocumentEnums.RG`: Frame para captura do RG;
+  - `DocumentEnums.RG`: Frame para captura do RG, primeiro a frente, depois o verso;
   - `DocumentEnums.rgFrente`: Frame para captura da parte da frente do RG;
   - `DocumentEnums.rgVerso`: Frame para captura da parte traseira do RG;
   - `DocumentEnums.CNH`: Frame para captura de CNH;
@@ -437,28 +435,7 @@ Em caso de sucesso, o evento `onSuccessDocument` será disparado, conforme expli
 
 ### Chamar nossas APIs
 
-A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `encrypted` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [neste artigo](#)). Exemplo abaixo:
-
-```bash
-curl --location --request POST 'https://example.com/services/v3/AcessoService.svc/processes' \
---header 'APIKEY: 11111111-1111-1111-1111-111111111111' \
---header 'Authorization: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "subject": {
-    "Code": "12345678910",
-    "Name": "Bob",
-    "Gender": "M",
-    "BirthDate": "01/01/0001",
-    "Email": "email@example.com",
-    "Phone": "5543999999999"
-  },
-  "onlySelfie": true,
-  "imagebase64": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAgSURBVDhPY/wPBAwUACYoTTYYNWDUABAYNWDgDWBgAABrygQclUTopgAAAABJRU5ErkJggg=="
-}'
-
-```
-
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs).
 
 </li>
 

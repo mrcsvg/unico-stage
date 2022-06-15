@@ -556,28 +556,7 @@ Caso ocorra algum erro ao preparar a câmera, o evento `onCameraFailed` será di
 
 ### Chamar nossas APIs
 
-A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `encrypted` gerado para nossas APIs, selecionando um dos fluxos disponíveis (detalhados [neste artigo](#)). Exemplo abaixo:
-
-```bash
-curl --location --request POST 'https://example.com/services/v3/AcessoService.svc/processes' \
---header 'APIKEY: 11111111-1111-1111-1111-111111111111' \
---header 'Authorization: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "subject": {
-    "Code": "12345678910",
-    "Name": "Bob",
-    "Gender": "M",
-    "BirthDate": "01/01/0001",
-    "Email": "email@example.com",
-    "Phone": "5543999999999"
-  },
-  "onlySelfie": true,
-  "imagebase64": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAgSURBVDhPY/wPBAwUACYoTTYYNWDUABAYNWDgDWBgAABrygQclUTopgAAAABJRU5ErkJggg=="
-}'
-
-```
-
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs).
 
 </li>
 
