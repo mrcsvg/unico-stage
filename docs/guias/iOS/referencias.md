@@ -221,16 +221,16 @@ class ViewController: UIViewController, AcessoBioManagerDelegate, AcessoBioTheme
   </TabItem>
 </Tabs>
 
+## Tempos de sessão
 
+O tempo máximo de captura ao utilizar a detecção da face (smart câmera) é de 13 segundos. Caso o usuário encontre alguma dificuldade para capturar a foto através da detecção de face e ultrapasse o tempo determinado em seu processo, a captura será alterada automaticamente para a manual, visando facilitar a ação para o usuário. ( TimeoutToFaceInference )
+  
 ## Configurando os tempos de sessão
 
-È possível alterar o tempo máximo de sessão do seu usuário e o tempo máximo de captura ao utilizar a funcionalidade de detecção da face (Smart Camera). Para isto, através de nosso builder, disponibilizamos 2 métodos:
+É possível alterar o tempo máximo de sessão do seu usuário ao utilizar a funcionalidade de detecção da face (Smart Camera). Para isto, através de nosso builder, disponibilizamos o método `setTimeoutSession`:
 
 #### Método `setTimeoutSession`: 
 Configura o tempo máximo de sessão do seu usuário (em segundos). Caso ele ultrapasse o tempo determinado em seu processo para capturar a foto, você poderá apresentar alguma mensagem personalizável ou instrução ao usuário. O valor padrão é de 40 segundos e seu valor mínimo também é de 40 segundos.
-
-#### Método `setTimeoutToFaceInference`: 
-Configura o tempo máximo de captura ao utilizar a detecção da face (smart câmera) em segundos. Caso o usuário encontre alguma dificuldade para capturar a foto através da detecção de face e ultrapasse o tempo determinado em seu processo, a captura será alterada automaticamente para a manual, visando facilitar a ação para o usuário. O valor padrão é de 15 segundos e seu valor mínimo é de 5 segundos.
 
 ### Exemplos de utilização
 
@@ -252,7 +252,6 @@ Configura o tempo máximo de captura ao utilizar a detecção da face (smart câ
 
     unicoCheck = [[AcessoBioManager alloc]initWithViewController:self];
     [unicoCheck setTimeoutSession:50];
-    [unicoCheck setTimeoutToFaceInference:10];
 
 }
 ```
@@ -274,7 +273,6 @@ var unicoCheck: AcessoBioManager!
         
         unicoCheck = AcessoBioManager(viewController: self)
         unicoCheck.setTimeoutSession(50)
-        unicoCheck.setTimeoutToFaceInference(10)
     }
 }            
 ```
