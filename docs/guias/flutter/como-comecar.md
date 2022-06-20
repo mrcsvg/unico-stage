@@ -76,8 +76,9 @@ Saiba mais sobre o Smartlive com interação [aqui](/conceitos-importantes#smart
 :::
 
 5. Marque o campo "Utiliza autenticação segura na SDK" como **SIM**;
-6. Expanda a seção SDK Flutter, adicione o nome de sua aplicação Flutter e o Bundle ID;
-7. Salve as alterações.
+6. Expanda a seção SDK iOS, adicione o nome de sua aplicação iOS e o Bundle ID;
+7. Salve as alterações;
+8. Repita o processo para criar uma outra API Key para sua aplicação Android.
 
 ### Embarcando as credenciais em seu projeto
 
