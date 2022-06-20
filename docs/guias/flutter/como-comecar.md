@@ -76,8 +76,9 @@ Saiba mais sobre o Smartlive com interação [aqui](/conceitos-importantes#smart
 :::
 
 5. Marque o campo "Utiliza autenticação segura na SDK" como **SIM**;
-6. Expanda a seção SDK Flutter, adicione o nome de sua aplicação Flutter e o Bundle ID;
-7. Salve as alterações.
+6. Expanda a seção SDK iOS, adicione o nome de sua aplicação iOS e o Bundle ID;
+7. Salve as alterações;
+8. Repita o processo para criar uma outra API Key para sua aplicação Android.
 
 ### Embarcando as credenciais em seu projeto
 
@@ -94,11 +95,11 @@ Caso a nova aba não abra, por favor, verifique se o seu navegador está bloquea
 
 7. Salve o conteúdo desta nova aba em um novo arquivo **JSON**;
 8. Repita os passos 1 a 7 para criar uma credencial para seu aplicativo **Android**;
-9. Embarque as credenciais obtidas em seu projeto. Você precisará efetuar configurações distintas para Android e iOS. Veja abaixo:
+9. Embarque as credenciais obtidas em seu projeto. Explicaremos como no próximo passo.
 
-#### Configurando as credenciais para iOS
+#### Configurando as credenciais em seu projeto
 
-Para configurar suas credenciais para iOS, você deverá utilizar o método `setUnicoConfigIos` dentro de seu projeto (em seus arquivos Dart). Este método é disponibilizado nos objetos da classe `UnicoCheck`. Este método deve receber como parâmetro as informações contidas no JSON, conforme o seguinte exemplo:
+Para configurar as credenciais em seu projeto, basta informar os dados dos arquvivos JSON como parâmetros ao instanciar a interface `UnicoCheck`. Os parâmetros deverão ser enviados como objetos, gerados a partir do método `UnicoConfig`. Confira o exemplo abaixo:
 
 ```json title="Arquivo JSON coms suas credenciais.json"
 {
@@ -123,16 +124,26 @@ Exemplo de implementação:
 
 ```dart title="main.dart"  
 // highlight-start
- final _configIos = UnicoConfig(
-      getProjectNumber: YOUR_PROJECT_NUMBER,
-      getProjectId: YOUR_PROJECT_ID,
-      getMobileSdkAppId: YOUR_MOBILE_SDK_APP_ID,
-      getBundleIdentifier: YOUR_MOBILE_BUNDLE_IDENTIFIER,
-      getHostInfo: YOUR_HOST_INFO,
-      getHostKey: YOUR_HOST_KEY);
+  final _configIos = UnicoConfig(
+      getProjectNumber: "Your ProjectNumber Ios",
+      getProjectId: "Your ProjectId Ios",
+      getMobileSdkAppId: "Your MobileSdkAppId Ios",
+      getBundleIdentifier: "Your BundleIdentifier Ios",
+      getHostInfo: "Your HostInfo Ios",
+      getHostKey: "Your HostKey Ios");
+  // highlight-end    
+
+  // highlight-start
+  final _configAndroid = UnicoConfig(
+      getProjectNumber: "Your ProjectNumber Android",
+      getProjectId: "Your ProjectId Android",
+      getMobileSdkAppId: "Your MobileSdkAppId Android",
+      getBundleIdentifier: "Your BundleIdentifier Android",
+      getHostInfo: "Your HostInfo Android",
+      getHostKey: "Your HostKey Android");
 // highlight-end
 
-  @override
+@override
   void initState() {
     super.initState();
     initUnicoCamera();
@@ -140,23 +151,14 @@ Exemplo de implementação:
   }
 
   void initUnicoCamera() {
-    _unicoCheck = new UnicoCheck(this);
-  }
-
-  void configUnicoCamera() {
-    _unicoCheck
-        .setTheme(unicoTheme: _theme)
-		// highlight-start
-        .setUnicoConfigIos(unicoConfig: _configIos)
-		// highlight-end
-        .setTimeoutSession(timeoutSession: 55);
+    _unicoCheck = new UnicoCheck(
+        listener: this,
+		    // highlight-start        
+        unicoConfigIos: _configIos,
+        unicoConfigAndroid: _configAndroid);
+        // highlight-end
   }
 ```
-
-
-#### Configurando as credenciais para Android
-
-Adicione o arquivo salvo em seu projeto Android, no caminho "/app/src/main/assets/<nome_do_arquivo>.json".
 
 ## Precisando de ajuda?
 
