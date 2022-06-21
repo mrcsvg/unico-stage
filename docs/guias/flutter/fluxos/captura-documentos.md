@@ -94,13 +94,6 @@ class _MyHomePageState extends State<MyHomePage> implements UnicoListener {
       @override
       void onSystemClosedCameraTimeoutSession() {}
 
-      /// Selfie callbacks
-      @override
-      void onSuccessSelfie(ResultCamera result) {}
-
-      @override
-      void onErrorSelfie(UnicoError error) {}
-
       /// Document callbacks
       @override
       void onSuccessDocument(ResultCamera resultCamera) { }
