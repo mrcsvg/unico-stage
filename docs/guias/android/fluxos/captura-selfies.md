@@ -277,6 +277,44 @@ Entenda um pouco mais sobre o método `setTheme()`, exemplos de utilização e o
 
 <li>
 
+</li>
+
+### Configurar credenciais
+É necessário informar as credenciais geradas no API Key para que a SDK funcione, para isso existem 2 maneiras, importando o arquivo JSON (para todas as versões da SDK) ou utilizando uma classe de configuração (para versões iguis ou superiores à 4.1.0 da SDK), se possível recomendados o uso da classe.
+
+#### Implementação por classe
+ <Tabs>
+  <TabItem value="java" label="Java" default>
+
+```java
+private static UnicoConfig unicoConfig = new UnicoConfig();
+```
+</TabItem>
+  <TabItem value="kotlin" label="Kotlin">
+
+```kotlin
+private val unicoConfig : UnicoConfig;
+```
+  </TabItem>
+</Tabs>
+
+#### Implementação por JSON
+<Tabs>
+  <TabItem value="java" label="Java" default>
+
+```java
+private String unicoConfig = "json-credentials.json"
+```
+  </TabItem>
+  <TabItem value="kotlin" label="Kotlin">
+
+```kotlin
+private val unicoConfig = "json-credentials.json"
+```
+  </TabItem>
+</Tabs>
+<li>
+
 ### Efetuar abertura da câmera
 
 O último passo é disparar a abertura da câmera. Vamos dividir este processo em algumas etapas:
@@ -314,7 +352,7 @@ A implementação destes métodos (*listeners*) deverá ser feita através de um
 :::
 
 #### Preparar e abrir câmera
-Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e o JSON com as credenciais, gerado [nesse passo](../como-comecar).
+Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e a classe ou JSON com as credenciais, gerado [nesse passo](../como-comecar).
 
 Quando estiver tudo certo, dispararemos um evento que deverá ser tratado através do método `onCameraReady`, que recebe como parâmetro um objeto do tipo `UnicoCheckCameraOpener.Selfie`. Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido, através do método `open()`. O método `open()` deverá receber como parâmetro os *listeners* configurados nos passos acima.
 
@@ -332,7 +370,7 @@ iAcessoBioSelfie cameraListener = new iAcessoBioSelfie() {
     public void onErrorSelfie(ErrorBio errorBio) { }
 };
 
-unicoCheckCamera.prepareSelfieCamera("json-credenciais.json", new SelfieCameraListener() {
+unicoCheckCamera.prepareSelfieCamera(unicoConfig, new SelfieCameraListener() {
     @Override
     public void onCameraReady(UnicoCheckCameraOpener.Selfie cameraOpener) {
         cameraOpener.open(cameraListener);
@@ -355,7 +393,7 @@ val cameraListener: iAcessoBioSelfie = object : iAcessoBioSelfie {
     override fun onErrorSelfie(errorBio: ErrorBio?) {}
 }
 
-unicoCheckCamera.prepareSelfieCamera("json-credenciais.json", object : SelfieCameraListener {
+unicoCheckCamera.prepareSelfieCamera(unicoConfig, object : SelfieCameraListener {
     override fun onCameraReady(cameraOpener: UnicoCheckCameraOpener.Selfie?) {
         cameraOpener?.open(cameraListener)
     }

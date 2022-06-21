@@ -85,8 +85,10 @@ import TabItem from '@theme/TabItem';
   <TabItem value="java" label="Java" default>
 
 ```java 
+package <package_name>
 
 import com.acesso.acessobio_android.onboarding.AcessoBioConfigDataSource;
+import androidx.annotation.NonNull;
 
 public class UnicoConfig implements AcessoBioConfigDataSource {
     @NonNull
@@ -132,8 +134,10 @@ public class UnicoConfig implements AcessoBioConfigDataSource {
   <TabItem value="kotlin" label="Koltin">
 
 ```kotlin
+package <package_name>
 
 import com.acesso.acessobio_android.onboarding.AcessoBioConfigDataSource
+import androidx.annotation.NonNull;
 
 class UnicoConfig : AcessoBioConfigDataSource {
     override fun getProjectNumber(): String {
@@ -218,6 +222,9 @@ Por favor, note que a dependência deve ser incluída em um arquivo diferente do
 ```java title="app/build.gradle"
 /* unico */
 implementation 'com.github.acesso-io:acessobio-android:+'
+
+/* anotacao NonNull, usada na classe de credenciais */
+implementation 'androidx.annotation:annotation:1.1.0'
 ```
 
 :::caution Erro ao compilar
