@@ -280,7 +280,7 @@ Entenda um pouco mais sobre o método `setTheme()`, exemplos de utilização e o
 </li>
 
 ### Configurar credenciais
-É necessário informar as credenciais geradas no API Key para que a SDK funcione, para isso existem 2 maneiras, importando o arquivo JSON (para todas as versões da SDK) ou utilizando uma classe de configuração (para versões iguis ou superiores à 4.1.0 da SDK), se possível recomendados o uso da classe.
+É necessário informar as credenciais geradas na API Key para que a SDK funcione, para isso existem 2 maneiras, importando o arquivo JSON (para todas as versões da SDK) ou utilizando uma classe de configuração (para versões iguais ou superiores à 4.1.0 da SDK). Como método recomendado aconselhamos o uso da classe de configuração.
 
 #### Implementação por classe
  <Tabs>
