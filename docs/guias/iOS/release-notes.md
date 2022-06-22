@@ -11,6 +11,16 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## Versão `2.3.4`
+
+```bash
+pod ‘unicocheck-ios’, '2.3.4'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Hot fix: Ajustes para manter compatibilidade com Xcode 13
+
 ## Versão `2.3.3`
 
 ```bash
