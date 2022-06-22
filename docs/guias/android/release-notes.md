@@ -11,6 +11,11 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## Versão 4.1.3
+- Hot Fix: Ajuste no frame de captura de documentos genéricos.
+- Hot Fix: Correção de nomenclaturas que causavam conflito de ```themes```.
+- Hot Fix: Melhoria na coleta de logs de erro.
+
 ## Versão 4.1.0
 - Indicador de atividade agora possui mesma cor que a mensagem na customização.
 - Possibilidade de executar os métodos ```prepareSelfieCamera``` e ```prepareDocumentCamera``` sem o arquivo ```json```, utilizando uma interface do tipo `AcessoBioConfigDataSource`.
