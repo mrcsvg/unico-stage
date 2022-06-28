@@ -50,7 +50,7 @@ Caso a nova aba não abra, por favor, verifique se o seu navegador está bloquea
 6. Atualmente temos duas opções para associar as informações contidas no JSON ao projeto: **Implementando o protocolo** `AcessoBioConfigDataSource` ou **Embarcando o arquivo JSON**.
 Veja abaixo: 
 
-#### Opcão 1: Implementação do protocolo `AcessoBioConfigDataSource`
+#### Opcão 1: Implementação do protocolo `AcessoBioConfigDataSource` (recomendado)
 
 1. Implemente o protocolo `AcessoBioConfigDataSource` em sua classe.  
 2. Copie e cole as informações contidas no JSON em seus respectivos métodos, como exemplificado abaixo: 
@@ -88,40 +88,33 @@ import TabItem from '@theme/TabItem';
 package <package_name>
 
 import com.acesso.acessobio_android.onboarding.AcessoBioConfigDataSource;
-import androidx.annotation.NonNull;
 
 public class UnicoConfig implements AcessoBioConfigDataSource {
-    @NonNull
     @Override
     public String getProjectNumber() {
         return PROJECT_NUMBER;
     }
     
-    @NonNull
     @Override
     public String getProjectId() {
         return PROJECT_ID;
     }
     
-    @NonNull
     @Override
     public String getMobileSdkAppId() {
         return MOBILE_SDK_APP_ID;
     }
     
-    @NonNull
     @Override
     public String getBundleIdentifier() {
         return BUNDLE_IDENTIFIER;
     }
     
-    @NonNull
     @Override
     public String getHostInfo() {
         return HOST_INFO;
     }
     
-    @NonNull
     @Override
     public String getHostKey() {
         return HOST_KEY;
@@ -137,7 +130,6 @@ public class UnicoConfig implements AcessoBioConfigDataSource {
 package <package_name>
 
 import com.acesso.acessobio_android.onboarding.AcessoBioConfigDataSource
-import androidx.annotation.NonNull;
 
 class UnicoConfig : AcessoBioConfigDataSource {
     override fun getProjectNumber(): String {
@@ -170,7 +162,7 @@ class UnicoConfig : AcessoBioConfigDataSource {
   </TabItem>
 </Tabs>
 
-#### Opcão 2: Embarcando o arquivo JSON
+#### Opcão 2: Embarcando o arquivo JSON (depreciado)
 
 Adicione o arquivo salvo na pasta assets do seu projeto.
 
@@ -203,12 +195,13 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### Permissões para utilização da câmera
+### Permissões para utilização da câmera e internet
 
-Adicione permissão para utilização da câmera em seu arquivo `AndroidManifest.xml`:
+Adicione permissão para utilização da câmera e internet em seu arquivo `AndroidManifest.xml`:
 
 ```xml title="AndroidManifest.xml"
 <uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.INTERNET" />
 ```
 
 ### Inclusão da dependência
@@ -222,9 +215,6 @@ Por favor, note que a dependência deve ser incluída em um arquivo diferente do
 ```java title="app/build.gradle"
 /* unico */
 implementation 'com.github.acesso-io:acessobio-android:+'
-
-/* anotacao NonNull, usada na classe de credenciais */
-implementation 'androidx.annotation:annotation:1.1.0'
 ```
 
 :::caution Erro ao compilar

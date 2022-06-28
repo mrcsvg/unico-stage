@@ -136,9 +136,82 @@ Todos os métodos acima devem ser criados da forma indicada em seu projeto (mesm
 
 <li>
 
+### Configurar credenciais
+É necessário informar as credenciais geradas na API Key para que a SDK funcione, para isso utilizaremos uma classe de configuração (AcessoBioConfigDataSource). A codificação da classe pode seguir como o exemplo abaixo:
 
+#### Implementação por classe
+ <Tabs>
+  <TabItem value="java" label="Java" default>
 
+```java
+AcessoBioConfigDataSource unicoConfig = new AcessoBioConfigDataSource() {
 
+    @Override
+    public String getHostKey() {
+        return HOST_KEY;
+    }
+
+    @Override
+    public String getHostInfo() {
+        return HOST_INFO;
+    }
+
+    @Override
+    public String getBundleIdentifier() {
+        return BUNDLE_IDENTIFIER;
+    }
+
+    @Override
+    public String getMobileSdkAppId() {
+        return MOBILE_SDK_APP_ID;
+    }
+
+    @Override
+    public String getProjectId() {
+        return PROJECT_ID;
+    }
+
+    @Override
+    public String getProjectNumber() {
+        return PROJECT_NUMBER;
+    }
+};
+```
+</TabItem>
+  <TabItem value="kotlin" label="Kotlin">
+
+```kotlin
+val unicoConfig = object : AcessoBioConfigDataSource {
+    override fun getProjectNumber(): String {
+        return PROJECT_NUMBER
+    }
+
+    override fun getProjectId(): String {
+        return PROJECT_ID
+    }
+
+    override fun getMobileSdkAppId(): String {
+        return MOBILE_SDK_APP_ID
+    }
+
+    override fun getBundleIdentifier(): String {
+        return BUNDLE_IDENTIFIER
+    }
+
+    override fun getHostInfo(): String {
+        return HOST_INFO
+    }
+
+    override fun getHostKey(): String {
+        return HOST_KEY
+    }
+}
+```
+  </TabItem>
+</Tabs>
+</li>
+
+<li>
 
 ### Efetuar abertura da câmera
 
@@ -242,7 +315,7 @@ iAcessoBioDocument cameraListener = new iAcessoBioDocument() {
     public void onErrorDocument(ErrorBio errorBio) { }
 };
 
-unicoCheckCamera.prepareDocumentCamera("json-credenciais.json", new DocumentCameraListener() {
+unicoCheckCamera.prepareDocumentCamera(unicoConfig, new DocumentCameraListener() {
     @Override
     public void onCameraReady(UnicoCheckCameraOpener.Document cameraOpener) {
         cameraOpener.open(DocumentType.CNH, cameraListener);
@@ -265,7 +338,7 @@ val cameraListener: iAcessoBioDocument = object : iAcessoBioDocument {
     override fun onErrorDocument(errorBio: ErrorBio?) {}
 }
 
-unicoCheckCamera.prepareDocumentCamera(UnicoConfig(), object : DocumentCameraListener {
+unicoCheckCamera.prepareDocumentCamera(unicoConfig, object : DocumentCameraListener {
     override fun onCameraReady(cameraOpener: UnicoCheckCameraOpener.Document?) {
         cameraOpener?.open(DocumentType.CNH, cameraListener)
     }

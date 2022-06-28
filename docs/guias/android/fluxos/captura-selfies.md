@@ -277,42 +277,81 @@ Entenda um pouco mais sobre o método `setTheme()`, exemplos de utilização e o
 
 <li>
 
-</li>
-
 ### Configurar credenciais
-É necessário informar as credenciais geradas na API Key para que a SDK funcione, para isso existem 2 maneiras, importando o arquivo JSON (para todas as versões da SDK) ou utilizando uma classe de configuração (para versões iguais ou superiores à 4.1.0 da SDK). Como método recomendado aconselhamos o uso da classe de configuração.
+É necessário informar as credenciais geradas na API Key para que a SDK funcione, para isso utilizaremos uma classe de configuração (AcessoBioConfigDataSource). A codificação da classe pode seguir como o exemplo abaixo:
 
 #### Implementação por classe
  <Tabs>
   <TabItem value="java" label="Java" default>
 
 ```java
-private static UnicoConfig unicoConfig = new UnicoConfig();
+AcessoBioConfigDataSource unicoConfig = new AcessoBioConfigDataSource() {
+
+    @Override
+    public String getHostKey() {
+        return HOST_KEY;
+    }
+
+    @Override
+    public String getHostInfo() {
+        return HOST_INFO;
+    }
+
+    @Override
+    public String getBundleIdentifier() {
+        return BUNDLE_IDENTIFIER;
+    }
+
+    @Override
+    public String getMobileSdkAppId() {
+        return MOBILE_SDK_APP_ID;
+    }
+
+    @Override
+    public String getProjectId() {
+        return PROJECT_ID;
+    }
+
+    @Override
+    public String getProjectNumber() {
+        return PROJECT_NUMBER;
+    }
+};
 ```
 </TabItem>
   <TabItem value="kotlin" label="Kotlin">
 
 ```kotlin
-private val unicoConfig : UnicoConfig;
+val unicoConfig = object : AcessoBioConfigDataSource {
+    override fun getProjectNumber(): String {
+        return PROJECT_NUMBER
+    }
+
+    override fun getProjectId(): String {
+        return PROJECT_ID
+    }
+
+    override fun getMobileSdkAppId(): String {
+        return MOBILE_SDK_APP_ID
+    }
+
+    override fun getBundleIdentifier(): String {
+        return BUNDLE_IDENTIFIER
+    }
+
+    override fun getHostInfo(): String {
+        return HOST_INFO
+    }
+
+    override fun getHostKey(): String {
+        return HOST_KEY
+    }
+}
 ```
   </TabItem>
 </Tabs>
+</li>
 
-#### Implementação por JSON
-<Tabs>
-  <TabItem value="java" label="Java" default>
-
-```java
-private String unicoConfig = "json-credentials.json"
-```
-  </TabItem>
-  <TabItem value="kotlin" label="Kotlin">
-
-```kotlin
-private val unicoConfig = "json-credentials.json"
-```
-  </TabItem>
-</Tabs>
 <li>
 
 ### Efetuar abertura da câmera
