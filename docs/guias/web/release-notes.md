@@ -12,6 +12,7 @@ Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aq
 :::
 
 ## `3.5.0`
+``17/06/2022``
 - Atualização da versão do SDK do Smartlive.
 
 :::caution Atenção
@@ -20,41 +21,52 @@ Veja isso na sessão [Embarcando outros arquivos do Unico Check em seu projeto](
 :::
 
 ## `3.4.3`
+``18/04/2022``
 - Correção no frame de captura de CNH Aberta em desktop
 
 ## `3.4.2`
+``12/04/2022``
 - Melhoria na qualidade da imagem retornada no base64
 - Melhoria em requests de autenticação
 - Correção para uso de WebCam na câmera de documentos
 
 ## `3.4.1`
+``04/04/2022``
 - Melhoria em tratamento anti-injection
 
 ## `3.4.0`
+``04/04/2022``
 - Lançamento de frames de captura de documentos com CNH frente e CNH verso.
 - Captura de documentos em modo paisagem no desktop
 
 ## `3.3.1`
+``22/03/2022``
 - Ajuste para utilização de função ao invés de classes
 - Ajuste na inicialização da camera após a segunda abertura
 
-## `3.3.0` 
+## `3.3.0`
+``10/03/2022`` 
 - Ajuste na abertura da camera para Motorola Edge 20
 - Ajuste nas informações criptografadas retornadas para o cliente
 
 ## `3.2.2`
+``18/02/2022``
 - Ajuste no fechamento da camera da Facetec quando um erro é retornado
 
 ## `3.2.1`
+``17/02/2022``
 - Remoção da tela de permissão de camera da facetec
 
 ### `3.1.0` 
+``31/01/2022``
 - Feature Flag para exibição do logo da unico
 
 ### `3.0.1`
+``25/01/2022``
 - Remoção do logo da unico
 
 ## `3.0.0` 
+``24/01/2022``
 - Inclusão da funcionalidade de captura com liveness com interação
 
 ## Versão `2.0.3`
