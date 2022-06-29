@@ -11,69 +11,86 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
-## Versão 4.1.0
+## Versão 4.1.0 
+``14/06/2022``
 - Indicador de atividade agora possui mesma cor que a mensagem na customização.
 - Possibilidade de executar os métodos ```prepareSelfieCamera``` e ```prepareDocumentCamera``` sem o arquivo ```json```, utilizando uma interface do tipo `AcessoBioConfigDataSource`.
 
 ## Versão 4.0.16
+``07/06/2022``
 - Hot fix: ajuste no lifecycle do frame de captura com interação.
 
 ## Versão 4.0.15
+``17/05/2022``
 - Melhoria da resolução da imagem gerada pelo Smartlive com interação para celulares de qualidade média/alta
 - Atualização do google play services ML Kit face detection para a versão 17.0.1.
 
 ## Versão 4.0.14
+``26/04/2022``
 - Atualização da versão do SDK do Smartlive.
 - Remoção de pedidos de permissões que não estavam sendo usados.
 
 ## Versão 4.0.13
+``07/04/2022``
 - Ajuste no tema padrão para o modo de baixa luminosidade do frame com interação
 
 ## Versão 4.0.12
+``05/04/2022``
 - Customização do botão de fechar camera
 - Correções de erros na customização de sucesso
 
 ## Versão 4.0.11
+``30/03/2022``
 - Ajuste para otimizar performance da SDK
 - Ajuste no seletor de câmera para dispositivos com múltiplas câmeras
 
 ## Versão 4.0.10
+``25/03/2022``
 - Ajuste nas configurações que geram o objeto encriptado unico
 - Correções em configuração de Temas
 - Resolução de conflitos com bugfender
 
 ## Versão 4.0.9
+``21/03/2022``
 - Downgrade do Kotlin para 1.4.0
 - Ajuste ao abrir a câmera pela segunda vez
 
 ## Versão 4.0.8
+``11/03/2022``
 - Correção na encriptação
 
 ## Versão 4.0.7
+``0/03/2022``
 - Ajuste de dependencias para tornar nossas bibliotecas compativeis com minCompileSdk 30
 
 ## Versão 4.0.6
+``0/03/2022``
 - Adicionada compatibilidade com java 8
 - Adicionado frames de captura de CNH frente e CNH verso
 
 ## Versão 4.0.5
+``17/02/2022``
 - Correção de erro no jitpack
 
 ## Versão 4.0.4
+``16/02/2022``
 - Update da biblioteca GSON para versão 2.8.9
 - Ajuste no modulo de abertura de câmera
 
 ## Versão 4.0.3
+``10/02/2022``
 - Corrigimos um bug no modulo de abertura da câmera de documentos
 
 ## Versão 4.0.2
+``09/02/2022``
 - Corrigimos um bug que esteva deixando o debug lento ao utilizar nosso SDK.
 
 ## Versão 4.0.1
+``04/02/2022``
 - Corrigimos um bug referente a: request prepare camera
 
 ## Versão 4.0.0
-
+``02/02/2022``
 ```
 implementation 'com.github.acesso-io:acessobio-android:4.0.0'
 ```
