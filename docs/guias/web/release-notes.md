@@ -11,6 +11,18 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## `3.5.1`
+``28/06/2022``
+- Hot fix: Correção da câmera invocada para captura de documentos em devices que possuem múltiplas câmeras
+
+:::info Vale lembrar
+Atualmente ainda não é possível lidar completamente com múltiplas câmeras em todos os devices android disponíveis, pois a API [MediaDevices](https://developer.mozilla.org/pt-BR/docs/Web/API/MediaDevices) não oferece recursos completos para isso.
+Abaixo estão alguns links de discussões levantadas sobre o tema:  
+[How to select proper backfacing camera in Javascript?](https://stackoverflow.com/questions/59636464/how-to-select-proper-backfacing-camera-in-javascript)  
+[How to avoid wide-lens backfacing camera on new phones?](https://lists.w3.org/Archives/Public/public-webrtc/2020Jan/0023.html)  
+[How to detect main / telephoto camera from multiple back cameras with getusermedia](https://stackoverflow.com/questions/56768386/how-to-detect-main-telephoto-camera-from-multiple-back-cameras-with-getusermed)
+:::
+
 ## `3.5.0`
 - Atualização da versão do SDK do Smartlive.
 

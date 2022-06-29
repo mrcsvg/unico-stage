@@ -72,12 +72,15 @@ Caso esteja utilizando TypeScript em seu projeto dentro de src/ crie uma pasta @
 ```javascript
 
 declare module 'unico-webframe' {
-	export class UnicoCheckBuilder {
-		setTheme(theme: UnicoTheme): void;
-		setModelsPath(path: string): void;
-		setResourceDirectory(path: string): void;
-		build(): MainView;
-	}
+  export class UnicoCheckBuilder {
+    setTheme(theme: UnicoTheme): UnicoCheckBuilder;
+
+    setModelsPath(path: string): UnicoCheckBuilder;
+
+    setResourceDirectory(path: string): UnicoCheckBuilder;
+
+    build(): MainView;
+  }
 	export interface UnicoTheme {
 		colorSilhouetteNeutral: string;
 		colorSilhouetteSuccess: string;
