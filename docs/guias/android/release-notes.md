@@ -12,6 +12,7 @@ Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aq
 :::
 
 ## Versão 4.1.3
+``28/06/2022``
 - Hot Fix: Ajuste no frame de captura de documentos genéricos.
 - Hot Fix: Correção de nomenclaturas que causavam conflito de ```themes```.
 - Hot Fix: Melhoria na coleta de logs de erro.
