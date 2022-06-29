@@ -11,6 +11,12 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
+## Versão 4.1.3
+``28/06/2022``
+- Hot Fix: Ajuste no frame de captura de documentos genéricos.
+- Hot Fix: Correção de nomenclaturas que causavam conflito de ```themes```.
+- Hot Fix: Melhoria na coleta de logs de erro.
+
 ## Versão 4.1.0 
 ``14/06/2022``
 - Indicador de atividade agora possui mesma cor que a mensagem na customização.
