@@ -88,7 +88,7 @@ npm install unico-webframe
 #### Instalação através de nosso cdn
 Para instalar nosso SDK em seu projeto por meio de nosso cdn, basta efetuar o download do arquivo abaixo e importa-lo em seu projeto.
 
-- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.5.0.zip) da versão `3.5.0` 
+- [Download](https://cdn.unico.io/sdk/check/bio/unico-webframe-3.5.1.zip) da versão `3.5.1` 
 
 
 :::note Nota sobre o *Câmera Inteligente* e modelos de IA

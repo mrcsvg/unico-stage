@@ -11,8 +11,18 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
-## Versão `2.3.3`
+## Versão `2.3.4`
 
+```bash
+pod ‘unicocheck-ios’, '2.3.4'
+```
+
+Essa nova versão conta com o seguinte ajuste:
+
+- Hot fix: Ajustes para manter compatibilidade com Xcode 13
+
+## Versão `2.3.3`
+``08/06/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.3.3'
 ```
@@ -23,7 +33,7 @@ Essa nova versão conta com o seguinte ajuste:
 
 
 ## Versão `2.3.2`
-
+``23/05/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.3.2'
 ```
@@ -33,7 +43,7 @@ Essa nova versão conta com o seguinte ajuste:
 - Hot fix: ajuste no callback do fechamento manual do frame de captura com interação.
 
 ## Versão `2.3.1`
-
+``17/05/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.3.1'
 ```
@@ -43,7 +53,7 @@ Essa nova versão conta com o seguinte ajuste:
 - Melhoria da resolução da imagem gerada pelo Smartlive com interação para celulares de qualidade média/alta.
 
 ## Versão `2.3.0`
-
+``25/04/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.3.0'
 ```
@@ -54,7 +64,7 @@ Essa nova versão conta com o seguinte ajuste:
 - Possibilidade de executar os métodos ```prepareSelfieCamera``` e ```prepareDocumentCamera``` sem o arquivo ```json```, utilizando uma classe do tipo `AcessoBioConfigDataSource`.
 
 ## Versão `2.2.1`
-
+``06/04/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.2.1'
 ```
@@ -65,7 +75,7 @@ Essa nova versão conta com o seguinte ajuste:
 - Ajuste na customização para o botão de fechar do frame com interação.
 
 ## Versão `2.1.3`
-
+``24/03/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.1.3'
 ```
@@ -75,7 +85,7 @@ Essa nova versão conta com o seguinte ajuste:
 - Feature flag para poder selecionar a exibição ou não do logo da unico.
  
 ## Versão `2.1.2`
-
+``18/03/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.1.2'
 ```
@@ -85,7 +95,7 @@ Essa nova versão conta com o seguinte ajuste:
 - Correções nas configurações, que estavam impedindo o upload do archive/.ipa para a loja Apple.
  
 ## Versão `2.1.0`
-
+``10/03/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.1.0'
 ```
@@ -98,7 +108,7 @@ Essa nova versão conta com as seguintes melhorias:
 
 
 ## Versão `2.0.5`
-
+``23/02/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.0.5'
 ```
@@ -110,7 +120,7 @@ Essa nova versão conta com os seguintes ajustes:
 - Correção nos callbacks de erro que não estavam sendo invocados em casos de falhas em requisições REST.
 
 ## Versão `2.0.4`
-
+``15/02/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.0.4'
 ````
@@ -147,7 +157,7 @@ pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios', :tag 
 - Correção na implementacão das customizacões.
 
 ## Versão `2.0.0`
-
+``01/02/2022``
 ```bash
 pod ‘AcessoBio’, :git => 'https://github.com/acesso-io/acessobio-ios', :tag => ‘2.0.0’
 ```
