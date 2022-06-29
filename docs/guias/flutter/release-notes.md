@@ -12,6 +12,10 @@ Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aq
 :::
 
 
+## 3.0.0
+``29/06/2022``
+- Versão estável de nosso SDK que contém a técnologia de SmartLive com interação.
+
 ## 3.0.0-beta.1
 - Nova versão de nosso SDK que contém a técnologia de SmartLive com interação.
 

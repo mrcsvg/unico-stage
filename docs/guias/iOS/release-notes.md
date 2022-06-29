@@ -11,8 +11,21 @@ Você já sabe, mas não custa lembrar: Mantenha sempre seu SDK atualizado com a
 Utilizamos Versionamento Semântico para numerar nossas versões. Saiba mais [aqui](/conceitos-importantes).
 :::
 
-## Versão `2.3.4`
+## Versão `2.3.5`
+``29/06/2022``
+```bash
+pod ‘unicocheck-ios’, '2.3.5'
+```
 
+Essa nova versão conta com o seguinte ajuste:
+
+- Hot fix: Fechamento automático da câmera quando o usuário coloca a aplicação em background
+- Hot fix: Limpezas de warnings na base de código
+
+
+
+## Versão `2.3.4`
+``22/06/2022``
 ```bash
 pod ‘unicocheck-ios’, '2.3.4'
 ```
