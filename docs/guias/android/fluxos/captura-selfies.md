@@ -277,6 +277,83 @@ Entenda um pouco mais sobre o método `setTheme()`, exemplos de utilização e o
 
 <li>
 
+### Configurar credenciais
+É necessário informar as credenciais geradas na API Key para que a SDK funcione, para isso utilizaremos uma classe de configuração (AcessoBioConfigDataSource). A codificação da classe pode seguir como o exemplo abaixo:
+
+#### Implementação por classe
+ <Tabs>
+  <TabItem value="java" label="Java" default>
+
+```java
+AcessoBioConfigDataSource unicoConfig = new AcessoBioConfigDataSource() {
+
+    @Override
+    public String getHostKey() {
+        return HOST_KEY;
+    }
+
+    @Override
+    public String getHostInfo() {
+        return HOST_INFO;
+    }
+
+    @Override
+    public String getBundleIdentifier() {
+        return BUNDLE_IDENTIFIER;
+    }
+
+    @Override
+    public String getMobileSdkAppId() {
+        return MOBILE_SDK_APP_ID;
+    }
+
+    @Override
+    public String getProjectId() {
+        return PROJECT_ID;
+    }
+
+    @Override
+    public String getProjectNumber() {
+        return PROJECT_NUMBER;
+    }
+};
+```
+</TabItem>
+  <TabItem value="kotlin" label="Kotlin">
+
+```kotlin
+val unicoConfig = object : AcessoBioConfigDataSource {
+    override fun getProjectNumber(): String {
+        return PROJECT_NUMBER
+    }
+
+    override fun getProjectId(): String {
+        return PROJECT_ID
+    }
+
+    override fun getMobileSdkAppId(): String {
+        return MOBILE_SDK_APP_ID
+    }
+
+    override fun getBundleIdentifier(): String {
+        return BUNDLE_IDENTIFIER
+    }
+
+    override fun getHostInfo(): String {
+        return HOST_INFO
+    }
+
+    override fun getHostKey(): String {
+        return HOST_KEY
+    }
+}
+```
+  </TabItem>
+</Tabs>
+</li>
+
+<li>
+
 ### Efetuar abertura da câmera
 
 O último passo é disparar a abertura da câmera. Vamos dividir este processo em algumas etapas:
@@ -314,7 +391,7 @@ A implementação destes métodos (*listeners*) deverá ser feita através de um
 :::
 
 #### Preparar e abrir câmera
-Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e o JSON com as credenciais, gerado [nesse passo](../como-comecar).
+Devemos preparar a câmera para abertura utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraListener` e a classe ou JSON com as credenciais, gerado [nesse passo](../como-comecar).
 
 Quando estiver tudo certo, dispararemos um evento que deverá ser tratado através do método `onCameraReady`, que recebe como parâmetro um objeto do tipo `UnicoCheckCameraOpener.Selfie`. Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido, através do método `open()`. O método `open()` deverá receber como parâmetro os *listeners* configurados nos passos acima.
 
@@ -332,7 +409,7 @@ iAcessoBioSelfie cameraListener = new iAcessoBioSelfie() {
     public void onErrorSelfie(ErrorBio errorBio) { }
 };
 
-unicoCheckCamera.prepareSelfieCamera("json-credenciais.json", new SelfieCameraListener() {
+unicoCheckCamera.prepareSelfieCamera(unicoConfig, new SelfieCameraListener() {
     @Override
     public void onCameraReady(UnicoCheckCameraOpener.Selfie cameraOpener) {
         cameraOpener.open(cameraListener);
@@ -355,7 +432,7 @@ val cameraListener: iAcessoBioSelfie = object : iAcessoBioSelfie {
     override fun onErrorSelfie(errorBio: ErrorBio?) {}
 }
 
-unicoCheckCamera.prepareSelfieCamera("json-credenciais.json", object : SelfieCameraListener {
+unicoCheckCamera.prepareSelfieCamera(unicoConfig, object : SelfieCameraListener {
     override fun onCameraReady(cameraOpener: UnicoCheckCameraOpener.Selfie?) {
         cameraOpener?.open(cameraListener)
     }
