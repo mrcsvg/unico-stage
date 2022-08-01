@@ -1,6 +1,6 @@
 {
-    "label": "Android SDK",
-    "position": 1,
+    "label": "Web",
+    "position": 4,
     "collapsible" : true,
     "collapsed" : true
   }

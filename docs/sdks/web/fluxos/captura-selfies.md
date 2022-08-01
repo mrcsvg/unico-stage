@@ -1,9 +1,12 @@
 ---
-sidebar_label: 'Captura de documentos'
+sidebar_label: 'Captura de Selfies'
 sidebar_position: 4
+hide_title: true
 ---
 
-# Verificação de documentos
+<!-- TODO Arrumar regência dos títulos  -->
+
+# Captura de Selfies
 
 ## Sobre este guia
 
@@ -26,25 +29,50 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 ## Recursos disponíveis
 
-Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
+Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. A captura da imagem para o captura de Selfies pode ser feita de três formas descritas ao longo desse guia. São elas:
 
-- **CNH:** Captura da CNH aberta;
-- **CNH frente:** Captura da frente da CNH;
-- **CNH verso:** Captura do verso da CNH;
-- **CPF:** Captura do documento de CPF;
-- **RG frente:** Captura da frente do RG;
-- **RG verso:** Captura do verso do RG;
-- **Novo RG frente:** Captura a frente do novo tipo de RG;
-- **Novo RG verso:** Captura o verso do novo tipo de RG;
-- **Outros:** Captura documento genérico. Para este tipo de captura você deve informar o título do documento que será mostrado na captura para o usuário usando a propriedade `optional.LABEL_DOCUMENT_TYPE_OTHERS`.
+### Captura Manual
+
+Neste tipo de experiência existe um frame de captura para auxiliar o usuário a posicionar sua face corretamente. Após se posicionar corretamente, o usuário deve clicar em um botão para capturar a imagem. 
+
+A SDK não efetua nenhum tipo de validação do que está sendo capturado. Caso a imagem capturada não possua uma face biométricamente válida, o `JWT` será recusado pelas APIs de nosso motor de biometria.
+
+import imgCapturaManual from '/static/img/sdks/img_cameranormal.png';
+
+<img src={imgCapturaManual} alt="Captura Manual" className="imgCenter" />
 
 
-import imgDocumento from '/static/img/guias/img_documentos.png';
+### Captura Automática
 
-<img src={imgDocumento} alt="Captura Manual" className="imgCenter" />
+Neste tipo de experiência, identificamos a face do usuário automaticamente através de algoritmos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
 
+Por ajudar o usuário a enquadrar sua face na área de captura, esta opção pode diminuir problemas ao enviar o `JWT` às APIs de nosso motor biométrico.
+
+import imgCapturaAutomatica from '/static/img/sdks/img_camerainteligente.png';
+
+<img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
+
+### Smartlive com interação Facetec
+
+Neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento.
+
+Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
+Tal como na Captura Automática a imagem é capturada sem a necessidade do usuário pressionar um botão. Desta forma tende a diminuir problemas ao enviar o `JWT` às APIs de nosso motor biométrico.
+
+:::info Ativação do Smartlive com interação Facetec
+Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).
+:::
 
 ## Implementação
+### Smartlive com interação Facetec
+
+Também conhecido como prova de vida, neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento. 
+
+Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
+
+:::info Ativação do Smartlive com interação Facetec
+Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).
+:::
 
 Abaixo um passo-a-passo para ter nosso SDK funcionando em poucos minutos em seu WebApp. 
 
@@ -71,13 +99,26 @@ Especifique o caminho dos arquivos adicionais (caso adicionados em seu projeto):
 unicoCameraBuilder.setResourceDirectory("/resources");
 ```
 
+Especifique o caminho dos arquivos dos modelos de IA, caso utilize a funcionalidade de Câmera Inteligente
+
+```javascript
+unicoCameraBuilder.setModelsPath("https://meusite.com.br/models");
+
+```
+
 </li>
 
 <li>
 
 ### Configurar o tamanho do frame
 
-Como primeiro passo, sugerimos que você configure o tamanho de nosso frame dentro de sua aplicação, a fim de otimizar a área de captura dentro de seu WebApp. Confira abaixo como fazer esta configuração para Web Desktop ou Mobile.
+:::note Passo não requerido para modo **Smartlive com interação Facetec**
+
+Este passo só é necessário caso você **não** esteja utilizando o **Smartlive com interação Facetec**, pois neste modo o SDK renderiza um frame que ocupa todo o espaço da tela e se ajusta automaticamente.
+
+:::
+
+Caso não esteja utilizando **Smartlive com interação Facetec**, sugerimos que você configure o tamanho de nosso frame dentro de sua aplicação, a fim de otimizar a área de captura dentro de seu WebApp. Confira abaixo como fazer esta configuração para Web Desktop ou Mobile.
 
 :::tip Dica
 
@@ -149,7 +190,7 @@ Um dos objetos que devemos passar como parâmetro ao método responsável por re
     on: {
       success: (obj) => {
         console.log(obj.base64);
-        console.log(obj.encrypted);
+        console.log(obj.encrypted);        
       },
       error: (error) => {
         console.error(error)
@@ -163,12 +204,12 @@ Um dos objetos que devemos passar como parâmetro ao método responsável por re
 
 ```
 
-Este objeto é obrigatório e caso não seja corretamente implementado (contemplando todos os eventos de `success` ou `error` irá gerar uma exceção, que caso não tratada, será exibida no console do usuário).
+Este objeto é obrigatório e caso não seja corretamente implementado (contemplando todos os eventos de `success` ou `error`) irá gerar uma exceção, que caso não tratada, será exibida no console do usuário.
 
 Para mais detalhes sobre os códigos de erro retornados por nosso SDK, consulte [este guia](../referencias#códigos-de-erro).
 
-<!-- Para mais detalhes sobre o objeto de `callback`, consulte nossa a [API Reference](api/callback) de nosso SDK Web. -->
 
+<!-- Para mais detalhes sobre o objeto de `callback`, consulte nossa a [API Reference](api/callback) de nosso SDK Web. -->
 
 </li>
 
@@ -177,8 +218,7 @@ Para mais detalhes sobre os códigos de erro retornados por nosso SDK, consulte 
 ### Configurar layout do frame
 
 :::note Passo opcional
-Este é um passo opcional, porém recomendado.
-  
+Este é um passo opcional, porém recomendado. 
 :::
 
 Oferecemos a possibilidade de customização do frame de captura por meio do nosso **Theme Builder**. Para efetuar a customização do frame basta gerar uma instância da classe `UnicoThemeBuilder` e invocar os métodos que customizam cada uma das propriedades do frame de captura, como exemplificados abaixo:
@@ -208,6 +248,7 @@ unicoCameraBuilder.setTheme(unicoTheme);
 ```
 
 <!-- Para mais detalhes sobre o `UnicoThemeBuilder`, consulte nossa a [API Reference](api/UnicoThemeBuilder) de nosso SDK Web. -->
+
 </li>
 
 
@@ -221,33 +262,62 @@ Finalmente, devemos iniciar a câmera com as configurações feitas até aqui. P
 const unicoCamera = unicoCameraBuilder.build();
 ```
 
-A preparação da câmera será efetuada a partir do método `prepareDocumentCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
+Em seguida, com a câmera "montada", iremos configurar o modo de captura da camera. Como explicamos [acima](captura-selfies#recursos-disponíveis) existem três modos de captura disponíveis.
+
+Caso **não** esteja utilizando o modo **Smartlive com interação Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
+
+
+:::tip Dica
+
+Caso você esteja utilizando o modo **Smartlive com interação Facetec**, a configuração do tipo de câmera passa a ser irrelevante, pois este modo oferece uma experiência pré-definida que não pode ser alterada.
+
+No entanto, sugerimos que você configure um tipo de câmera em seu builder (como descrito neste passo), pois caso você desabilite o modo **Liveness com interação Facetec** em seu portal do cliente (e gere um novo JSON), você não precisará alterar seu código.
+
+:::
+
+A preparação da câmera será efetuada a partir do método `prepareSelfieCamera()`, disponibilizado a partir do **builder**. Este método recebe 2 parâmetros:
 - O arquivo JSON com suas credenciais (Gerado através deste [guia](../como-comecar#criando-ou-editando-uma-api-key);
-- Tipo de documento a ser capturado, sendo eles:
-  - `DocumentCameraTypes.CNH`: Frame para captura de CNH.
-  - `DocumentCameraTypes.CNH_FRENTE`: Frame para captura da frente da CNH.
-  - `DocumentCameraTypes.CNH_VERSO`: Frame para captura do verso da CNH.
-  - `DocumentCameraTypes.CPF`: Frame para captura CPF.
-  - `DocumentCameraTypes.OTHERS("descrição")`: Frame somente com o retângulo onde pode ser usado para outros tipos de documentos. Neste tipo, haverá um parâmetro com a descrição do documento. (Ex. contrato)
-  - `DocumentCameraTypes.RG_FRENTE`: Frame para captura da frente do RG.
-  - `DocumentCameraTypes.RG_VERSO`: Frame para captura da parte traseira do RG.
-  - `DocumentCameraTypes.RG_FRENTE_NOVO`: Frame para captura da frente do novo RG.
-  - `DocumentCameraTypes.RG_VERSO_NOVO`: Frame para captura da parte traseira do novo RG.
+- Modo de câmera desejado, sendo eles:
+  - `SelfieCameraTypes.NORMAL` para o modo de câmera normal;
+  - `SelfieCameraTypes.SMART` para o modo de câmera inteligênte;
 
 Este método gera uma *promisse* que ao ser resolvida, devolve um objeto que será utilizado para efetivamente abrir a câmera através do método `open`, que recebe como parâmetro as funções de `callback` configuradas [neste passo](#configurar-funções-de-callback).
 
+
 <!-- Entender o tipo do objeto do cameraOpener -->
 
-Abaixo um exemplo utilizando a captura de CPF:
+<Tabs>
+  <TabItem value="manual" label="Captura Manual" default>
+
+#### Captura manual
+
+Caso deseje utilizar a captura manual, passe o parâmetro `Unico.SelfieCameraTypes.NORMAL` para o método `prepareSelfieCamera`.
 
 ```javascript
-const cameraPromised = unicoCamera.prepareDocumentCamera("/services.json",
-DocumentCameraTypes.CNH);
 
-cameraPromised.then(cameraOpener => cameraOpener.open(callback));
+  const cameraPromised = unicoCamera.prepareSelfieCamera("/services.json", SelfieCameraTypes.NORMAL);
+  
+  cameraPromised.then(cameraOpener => cameraOpener.open(callback));
 ```
 
+  </TabItem>
 
+  <TabItem value="automatico" label="Captura Automática">
+
+#### Captura inteligente (automática)
+
+Caso deseje utilizar a captura automática, passe o parâmetro `Unico.SelfieCameraTypes.SMART` para o método `prepareSelfieCamera`.
+
+Para a captura inteligente, os modelos de visão computacional também devem ser carregados através do método `setModelsPath`, conforme explicado no primeiro passo deste guia.
+
+```javascript
+  const cameraPromised = unicoCamera.prepareSelfieCamera("/services.json", SelfieCameraTypes.SMART);
+
+  cameraPromised.then(cameraOpener => cameraOpener.open(callback));
+```
+
+  </TabItem>
+</Tabs>
 
 </li>
 
@@ -255,14 +325,15 @@ cameraPromised.then(cameraOpener => cameraOpener.open(callback));
 
 ### Chamar nossas APIs
 
-A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs). 
+A captura das imagens é apenas a primeira parte da nossa jornada. Após a capturar, você deverá enviar o `JWT` gerado para nossas APIs, selecionando um dos fluxos disponíveis detalhados [nesta documentação](https://www3.acesso.io/identity/services/v3/docs).
+
 
 </li>
 
 </ol>
 </Steps>
 
-## Precisando de ajuda?
+## Ficou com dúvidas?
 
 Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de ajuda? Disponibilizamos as seguintes opções para que você possa obter ajuda:
 
@@ -272,5 +343,14 @@ Esperamos ter ajudado com este artigo. Não encontrou algo ou ainda precisa de a
 
 Ótimo! Você chegou até aqui =). A seguir vamos te contar um pouco mais sobre nossa API ou sobre nossa funcionalidade de captura de documentos.
 
-- [Guia para implantação de captura de Selfies](/guias/web/fluxos/captura-selfies);
-<!-- - [API Reference do SDK](/guias/web/API); -->
+- [Guia para implantação de captura de documentos](captura-selfies);
+- [Artigo de referencias do SDK Web](../referencias);
+
+
+
+
+
+
+
+
+

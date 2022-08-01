@@ -19,7 +19,7 @@ Caso use Swift em seu projeto:
 - Swift Syntax > 4.2
 
 ### Credeciais unico
-Para utilizar nossos SDKs você precisará importar as credenciais unico (Client API Key) em seu projeto. Utilize [este](/guias/iOS/como-comecar#obtendo-suas-credenciais) passo-a-passo para gerar e importar as credenciais.
+Para utilizar nossos SDKs você precisará importar as credenciais unico (Client API Key) em seu projeto. Utilize [este](/sdks/iOS/como-comecar#obtendo-suas-credenciais) passo-a-passo para gerar e importar as credenciais.
 
 ## Configuração e instalação
 

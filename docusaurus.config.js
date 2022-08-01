@@ -45,7 +45,7 @@ const config = {
           ]
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/main/website/blog/',
@@ -95,7 +95,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'right',
-            label: 'SDKs Docs',
+            label: 'Docs',
           },
 
           // Ocultando o release notes do menu enquanto n temos o conteúdo.
@@ -114,22 +114,22 @@ const config = {
               {
                 type: 'doc',
                 label: 'Web SDK',
-                docId: 'guias/web/release-notes',
+                docId: 'sdks/web/release-notes',
               },
               {
                 type: 'doc',
                 label: 'iOS SDK',
-                docId: 'guias/iOS/release-notes',
+                docId: 'sdks/iOS/release-notes',
               },
               {
                 type: 'doc',
                 label: 'Android SDK',
-                docId: 'guias/android/release-notes',
+                docId: 'sdks/android/release-notes',
               },
               {
                 type: 'doc',
                 label: 'Flutter SDK',
-                docId: 'guias/flutter/release-notes',
+                docId: 'sdks/flutter/release-notes',
               },
 
               // ... more items

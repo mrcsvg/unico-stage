@@ -36,7 +36,7 @@ Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se a
 - **RG verso:** Captura do verso do RG;
 - **Outros:** Captura de documento genérico;
 
-import imgDocumento from '/static/img/guias/img_documentos.png';
+import imgDocumento from '/static/img/sdks/img_documentos.png';
 
 <img src={imgDocumento} alt="Captura Manual" className="imgCenter" />
 

@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Captura de documentos'
-sidebar_position: 2
+sidebar_label: 'Captura de Selfies'
+sidebar_position: 1
 ---
 
-# Captura de documentos
+# Captura de Selfies
 
 ## Sobre este guia
 
@@ -26,18 +26,39 @@ Certifique-se que você seguiu nosso passo-a-passo para instalação e importaç
 
 ## Recursos disponíveis
 
-Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se ajusta automaticamente com base na proporção da tela do usuário final. Possibilitamos a captura dos seguintes tipos de documentos:
+Nosso SDK oferece um componente para captura de imagem contendo uma silhueta que ajuda o usuário a se posicionar de forma correta para a foto. A captura da imagem para o captura de Selfies pode ser feita de duas formas, descritas ao longo desse guia. Sendo elas:
 
-- **Sem silhueta:** Captura documento genérico;
-- **RG:** Captura do RG (separado em frente e verso);
-- **CNH:** Captura da CNH aberta;
-- **CNH frente:** Captura da frente da CNH;
-- **CNH verso:** Captura do verso da CNH;
-- **CPF:** Captura do documento de CPF;
+### Captura Manual
 
-import imgDocumento from '/static/img/guias/img_documentos.png';
+Neste tipo de experiência existe um frame de captura para auxiliar o usuário a posicionar sua face corretamente. Após se posicionar corretamente, o usuário deve clicar em um botão para capturar a imagem. 
 
-<img src={imgDocumento} alt="Captura Manual" className="imgCenter" />
+A SDK não efetua nenhum tipo de validação do que está sendo capturado. Caso a imagem capturada não possua uma face biométricamente válida, o `JWT` será recusado pelas APIs de nosso motor de biometria.
+
+import imgCapturaManual from '/static/img/sdks/img_cameranormal.png';
+
+<img src={imgCapturaManual} alt="Captura Manual" className="imgCenter" />
+
+
+### Captura Automática
+
+Neste tipo de experiência, identificamos a face do usuário automaticamente através de algoritmos de visão computacional e o auxiliamos para que se posicione de forma correta dentro da área de captura. Após se posicionar corretamente, capturamos a imagem de forma automática.
+
+Por ajudar o usuário a enquadrar sua face na área de captura, esta opção pode diminuir problemas ao enviar o `JWT` às APIs de nosso motor biométrico.
+
+import imgCapturaAutomatica from '/static/img/sdks/img_camerainteligente.png';
+
+<img src={imgCapturaAutomatica} alt="Captura Manual" className="imgCenter" />
+
+### Smartlive com interação Facetec
+
+Neste tipo de experiência o usuário é instruído a realizar alguns movimentos simples durante a captura, que são acompanhados por algoritmos de visão computacional com o intuito de garantir que ele está tirando foto naquele momento.
+
+Por exigir a movimentação do usuário este tipo de captura possui uma camada extra de segurança contra fraudes.
+Tal como na Captura Automática a imagem é capturada sem a necessidade do usuário pressionar um botão. Desta forma tende a diminuir problemas ao enviar o `JWT` às APIs de nosso motor biométrico.
+
+:::info Ativação do Smartlive com interação Facetec
+Esta funcionalidade deve ser ativada através do portal do cliente, como explicado [neste artigo](../como-comecar#criando-ou-editando-uma-api-key).
+:::
 
 
 ## Implementação
@@ -54,7 +75,7 @@ import Steps from '@site/src/components/Steps';
 
 Para iniciar com SDK iOS do **Unico Check**, importe nosso SDK e implemente a interface `AcessoBioManagerDelegate` dentro da *ViewController* que deseja utilizar.
 
-A implementação dessa classe é bem simples e pode ser feita com poucas linhas de código. Tudo que precisa fazer é intanciar nosso *builder* informando o contexto em questão e sobrescrever nossos métodos de callback com as lógicas de negócio de sua aplicação:
+A implementação dessa classe é bem simples e pode ser feita com poucas linhas de código. Tudo que precisa fazer é instanciar nosso *builder* informando o contexto em questão e sobrescrever nossos métodos de callback com as lógicas de negócio de sua aplicação:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -151,10 +172,123 @@ O tempo máximo da sessão pode ser configurado em nosso **builder** através do
 
 <!-- TODO Criar conteúdo acima nas referencias -->
 
+##### Método `onSystemChangedTypeCameraTimeoutFaceInference()`
+
+Este método será invocado assim que o tempo máximo para detecção da face de um usuário for atingido (sem ter nada detectado). Neste caso, o modo de câmera é alterado automaticamente para o modo manual (sem o smart frame).
+
+
+
+
+
 
 :::caution Atenção
 
 Todos os métodos acima devem ser criados da forma indicada em seu projeto (mesmo que sem nenhuma lógica). Caso contrário, o projeto não compilará com sucesso.
+
+:::
+
+</li>
+
+
+
+<li>
+
+### Configurar modo da câmera
+
+Em seguida, iremos configurar o modo de captura da camera. Como explicamos [acima](captura-selfies#recursos-disponíveis) existem três modos de captura disponíveis. Caso **não** esteja utilizando o modo **Smartlive com interação Facetec**, neste passo você poderá escolher entre o modo de captura **Manual** ou **Automático**.
+
+:::tip Dica - Smartlive com interação Facetec
+
+Caso você esteja utilizando o modo **Smartlive com interação Facetec**, a configuração do tipo de câmera passa a ser irrelevante, pois este modo oferece uma experiência pré-definida que não pode ser alterada.
+
+No entanto, sugerimos que você configure um tipo de câmera em seu builder (como descrito neste passo), pois caso você desabilite o modo **Liveness com interação Facetec** em seu portal do cliente (e gere um novo JSON), você não precisará alterar seu código.
+
+:::
+
+Nosso SDK tem configurado e habilitado por padrão o *enquadramento inteligente* e a *captura automática*. Para utilizar a câmera em modo normal, desabilite ambas funcionalidades através dos métodos `setAutoCapture` e `setSmartFrame`, através do objeto da classe `AcessoBioManager` gerado no [passo acima](#inicializar-nosso-sdk). 
+
+Os exemplos a seguir demonstram como você poderia configurar cada um dos modos de câmera a partir da ação de um botão em sua UI:
+
+#### Modo inteligente (Captura automática - Smart Camera)
+
+Por padrão, nosso SDK possui o enquadramento inteligente e a captura automática habilitados. Caso decida utilizar este modo de câmera, não será necessário alterar nenhuma configuração. 
+
+Caso as configurações da câmera tenham sido alteradas previamente em seu App, é possível restaurá-las através dos métodos `setAutoCapture` e `setSmartFrame`:
+
+<Tabs>
+<TabItem value="objectivec" label="Objective-C" default>
+
+```objectivec {5,6}
+.m:
+- (IBAction)configureSmartCamera:(UIButton *)sender {
+
+    // Objeto unicoCheck da classe AcessoBioManager
+    [unicoCheck setSmartFrame:true];
+    [unicoCheck setAutoCapture:true];
+
+}
+```
+</TabItem>
+
+<TabItem value="swift" label="Swift">
+
+
+```swift {4,5}
+@IBAction func configureSmartCamera(_ sender: Any) 
+
+    // Objeto unicoCheck da classe AcessoBioManager
+    unicoCheck.setSmartFrame(true)
+    unicoCheck.setAutoCapture(true)    
+}
+```
+
+</TabItem>
+</Tabs>
+
+:::caution Atenção
+
+Não é possível implementar o método `setAutoCapture(true)` com o método `setSmartFrame(false)`. Ou seja, não é possível manter a captura automática sem o Smart Frame, pois ele é quem realiza o enquadramento inteligente.
+
+:::
+
+#### Modo manual 
+
+Por padrão, nosso SDK possui o enquadramento inteligente e a captura automática habilitados. Neste caso, para utilizar o modo manual ambas configurações relacionadas a *Smart Camera* devem ser desligadas através dos métodos `setAutoCapture` e `setSmartFrame`:
+
+<Tabs>
+  <TabItem value="objectivec" label="Objective-C" default>
+
+```objectivec {5-6}
+.m:
+- (IBAction)configureSmartCamera:(UIButton *)sender {
+
+    // Objeto unicoCheck da classe AcessoBioManager
+    [unicoCheck setSmartFrame:false];
+    [unicoCheck setAutoCapture:false];
+
+}
+
+```
+  </TabItem>
+
+  <TabItem value="swift" label="Swift">
+
+```swift {4-5}
+@IBAction func configureSmartCamera(_ sender: Any) {
+
+    // Objeto unicoCheck da classe AcessoBioManager
+    unicoCheck.setSmartFrame(false)
+    unicoCheck.setAutoCapture(false)    
+}
+
+```
+
+  </TabItem>
+</Tabs>
+
+:::tip Dica - SmartFrame
+
+Mesmo em modo manual é possível utilizar o Smart Frame. Neste caso, exibiremos a silhueta para identificar o enquadramento para então habilitar o botão. Para isto, basta configurar `setAutoCapture=false` e `setSmartFrame=true`
 
 :::
 
@@ -167,9 +301,9 @@ Todos os métodos acima devem ser criados da forma indicada em seu projeto (mesm
 
 O método de abertura da câmera (que será chamado no próximo passo) precisa saber o que fazer ao conseguir capturar uma imagem com **sucesso** ou ao ter algum **erro** no processo. Informaremos "o que fazer" ao método de abertura da câmera através da configuração de *delegates* que serão chamados em situações de sucesso ou erro.
 
-Através da configuração dos *delegates*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorDocument`) ou sucesso (método `onSuccessDocument`) na captura de imagens.
+Através da configuração dos *delegates*, você poderá especificar o que acontecerá em seu App em situações de erro (método `onErrorSelfie`) ou sucesso (método `onSuccessSelfie`) na captura de imagens.
 
-Para a configuração dos *delegates*, você deverá também deverá implementar as interfaces `DocumentCameraDelegate` e `AcessoBioDocumentDelegate`:
+Para a configuração dos *delegates*, você deverá também deverá implementar as interfaces `SelfieCameraDelegate` e `AcessoBioSelfieDelegate`:
 
 <Tabs>
   <TabItem value="objectivec" label="Objective-C" default>
@@ -182,8 +316,8 @@ Para a configuração dos *delegates*, você deverá também deverá implementar
 
 @interface ViewController : UIViewController < AcessoBioManagerDelegate,
           // highlight-start
-          DocumentCameraDelegate, 
-          AcessoBioDocumentDelegate> {
+          SelfieCameraDelegate, 
+          AcessoBioSelfieDelegate> {
           // highlight-end
 
     AcessoBioManager *unicoCheck;
@@ -203,8 +337,8 @@ import AcessoBio
 class ViewController: UIViewController, 
                       AcessoBioManagerDelegate, 
                       // highlight-start
-                      DocumentCameraDelegate, 
-                      AcessoBioDocumentDelegate {
+                      SelfieCameraDelegate, 
+                      AcessoBioSelfieDelegate {
                         // highlight-end
     
   //Your code from previous and next steps here ;) 
@@ -214,18 +348,22 @@ class ViewController: UIViewController,
   </TabItem>
 </Tabs>
 
-#### Método `onSuccessDocument`
 
-Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e retornará um objeto do tipo `ResultCamera` que será utilizado posteriormente na chamada de nossas APIs REST. 
 
-<!-- Saiba mais sobre o tipo `ResultCamera` no [API Reference](API#resultcamera) de nosso SDK. -->
+
+
+#### Método `onSuccessSelfie`
+
+Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e retornará um objeto do tipo `SelfieResult` que será utilizado posteriormente na chamada de nossas APIs REST. 
+
+<!-- Saiba mais sobre o tipo `SelfieResult` no [API Reference](API#SelfieResult) de nosso SDK. -->
 
 <Tabs>
   <TabItem value="objectivec" label="Objective-C" default>
 
 ```objectivec 
 
-- (void)onSuccessDocument:(DocumentResult *)result {
+- (void)onSuccessSelfie:(SelfieResult *)result {
     NSLog(@"%@", result.base64);
 }  
 
@@ -236,7 +374,7 @@ Ao efetuar uma captura de imagem com **sucesso**, este método será invocado e 
 
 ```swift
 
-func onSuccessDocument(_ result: DocumentResult!) {
+func onSuccessSelfie(_ result: SelfieResult!) {
     // your code
  }
 
@@ -245,7 +383,7 @@ func onSuccessDocument(_ result: DocumentResult!) {
   </TabItem>
 </Tabs>
 
-O objeto `ResultCamera` retornará 2 atributos: `base64` e `encrypted`:
+O objeto `SelfieResult` retornará 2 atributos: `base64` e `encrypted`:
 
 - O atributo `base64` pode ser utilizado caso você queira exibir um preview da imagem em seu app;
 - O atributo `encrypted` deverá ser enviado na chamada de nossas APIs REST do **unico check** (detalhado [neste passo](#chamar-nossas-apis));  
@@ -260,7 +398,7 @@ Caso queira converter o base64 para bitmap, a maneira padrão não funcionará p
 
 
 
-#### Método `onErrorDocument`
+#### Método `onErrorSelfie`
 
 Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo `ErrorBio`. 
 
@@ -269,7 +407,7 @@ Ao ocorrer algum erro na captura de imagem, este método será invocado e retorn
 
 ```objectivec 
 
-- (void)onErrorDocument:(ErrorBio *)errorBio {
+- (void)onErrorSelfie:(ErrorBio *)errorBio {
     // Your code
 }
 
@@ -280,7 +418,7 @@ Ao ocorrer algum erro na captura de imagem, este método será invocado e retorn
 
 ```swift
 
-func onErrorDocument(_ errorBio: ErrorBio!) {
+func onErrorSelfie(_ errorBio: ErrorBio!) {
     // Your code
  }
 
@@ -313,7 +451,7 @@ Entenda um pouco mais sobre o método `setTheme()`, exemplos de utilização e o
 
 ### Preparar e abrir câmera
 
-Para seguir com a abertura da câmera, primeiro devemos prepará-la utilizando o método `prepareDocumentCamera`. Este método recebe como parâmetro a implementação da classe `DocumentCameraDelegate` e o JSON com as credenciais, gerado [nesse passo](#../como-comecar).
+Para seguir com a abertura da câmera, primeiro devemos prepará-la utilizando o método `prepareSelfieCamera`. Este método recebe como parâmetro a implementação da classe `SelfieCameraDelegate` e o JSON com as credenciais, gerado [nesse passo](#../como-comecar).
 
 
 <Tabs>
@@ -328,7 +466,7 @@ Para seguir com a abertura da câmera, primeiro devemos prepará-la utilizando o
 #import "SelfieCameraDelegate.h"
 
 @interface ViewController : UIViewController < AcessoBioManagerDelegate,
-DocumentCameraDelegate, AcessoBioDocumentDelegate> {
+SelfieCameraDelegate, AcessoBioSelfieDelegate> {
 
     AcessoBioManager *unicoCheck;
 }
@@ -337,12 +475,12 @@ DocumentCameraDelegate, AcessoBioDocumentDelegate> {
 - (IBAction)openCamera:(UIButton *)sender {
 
     // with AcessoBioConfigDataSource implementation
-    [[unicoCheck build] prepareDocumentCamera:self config: [YourUnicoConfigClass new]];
+    [[unicoCheck build] prepareSelfieCamera:self config: [YourUnicoConfigClass new]];
 
     // or
 
     // with JSON config
-    [[unicoCheck build] prepareDocumentCamera:self jsonConfigName: @""];
+    [[unicoCheck build] prepareSelfieCamera:self jsonConfigName: @""];
 }
 
 ```
@@ -355,17 +493,17 @@ import UIKit
 import AcessoBio
 
 class ViewController: UIViewController, AcessoBioManagerDelegate, 
-DocumentCameraDelegate, AcessoBioDocumentDelegate {
+SelfieCameraDelegate, AcessoBioSelfieDelegate {
 
     @IBAction func openCamera(_ sender: Any) {
 
         // with AcessoBioConfigDataSource implementation
-        unicoCheck.build().prepareDocumentCamera(self, config: YourUnicoConfigClass())
+        unicoCheck.build().prepareSelfieCamera(self, config: YourUnicoConfigClass())
 
         // or
 
         // with JSON config
-        unicoCheck.build().prepareDocumentCamera(self, jsonConfigName:
+        unicoCheck.build().prepareSelfieCamera(self, jsonConfigName:
         "json-credenciais.json")
     }
 }
@@ -374,21 +512,9 @@ DocumentCameraDelegate, AcessoBioDocumentDelegate {
   </TabItem>
 </Tabs>
 
-Quando a câmera estiver preparada, dispararemos o evento `onCameraReadyDocument`, que recebe como parâmetro um objeto do tipo `AcessoBioCameraOpenerDelegate`. 
+Quando a câmera estiver preparada, dispararemos o evento `onCameraReady`, que recebe como parâmetro um objeto do tipo `AcessoBioCameraOpenerDelegate`. 
 
-Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido através do método `openDocument()`, informando os seguintes parâmetros:
-
-- Tipo de documento a ser capturado, sendo eles:
-  - `DocumentEnums.none`: Frame para captura de documento genérico, sem nenhuma silhueta;
-  - `DocumentEnums.RG`: Frame para captura do RG, primeiro a frente, depois o verso;
-  - `DocumentEnums.rgFrente`: Frame para captura da parte da frente do RG;
-  - `DocumentEnums.rgVerso`: Frame para captura da parte traseira do RG;
-  - `DocumentEnums.CNH`: Frame para captura de CNH;
-  - `DocumentEnums.cnhFrente`: Frame para captura da parte da frente da CNH;
-  - `DocumentEnums.cnhVerso`: Frame para captura da parte traseira da CNH;
-  - `DocumentEnums.CPF`: Frame para captura CPF;
-
-- Os **delegates** implementados [acima](#implementar-delegates-para-eventos-da-câmera) (aqui descritos como Self);
+Você deverá sobrescrever este método, efetuando a abertura da câmera com o objeto recebido através do método `open()`:
 
 
 <Tabs>
@@ -397,11 +523,11 @@ Você deverá sobrescrever este método, efetuando a abertura da câmera com o o
 <!-- TODO Obter exemplo em objective c  -->
 
 ```objectivec 
-- (void)onCameraReadyDocument:(id)cameraOpener {
-    [cameraOpener openDocument:DocumentCNH delegate:self];
+- (void)onCameraReady:(id)cameraOpener {
+    [cameraOpener open:self];
 }
 
-- (void)onCameraFailedDocument:(NSString *)message {
+- (void)onCameraFailed:(NSString *)message {
     code
 }
 ```
@@ -410,24 +536,19 @@ Você deverá sobrescrever este método, efetuando a abertura da câmera com o o
   <TabItem value="swift" label="Swift">
 
 ```swift
-func onCameraReadyDocument(_ cameraOpener: AcessoBioCameraOpenerDelegate!) {
-    cameraOpener.openDocument(
-        DocumentEnums.CNH, 
-        delegate: self
-    )
-}
+func onCameraReady(_ cameraOpener: AcessoBioCameraOpenerDelegate!) {
+    cameraOpener.open(self)
+ }
  
-func onCameraFailedDocument(_ message: String!) {
+func onCameraFailed(_ message: String!) {
     code
-}
+ }
 ```
 
   </TabItem>
 </Tabs>
 
-Caso ocorra algum erro ao preparar a câmera, o evento `onCameraFailedDocument` será disparado. Você deve implementar este método aplicando as regras de negócio de seu App.
-
-Em caso de sucesso, o evento `onSuccessDocument` será disparado, conforme explicado [neste passo](#método-onsuccessdocument).
+Caso ocorra algum erro ao preparar a câmera, o evento `onCameraFailed` será disparado. Você devem implementar este método aplicando as regras de negócio de seu App.
 
 </li>
 

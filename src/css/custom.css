@@ -149,3 +149,10 @@ td .label {
 [data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgb(66 66 66 / 30%);
 }
+
+
+/* admonition customization */ 
+
+.admonition {
+  margin-top: 10px;
+}

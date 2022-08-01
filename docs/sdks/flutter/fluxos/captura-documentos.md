@@ -39,7 +39,7 @@ Nosso SDK é responsável por renderizar um frame contendo uma silhueta que se a
 - **Outros:** Captura documento genérico. Para este tipo de captura você deve informar o título do documento que será mostrado na captura para o usuário usando a propriedade `optional.LABEL_DOCUMENT_TYPE_OTHERS`.
 
 
-import imgDocumento from '/static/img/guias/img_documentos.png';
+import imgDocumento from '/static/img/sdks/img_documentos.png';
 
 <img src={imgDocumento} alt="Captura Manual" className="imgCenter" />
 
@@ -173,7 +173,7 @@ Ao efetuar uma captura de imagem com sucesso, este método será invocado e reto
 public void onErrorDocument(UnicoError error) { }
 ```
 
-Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`UnicoError`](/guias/flutter/referencias#objeto-unicoerror). 
+Ao ocorrer algum erro na captura de imagem, este método será invocado e retornará um objeto do tipo [`UnicoError`](/sdks/flutter/referencias#objeto-unicoerror). 
 
 <!-- Saiba mais sobre o tipo `ErrorBio` no [API Reference](API#errorbio) de nosso SDK. -->
 
