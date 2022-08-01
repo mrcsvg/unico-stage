@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkunico_sdkbio=self.webpackChunkunico_sdkbio||[]).push([[2576],{5804:function(a){a.exports=JSON.parse('{"allTagsPath":"/unico-stage/blog/tags","slug":"/unico-stage/blog/tags/hola","name":"hola","count":1,"permalink":"/unico-stage/blog/tags/hola"}')}}]);
