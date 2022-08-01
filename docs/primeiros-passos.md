@@ -3,25 +3,25 @@ sidebar_label: 'Primeiros passos'
 sidebar_position: 2
 ---
 
-# Começando
+# Primeiros passos
 
-Nossos guias foram elaborados para ajudá-lo a se familiarizar com alguns conceitos básicos, oferecendo uma abordagem rápida e simples, para que você possa se integrar sem qualquer fricção ao nosso motor biométrico.
+## Começando
 
-Para deixar as coisas mais organizadas, dividimos nossos guias por stack técnológico. Desta forma, para iniciar, escolha abaixo um de nossos Client SDKs ;-).
+Nossos guias foram elaborados para ajudá-lo a se familiarizar com alguns conceitos básicos, oferecendo uma abordagem rápida e simples para que você possa se integrar sem qualquer fricção ao nosso motor biométrico.
 
-## Client SDKs disponíveis
+Antes de iniciar sua integração, tenha certeza que suas credenciais estão criadas e ativas. Caso ainda não possua suas credenciais, [fale com nossos especialistas](https://unico.io/contato-unico-check/).
 
-- [SDK Android](guias/android/overview);
-- [SDK iOS](guias/iOS/overview);
-- [SDK Web](guias/web/overview);
-- [SDK Flutter](guias/flutter/overview);
+### Entenda nossas APIs
 
-## Estrutura dos guias
+Como mencionamos anteriormente, a captura das imagens por meio de nossos SDKs é apenas a primeira parte de sua jornada. Sendo assim, é de extrema importância que você entenda alguns conceitos básicos e o funcionamento de nossas APIs do motor biométrico.
 
-Dentro da documentação de cada SDK você encontrará guias para implementar nossas principais funcionalidades, além do API Reference para cada SDK.
+Disponibilizamos [neste artigo](/fundamentals/token-biometrico) alguns conceitos básico (e importantes) para que você entenda mais sobre nosso Token Biométrico. Também disponibilizamos nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/) como material complementar para sua integração.
 
-### Funcionalidades disponíveis por SDK
+### Utilizando nossos SDKs
 
+Antes de começar, certifique-se que a funcionalidade que irá utilizar em sua integração está disponível no SDK em questão:
+
+<!-- TODO Atualizar pro flutter -->
 <div className="compatibility-table">
 
 | Funcionalidade | SDK Web | SDK Android | SDK iOS | 
@@ -33,11 +33,12 @@ Dentro da documentação de cada SDK você encontrará guias para implementar no
 
 </div>
 
-## Entenda nossas APIs
+Nossos guias estão organizados por stack tecnológica e em cada um deles você encontrará o passo-a-passo para instalação e configuração dos SDKs (Desde a geração de credenciais até as chamadas às nossas APIs rest). Selecione um dos guias abaixo e happy coding! =)
 
-Como mencionamos anteriormente, a captura das imagens por meio de nossos SDKs é apenas a primeira parte de sua jornada. Sendo assim, é de extrema importancia que você entenda alguns conceitos básicos e o funcionamento de nossas APIs do motor biométrico.
-
-Saiba mais sobre nossas APIs [neste artigo](conceitos-importantes).
+- [SDK Android](guias/android/overview);
+- [SDK iOS](guias/iOS/overview);
+- [SDK Web](guias/web/overview);
+- [SDK Flutter](guias/flutter/overview);
 
 ## Ficou com dúvidas?
 

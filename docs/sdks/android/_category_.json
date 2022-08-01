@@ -1,6 +1,6 @@
 {
-    "label": "iOS SDK",
-    "position": 2,
+    "label": "Android",
+    "position": 1,
     "collapsible" : true,
     "collapsed" : true
   }

@@ -9,8 +9,8 @@ const simplePlantUML = require("@akebifiky/remark-simple-plantuml");
 const config = {
   title: 'Unico Check - SDKs',
   tagline: 'Se integre com a único de forma fácil e rápida',
-  url: 'https://mrcsvg.github.io',
-  baseUrl: '/unico-stage/',
+  url: 'https://developers.unico.io',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',

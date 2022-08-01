@@ -14,7 +14,7 @@ Antes de começar você deve ter certeza de que seu ambiente de desenvolvimento 
 
 ## Credenciais unico
 
-Para utilizar nossos SDKs você precisará importar as credenciais unico (Client API Key) em seu projeto. Utilize [este](/guias/flutter/como-comecar#obtendo-suas-credenciais) passo-a-passo para gerar e importar as credenciais.
+Para utilizar nossos SDKs você precisará importar as credenciais unico (Client API Key) em seu projeto. Utilize [este](/sdks/flutter/como-comecar#obtendo-suas-credenciais) passo-a-passo para gerar e importar as credenciais.
 
 ## Instalação
 

@@ -32,17 +32,13 @@ Por meio de uma plataforma de serviços, é possível configurar suas funcionali
 
 ## O que você encontrará por aqui
 
-Neste espaço, você encontrará tudo que necessita para completar a integração em seu client, seja Web ou Mobile, através de nossos **Client SDKs**.
+Neste espaço, você encontrará grande parte do que necessita para completar sua integração com o **unico | check 3.0**. Disponibilizaremos aqui a guias completos de nossos **Client SDKs**, assim como conceitos fundamentais de nosso Token Biométrico (Disponível em nossas **APIs Rest**).
 
-:::info API Reference de nosso backend
-Não discutiremos aqui conceitos sobre nossas APIs do motor biométrico. Para informações sobre nossa APIs, favor consultar [esta página](https://www3.acesso.io/identity/services/v3/docs/).
-:::
-
-Você poderá começar de forma rápida através de nossos [guias de integração](primeiros-passos#escolha-um-de-nossos-sdks) ou de nossos [projetos de exemplo](recursos-adicionais/exemplos). Também disponibilizamos por aqui a *API References* de cada um de nossos SDKs, onde você poderá encontrar todos os detalhes necessários para customizar sua integração.
-
-## Qual o objetivo de nossos SDKs?
+### Client SDKs
 
 Criamos estes SDKs para te ajudar a potencializar a segurança do seu negócio e dos seus clientes sem prejudicar a experiência do usuário, permitindo inclusive personalizar a experiência de uso aplicando a identidade visual da sua marca. Nossos SDKs foram desenvolvidos para abstrair a complexidade relacionada a manipulação da camera do dispositivo dos usuários e a captura de imagens. Além de outras vantagens:
+
+Você poderá começar de forma rápida através de nossos [guias de integração](primeiros-passos#escolha-um-de-nossos-sdks) ou de nossos [projetos de exemplo](recursos-adicionais/exemplos). Também disponibilizamos por aqui a *API References* de cada um de nossos SDKs, onde você poderá encontrar todos os detalhes necessários para customizar sua integração.
 
 #### Precisão na captura de imagens
 - Recursos que auxiliam o usuário a obter fotos biometricamente válidas, reduzindo o drop das imagens quando comparados a captura realizada pelas câmeras padrões dos dispositivos. Adicionamos SmartFrames, “elementos chave“ que se ajustam automaticamente à silhueta e proporção da tela do usuário permitindo uma melhor captura da imagem.
@@ -51,6 +47,15 @@ Criamos estes SDKs para te ajudar a potencializar a segurança do seu negócio e
 - Recursos de criptografia e segurança contra injection de imagens, possuindo também funcionalidades que previnem fraudes adaptadas a nossos diferentes fluxos, tais como: Smartlive com interação, câmera inteligente, câmera normal e captura de documentos. 
 - Camadas de segurança que funcionam de forma complementar, tanto a nível da aplicação quanto em relação aos dados que trafegados entre as SDKs e nosso backend.
 - Ofuscação de código, bloqueio de emulador e checagem de bundle do aplicativo que a está executando.
+
+
+### Rest APIs
+
+A captura das imagens por meio de nossos SDKs é apenas a primeira parte de sua jornada. Sendo assim, é de extrema importância que você entenda alguns conceitos básicos e o funcionamento de nossas APIs do motor biométrico.
+
+Neste espaço você encontrará alguns conceitos básicos sobre nosso [Token Biométrico](/fundamentals/token-biometrico), assim como algumas dúvidas frequentes. O entendimento destes conceitos é fundamental para fazer bom uso de nosso produto.
+
+Caso esteja buscando uma documentação mais completa de nossas APIs Rest, acesse nosso [API Reference](https://www3.acesso.io/identity/services/v3/docs/).
 
 ## Ficou com dúvidas?
 

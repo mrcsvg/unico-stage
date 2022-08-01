@@ -1,5 +1,6 @@
 {
   "label": "Recursos adicionais",
   "position": 9,
-  "collapsible" : false 
+  "collapsible" : true,
+  "collapsed" : true
 }

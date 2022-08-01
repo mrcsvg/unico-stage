@@ -1,6 +1,6 @@
 ---
-sidebar_label: 'Conceitos importantes'
-sidebar_position: 3
+sidebar_label: 'Nossos SDKs'
+sidebar_position: 1
 ---
 
 # Conceitos importantes
@@ -8,7 +8,7 @@ sidebar_position: 3
 Abaixo alguns pontos importantes para sua integração:
 
 - O objetivo da SDK é realizar a captura de imagens (selfie e documento);
-- A SDK não realiza requisições a Rest-API do Unico check (vide [diagrama](/guias/web/overview#como-funciona-este-sdk));
+- A SDK não realiza requisições a Rest-API do Unico check (vide [diagrama](/sdks/web/overview#como-funciona-este-sdk));
 - Você pode encontrar mais detalhes sobre nossas APIs Rest [nesta página](https://www3.acesso.io/identity/services/v3/docs/#section/Fluxos).
 - É importante manter o SDK Unico check atualizado com a última versão disponível;
 - O SDK não funciona em emuladores, somente com aparelhos móveis físicos;
